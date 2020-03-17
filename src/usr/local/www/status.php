@@ -204,12 +204,19 @@ function execCmds() {
 function get_firewall_info() {
 	global $g, $output_path;
 	/* Firewall Platform/Serial */
+	/* Inglese
 	$firewall_info = "Product Name: " . htmlspecialchars($g['product_name']);
 	$platform = system_identify_specific_platform();
 	if (!empty($platform['descr'])) {
 		$firewall_info .= "<br/>Platform: " . htmlspecialchars($platform['descr']);
-	}
-
+	} */
+	
+	$firewall_info = "Nome prodotto: " . htmlspecialchars($g['product_name']);
+	$platform = system_identify_specific_platform();
+	if (!empty($platform['descr'])) {
+		$firewall_info .= "<br/>Piattaforma: " . htmlspecialchars($platform['descr']);
+	} */
+/*
 	if (file_exists('/var/db/uniqueid')) {
 		$ngid = file_get_contents('/var/db/uniqueid');
 		if (!empty($ngid)) {
@@ -229,18 +236,19 @@ function get_firewall_info() {
 	if (!empty($serial)) {
 		$firewall_info .= "<br/>Serial: " . htmlspecialchars($serial);
 	}
-
+*/
 	if (!empty($g['product_version_string'])) {
 		$firewall_info .= "<br/>" . htmlspecialchars($g['product_name']) .
-		    " version: " . htmlspecialchars($g['product_version_string']);
+		    " versione: " . htmlspecialchars($g['product_version_string']);
 	}
 
 	if (file_exists('/etc/version.buildtime')) {
 		$build_time = file_get_contents('/etc/version.buildtime');
 		if (!empty($build_time)) {
-			$firewall_info .= "<br/>Built On: " . htmlspecialchars($build_time);
+			$firewall_info .= "<br/>Installato il: " . htmlspecialchars($build_time);
 		}
 	}
+	/*
 	if (file_exists('/etc/version.lastcommit')) {
 		$build_commit = file_get_contents('/etc/version.lastcommit');
 		if (!empty($build_commit)) {
@@ -255,7 +263,7 @@ function get_firewall_info() {
 			    date("D M j G:i:s T Y", filemtime('/etc/version.gitsync')) .
 			    " to commit " . htmlspecialchars($gitsync);
 		}
-	}
+	} */
 
 	file_put_contents("{$output_path}/Product-Info.txt", str_replace("<br/>", "\n", $firewall_info) . "\n");
 	return $firewall_info;
@@ -278,17 +286,17 @@ if (function_exists("system_get_thothid") &&
 	}
 }
 
-defCmdT("OS-Uptime", "/usr/bin/uptime");
-defCmdT("Network-Interfaces", "/sbin/ifconfig -vvvvvam");
-defCmdT("Network-Interface Statistics", "/usr/bin/netstat -nWi");
-defCmdT("Process-Top Usage", "/usr/bin/top | /usr/bin/head -n5");
-defCmdT("Process-List", "/bin/ps xauwwd");
-defCmdT("Disk-Mounted Filesystems", "/sbin/mount");
-defCmdT("Disk-Free Space", "/bin/df -hi");
-defCmdT("Network-Routing tables", "/usr/bin/netstat -nWr");
-defCmdT("Network-Gateway Status", 'get_gateway_status', "php_func");
-defCmdT("Network-Mbuf Usage", "/usr/bin/netstat -mb");
-defCmdT("Network-Protocol Statistics", "/usr/bin/netstat -s");
+defCmdT("Uptime", "/usr/bin/uptime");
+defCmdT("Interfacce di rete", "/sbin/ifconfig -vvvvvam");
+defCmdT("Statistiche interfacce di rete", "/usr/bin/netstat -nWi");
+defCmdT("Uso risorse processi", "/usr/bin/top | /usr/bin/head -n5");
+defCmdT("Lista processi", "/bin/ps xauwwd");
+defCmdT("Partizioni disponibili", "/sbin/mount");
+defCmdT("Spazio libero", "/bin/df -hi");
+defCmdT("Tabella di routing di rete", "/usr/bin/netstat -nWr");
+defCmdT("Stato network di rete", 'get_gateway_status', "php_func");
+defCmdT("Uso MBUF", "/usr/bin/netstat -mb");
+defCmdT("Statistiche protocolli di rete ", "/usr/bin/netstat -s");
 defCmdT("Network-Buffer and Timer Statistics", "/usr/bin/netstat -nWx");
 defCmdT("Network-Listen Queues", "/usr/bin/netstat -LaAn");
 defCmdT("Network-Sockets", "/usr/bin/sockstat");
@@ -404,11 +412,11 @@ include("head.inc"); ?>
 <form action="status.php" method="post">
 
 <?php print_info_box(
-	gettext("Make sure all sensitive information is removed! (Passwords, etc.) before posting information from this page in public places such as forum or social media sites.") .
+	gettext("Assicurati che tutte le informazioni sensibili siano rimosse! (Password, ecc.) Prima di pubblicare informazioni da questa pagina in luoghi pubblici come forum o siti di social media") .
 	'<br />' .
-	gettext("Common password and other private fields in config.xml have been automatically redacted.") .
+	gettext("Password e altri campi privati in config.xml sono stati automaticamente redatti") .
 	'<br />' .
-	sprintf(gettext('When the page has finished loading, the output is stored in %1$s. It may be downloaded via scp or using this button: '), $output_file) .
+	sprintf(gettext('Al termine del caricamento della pagina, l''output viene archiviato in% 1 $ s. Può essere scaricato tramite scp o usando questo pulsante: '), $output_file) .
 	' <button name="submit" type="submit" class="btn btn-primary btn-sm" id="download" value="DOWNLOAD">' .
 	'<i class="fa fa-download icon-embed-btn"></i>' .
 	gettext("Download") .
@@ -421,18 +429,18 @@ include("head.inc"); ?>
 if ($show_output) {
 	listCmds();
 } else {
-	print_info_box(gettext("Status output suppressed. Download archive to view."), 'info', false);
+	print_info_box(gettext("Uscita di stato soppressa. Scarica l'archivio per visualizzarlo"), 'info', false);
 }
 
 endif;
 
 if ($console) {
-	print(gettext("Gathering status data...") . "\n");
+	print(gettext("Raccolta dei dati sullo stato...") . "\n");
 	get_firewall_info();
 }
 execCmds();
 
-print(gettext("Saving output to archive..."));
+print(gettext("Salvataggio nell'archivio..."));
 
 if (is_dir($output_path)) {
 	mwexec("/usr/bin/tar czpf " . escapeshellarg($output_file) . " -C " . escapeshellarg(dirname($output_path)) . " " . escapeshellarg(basename($output_path)));
@@ -443,7 +451,7 @@ if (is_dir($output_path)) {
 	}
 }
 
-print(gettext("Done.") . "\n");
+print(gettext("Fatto.") . "\n");
 
 if (!$console) {
 	include("foot.inc");

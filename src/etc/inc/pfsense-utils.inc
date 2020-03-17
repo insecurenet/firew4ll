@@ -2802,9 +2802,9 @@ function get_cert_country_codes() {
 
 	/* Preserve historical order: None, US, CA, other countries */
 	$first_items[''] = gettext("None");
-	$first_items['US'] = $country_codes['US'];
+	$first_items['IT'] = $country_codes['IT'];
 	$first_items['CA'] = $country_codes['CA'];
-	unset($country_codes['US']);
+	unset($country_codes['IT']);
 	unset($country_codes['CA']);
 
 	return array_merge($first_items, $country_codes);
@@ -3071,24 +3071,9 @@ function set_language() {
 
 function get_locale_list() {
 	$locales = array(
-		"bs" => gettext("Bosnian"),
-		"zh_CN" => gettext("Chinese"),
-		"zh_Hans_CN" => gettext("Chinese (Simplified, China)"),
-		"zh_HK" => gettext("Chinese (Hong Kong)"),
-		"zh_TW" => gettext("Chinese (Taiwan)"),
-		"nl" => gettext("Dutch"),
+		"it" => gettext("Italiano"),
 		"en_US" => gettext("English"),
-		"fr" => gettext("French"),
-		"de_DE" => gettext("German (Germany)"),
-		"ko" => gettext("Korean"),
-		"nb" => gettext("Norwegian Bokmål"),
-		"pl" => gettext("Polish"),
-		"pt_PT" => gettext("Portuguese"),
-		"pt_BR" => gettext("Portuguese (Brazil)"),
-		"ru" => gettext("Russian"),
-		"es" => gettext("Spanish"),
-		"es_AR" => gettext("Spanish (Argentina)"),
-	);
+		);
 
 	// If the locales are sorted, the order changes depending on the language selected. If the user accidentally
 	// selects the wrong language, this makes it very difficult to guess the intended language. NOT sorting
