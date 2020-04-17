@@ -35,14 +35,12 @@ $serial = system_get_serial();
 if (isset($platform['descr'])) {
 	printf("%s - ", $platform['descr']);
 }
-/*
 if (!empty($serial)) {
 	printf("%s: %s - ", gettext("Serial"), $serial);
 }
 printf("%s: %s\n\n", gettext("Netgate Device ID"), system_get_uniqueid());
-*/
-printf("%s: %s\n\n", gettext("https://www.insecurenet.it/firew4ll"));
-print "*** Benvenuti in {$product} {$g['product_version_string']} ({$machine}) su {$hostname} ***\n";
+
+print "*** Welcome to {$product} {$g['product_version_string']} ({$machine}) on {$hostname} ***\n";
 
 $iflist = get_configured_interface_with_descr(true);
 foreach ($iflist as $ifname => $friendly) {

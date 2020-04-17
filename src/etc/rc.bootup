@@ -24,9 +24,9 @@
 
 require_once("pkg-utils.inc");
 
-echo " fatto.\n";
+echo " done.\n";
 
-echo "Avviando...";
+echo "Initializing...";
 echo ".";
 require_once("/etc/inc/globals.inc");
 echo ".";
@@ -71,7 +71,7 @@ echo ".";
 $memory = get_memory();
 $physmem = $memory[0];
 $realmem = $memory[1];
-echo " fatto.\n";
+echo " done.\n";
 
 
 /* save dmesg output to file */
@@ -92,18 +92,18 @@ if (file_exists("{$g['conf_path']}/trigger_initial_wizard_after_reboot")) {
 }
 
 /* start devd (dhclient now uses it) */
-echo "Avviando gestore dispositivi (devd)...";
+echo "Starting device manager (devd)...";
 mute_kernel_msgs();
 start_devd();
 set_device_perms();
 unmute_kernel_msgs();
-echo "fatto.\n";
+echo "done.\n";
 
-echo "Caricando configurazione...";
+echo "Loading configuration...";
 parse_config_bootup();
-echo "fatto.\n";
+echo "done.\n";
 
-/* mwexec("/usr/sbin/gnid > {$g['vardb_path']}/uniqueid 2>/dev/null"); */
+mwexec("/usr/sbin/gnid > {$g['vardb_path']}/uniqueid 2>/dev/null");
 
 /* run any early shell commands specified in config.xml */
 system_do_shell_commands(1);
@@ -144,7 +144,7 @@ while (is_interface_mismatch() == true) {
 		}
 	}
 	if (set_networking_interfaces_ports() == -1) {
-		echo "\nFirew4ll non può continuare senza almeno un'interfaccia di rete.\n";
+		echo "\npfSense cannot continue without at least one Network Interface Card.\n";
 		echo "\nHalting the system.\n";
 		system("/sbin/shutdown -h now");
 		exit(0);
@@ -263,7 +263,7 @@ local_reset_accounts();
 echo "done.\n";
 
 if ($realmem > 0 and $realmem < 65) {
-	echo "Il sistema ha meno di 65mb di ram {$realmem}.  Aspettando l'avvio di webConfigurator.\n";
+	echo "System has less than 65 megabytes of ram {$realmem}.  Delaying webConfigurator startup.\n";
 	/* start webConfigurator up on final pass */
 	mwexec("/usr/local/sbin/pfSctl -c 'service restart webgui'");
 } else {
@@ -389,7 +389,7 @@ system_syslogd_start();
 
 /* done */
 unset($g['booting']);
-@unlink("{$g['varrun_path']}/avviando");
+@unlink("{$g['varrun_path']}/booting");
 
 /* If there are ipsec dynamic hosts try again to reload the tunnels as rc.newipsecdns does */
 if ($ipsec_dynamic_hosts) {
@@ -401,5 +401,5 @@ if ($ipsec_dynamic_hosts || !empty($filterdns)) {
 
 led_normalize();
 
-notify_all_remote("Bootup completato");
+notify_all_remote("Bootup complete");
 ?>
