@@ -42,7 +42,7 @@ global $g;
 $g = array(
 	"event_address" => "unix:///var/run/check_reload_status",
 	"factory_shipped_username" => "admin",
-	"factory_shipped_password" => "pfsense",
+	"factory_shipped_password" => "firew4ll",
 	"upload_path" => "/root",
 	"dhcpd_chroot_path" => "/var/dhcpd",
 	"unbound_chroot_path" => "/var/unbound",
@@ -82,7 +82,7 @@ $g = array(
 	"help_base_url" => "/help.php",
 	"pkg_prefix" => "pfSense-pkg-",
 	"default_timezone" => "Etc/UTC",
-	"language" => "en_US",
+	"language" => "it",
 	"default_config_backup_count" => 30,
 	"minimumtableentries_bogonsv6" => 400000,
 	"alternativemetaports" => array("vmware", "php72")
