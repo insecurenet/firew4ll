@@ -3071,6 +3071,7 @@ function set_language() {
 
 function get_locale_list() {
 	$locales = array(
+		"it" => gettext("ITALIANO"),
 		"bs" => gettext("Bosnian"),
 		"zh_CN" => gettext("Chinese"),
 		"zh_Hans_CN" => gettext("Chinese (Simplified, China)"),

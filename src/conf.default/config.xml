@@ -4,7 +4,7 @@
 	<lastchange/>
 	<system>
 		<optimization>normal</optimization>
-		<hostname>pfSense</hostname>
+		<hostname>firew4ll</hostname>
 		<domain>localdomain</domain>
 		<dnsserver/>
 		<dnsallowoverride/>
@@ -34,7 +34,7 @@
 		</user>
 		<nextuid>2000</nextuid>
 		<nextgid>2000</nextgid>
-		<timeservers>2.pfsense.pool.ntp.org</timeservers>
+		<timeservers>1.it.pool.ntp.org</timeservers>
 		<webgui>
 			<protocol>https</protocol>
 			<loginautocomplete/>
