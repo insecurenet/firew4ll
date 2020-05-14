@@ -53,7 +53,7 @@ get_version ()
 get_version
 
 # Setup dumpdev/ddb/savecore"
-echo "Configuring crash dumps..."
+echo "Configurando i crash dumps..."
 /etc/rc.dumpon
 
 if [ -e /root/force_growfs ]; then
@@ -69,7 +69,7 @@ fi
 
 fsck_forced_iterations=`/bin/kenv -q pfsense.fsck.force`
 if [ ! -z "${fsck_forced_iterations}" ]; then
-	echo "Forcing filesystem check (${fsck_forced_iterations} times)..."
+	echo "Forzando il controllo del filesystem (${fsck_forced_iterations} times)..."
 	while [ ${fsck_forced_iterations} -gt 0 ]; do
 		/sbin/fsck -y -t ufs
 		fsck_forced_iterations=$((fsck_forced_iterations - 1))
@@ -78,7 +78,7 @@ fi
 
 # Apply fix for https://www.freebsd.org/security/advisories/FreeBSD-SA-19:10.ufs.asc
 if [ -f /.fix_for_SA-19-10.ufs ]; then
-	echo "Applying fix for FreeBSD-SA-19:10.ufs"
+	echo "Applicando correzione per FreeBSD-SA-19:10.ufs"
 	/sbin/fsck -t ufs -f -p -T ufs:-z
 fi
 
@@ -86,21 +86,21 @@ FSCK_ACTION_NEEDED=0
 /sbin/fsck -p
 case $? in
 0)
-	echo "Filesystems are clean, continuing..."
-	echo "Mounting filesystems..."
+	echo "I filesystem sono puliti, continuando..."
+	echo "Montando filesystem..."
 	;;
 8|16)
-	echo "Preen mode recommended running a check that will be performed now."
+	echo "Si consiglia di eseguire un controllo che verrà eseguito ora."
 	FSCK_ACTION_NEEDED=1
 	;;
 *)
-	echo "Stopping boot is recommended because filesystem manual action is needed, nevertheless automated repair of the filesystem will be attempted."
+	echo "Si raccomanda di fermare l'avvio perché è necessaria un'azione manuale del filesystem, tuttavia si tenterà di riparare il filesystem in modo automatico."
 	FSCK_ACTION_NEEDED=1
 	;;
 esac
 
 if [ ${FSCK_ACTION_NEEDED} = 1 ]; then
-	echo "WARNING: Trying to recover filesystem from inconsistency..."
+	echo "ATTENZIONE: Filesystem incongruente, tentativo di recupero in corso.."
 	/sbin/fsck -y -t ufs
 fi
 
@@ -115,7 +115,7 @@ while [ ${mount_rc} -ne 0 -a ${attempts} -lt 10 ]; do
 done
 
 if [ ${mount_rc} -ne 0 ]; then
-	echo "ERROR: Impossible to mount filesystem, use interactive shell to attempt to recover it"
+	echo "ERRORE: Impossibile montare il filesystem, utilizzare la shell per tentare di recuperarlo"
 	/bin/sh
 	/sbin/reboot
 fi
@@ -240,7 +240,7 @@ echo
 cat /usr/local/share/pfSense/ascii-art/pfsense-logo-small.txt
 echo
 echo
-echo "Welcome to ${product} ${version}${version_patch}..."
+echo "Benvenuto in ${product} ${version}${version_patch}..."
 echo
 
 /sbin/conscontrol mute off >/dev/null
@@ -317,7 +317,7 @@ fi
 /bin/chmod 1777 /var/tmp
 
 set -T
-trap "echo 'Reboot interrupted'; exit 1" 3
+trap "echo 'Riavvio interrotto'; exit 1" 3
 
 echo -n "."
 DISABLESYSLOGCLOG=$(/usr/local/sbin/read_xml_tag.sh boolean system/disablesyslogclog)
@@ -366,7 +366,7 @@ if [ -f /dist/uniondirs ]; then
 	/etc/rc.d/unionfs start
 fi
 
-echo "done."
+echo "fatto."
 
 # Recreate capabilities DB
 /usr/bin/cap_mkdb /etc/login.conf
@@ -397,7 +397,7 @@ ln -sf /etc/ssl/openssl.cnf \
 /usr/local/sbin/fcgicli -f /etc/ecl.php
 
 if [ -f /etc/rc.custom_boot_early ]; then
-	/bin/echo -n "Launching /etc/rc.custom_boot_early...";
+	/bin/echo -n "Avviando /etc/rc.custom_boot_early...";
 	/etc/rc.custom_boot_early
 	echo "Done"
 fi
@@ -406,7 +406,7 @@ export fcgipath=/var/run/php-fpm.socket
 /usr/bin/nice -n20 /usr/local/sbin/check_reload_status
 
 # let the PHP-based configuration subsystem set up the system now
-echo -n "Launching the init system..."
+echo -n "Avvio del sistema init..."
 /bin/rm -f /cf/conf/backup/backup.cache
 /usr/bin/touch $varrunpath/booting
 
@@ -430,7 +430,7 @@ if [ -f $varrunpath/booting ]; then
 	/bin/rm $varrunpath/booting
 fi
 
-echo -n "Starting CRON... "
+echo -n "Avviando CRON... "
 cd /tmp && /usr/sbin/cron -s 2>/dev/null
 echo "done."
 
@@ -472,7 +472,7 @@ BUILDTIME=`cat /etc/version.buildtime`
 ARCH=`uname -m`
 echo "$product ${version}${version_patch} $ARCH $BUILDTIME"
 
-echo "Bootup complete"
+echo "Avvio completato"
 
 /usr/local/bin/beep.sh start 2>&1 >/dev/null
 
