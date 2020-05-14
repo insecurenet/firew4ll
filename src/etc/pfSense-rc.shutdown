@@ -19,7 +19,7 @@
 # limitations under the License.
 
 if ! /usr/bin/lockf -s -t 30 /tmp/config.lock /usr/bin/true; then
-	echo "Cannot shutdown at this moment, a config write operation is in progress and 30 seconds have passed."
+	echo "Impossibile spegnere in questo momento, è in corso un'operazione di scrittura della configurazione e sono passati 30 secondi."
 	exit -1
 fi
 
@@ -27,7 +27,7 @@ fi
 product=$(/usr/local/sbin/read_global_var product_name pfSense)
 
 echo
-echo "${product} is now shutting down ..."
+echo "${product} si sta spegnendo ..."
 echo
 
 stty status '^T'
