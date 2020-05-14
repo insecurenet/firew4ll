@@ -62,9 +62,9 @@ function discover_config($mountpoint) {
 	foreach ($locations_to_check as $ltc) {
 		$tocheck = "/tmp/mnt/cf{$ltc}config.xml";
 		if ($debug) {
-			echo "\nChecking for $tocheck";
+			echo "\nVerificando $tocheck";
 			if (file_exists($tocheck)) {
-				echo " -> found!";
+				echo " -> trovato!";
 			}
 		}
 		if (file_exists($tocheck)) {
@@ -116,13 +116,13 @@ function find_config_xml() {
 				}
 				if (stristr($slice, $boot_disk)) {
 					if ($debug) {
-						echo "\nSkipping boot device slice $slice";
+						echo "\nSaltando boot device slice $slice";
 					}
 					continue;
 				}
 				if (in_array($slice, $swap_disks)) {
 					if ($debug) {
-						echo "\nSkipping swap device slice $slice";
+						echo "\nSaltando swap device slice $slice";
 					}
 					continue;
 				}
@@ -141,7 +141,7 @@ function find_config_xml() {
 				}
 				$mounted = trim(exec("/sbin/mount | /usr/bin/grep -v grep | /usr/bin/grep '/tmp/mnt/cf' | /usr/bin/wc -l"));
 				if ($debug) {
-					echo "\nmounted: $mounted ";
+					echo "\nmontato: $mounted ";
 				}
 				if (intval($mounted) > 0) {
 					// Item was mounted - look for config.xml file
@@ -149,17 +149,17 @@ function find_config_xml() {
 					if ($config_location) {
 						if (test_config($config_location)) {
 							// We have a valid configuration.  Install it.
-							echo " -> found config.xml\n";
-							echo "Backing up old configuration...\n";
+							echo " -> trovato config.xml\n";
+							echo "Backup della vecchia configurazione...\n";
 							backup_config();
-							echo "Restoring [{$slice}] {$config_location}...\n";
+							echo "Ripristinando [{$slice}] {$config_location}...\n";
 							restore_backup($config_location);
 							if (file_exists('/cf/conf/trigger_initial_wizard')) {
-								echo "First boot after install, setting flag for package sync and disabling wizard...\n";
+								echo "Primo avvio dopo l'installazione, impostazione del flag per la sincronizzazione dei pacchetti, e disabilitazione della procedura guidata...\n";
 								touch('/cf/conf/needs_package_sync');
 								@unlink('/cf/conf/trigger_initial_wizard');
 							}
-							echo "Cleaning up...\n";
+							echo "Pulendo...\n";
 							exec("/sbin/umount /tmp/mnt/cf");
 							exit;
 						}
@@ -171,7 +171,7 @@ function find_config_xml() {
 	}
 }
 
-echo "External config loader 1.0 is now starting...";
+echo "Il configuratore esterno 1.0 si sta avviando...";
 find_config_xml();
 echo "\n";
 
