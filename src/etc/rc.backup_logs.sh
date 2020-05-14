@@ -27,7 +27,7 @@
 
 # Save the logs database to the RAM disk store.
 if [ -d "${DBPATH}" ]; then
-	echo -n "Saving Logs to RAM disk store...";
+	echo -n "Salvando Log sulla memoria RAM...";
 
 	[ -f "${RAM_Disk_Store}/logs.tgz" ] && /bin/rm -f "${RAM_Disk_Store}/logs.tgz"
 
@@ -37,5 +37,5 @@ if [ -d "${DBPATH}" ]; then
 
 	/usr/bin/tar -czf "${RAM_Disk_Store}/logs.tgz" -C / "${DBPATH#/}/"
 
-	echo "done.";
+	echo "fatto.";
 fi
