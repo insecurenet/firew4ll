@@ -7,7 +7,7 @@
 
 # Save the alias tables database to the RAM disk store.
 if [ -d "${DBPATH}" ]; then
-	echo -n "Saving Alias Tables to RAM disk store...";
+	echo -n "Salvataggio delle tabelle Alias su disco RAM...";
 
 	if [ ! -d "${RAM_Disk_Store}" ]; then
 		mkdir -p "${RAM_Disk_Store}"
@@ -21,5 +21,5 @@ if [ -d "${DBPATH}" ]; then
 		fi
 	done
 
-	echo "done.";
+	echo "fatto.";
 fi
