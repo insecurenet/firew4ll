@@ -7,7 +7,7 @@
 
 # Save the DHCP lease database to the RAM disk store.
 if [ -d "${DBPATH}" ]; then
-	echo -n "Saving DHCP Leases to RAM disk store...";
+	echo -n "Salvando i Lease DHCP sulla memoria RAM...";
 
 	[ -f "${RAM_Disk_Store}/dhcpleases.tgz" ] && /bin/rm -f "${RAM_Disk_Store}/dhcpleases.tgz"
 
@@ -17,5 +17,5 @@ if [ -d "${DBPATH}" ]; then
 
 	/usr/bin/tar -czf "${RAM_Disk_Store}/dhcpleases.tgz" -C / "${DBPATH#/}/"
 
-	echo "done.";
+	echo "fatto.";
 fi
