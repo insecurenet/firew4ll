@@ -2,7 +2,7 @@
 /*
  * autoconfigbackup.inc
  *
- * part of pfSense (https://www.pfsense.org)
+ * part of pense (https://www.pense.org)
  * Copyright (c) 2008-2016 Rubicon Communications, LLC (Netgate)
  * All rights reserved.
  *

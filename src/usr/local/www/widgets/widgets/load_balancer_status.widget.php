@@ -2,7 +2,7 @@
 /*
  * load_balancer_status.widget.php
  *
- * part of pfSense (https://www.pfsense.org)
+ * part of pense (https://www.pense.org)
  * Copyright (c) 2004-2019 Rubicon Communications, LLC (Netgate)
  * Copyright (c) 2010 Seth Mos <seth.mos@dds.nl>.
  * Copyright (c) 2005-2008 Bill Marquette

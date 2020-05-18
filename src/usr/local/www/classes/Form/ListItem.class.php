@@ -2,7 +2,7 @@
 /*
  * ListItem.class.php
  *
- * part of pfSense (https://www.pfsense.org)
+ * part of pense (https://www.pense.org)
  * Copyright (c) 2004-2016 Rubicon Communications, LLC (Netgate)
  * Copyright (c) 2015 Sjon Hortensius
  * All rights reserved.

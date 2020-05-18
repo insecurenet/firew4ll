@@ -2,7 +2,7 @@
 /*
  * pkg_mgr_install.php
  *
- * part of pfSense (https://www.pfsense.org)
+ * part of pense (https://www.pense.org)
  * Copyright (c) 2004-2019 Rubicon Communications, LLC (Netgate)
  * Copyright (c) 2005 Colin Smith
  * All rights reserved.

@@ -2,7 +2,7 @@
 /*
  * carp_status.widget.php
  *
- * part of pfSense (https://www.pfsense.org)
+ * part of pense (https://www.pense.org)
  * Copyright (c) 2007 Sam Wenham
  * Copyright (c) 2004-2019 Rubicon Communications, LLC (Netgate)
  * All rights reserved.

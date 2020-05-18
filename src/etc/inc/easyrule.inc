@@ -2,7 +2,7 @@
 /*
  * easyrule.inc
  *
- * part of pfSense (https://www.pfsense.org)
+ * part of pense (https://www.pense.org)
  * Copyright (c) 2009-2019 Rubicon Communications, LLC (Netgate)
  * Originally Sponsored By Anathematic @ pfSense Forums
  * All rights reserved.

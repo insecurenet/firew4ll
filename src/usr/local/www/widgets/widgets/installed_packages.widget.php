@@ -2,7 +2,7 @@
 /*
  * installed_packages.widget.php
  *
- * part of pfSense (https://www.pfsense.org)
+ * part of pense (https://www.pense.org)
  * Copyright (c) Scott Dale
  * Copyright (c) 2004-2005 T. Lechat <dev@lechat.org>
  * Copyright (c) Jonathan Watt <jwatt@jwatt.org>

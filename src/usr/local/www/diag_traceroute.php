@@ -2,7 +2,7 @@
 /*
  * diag_traceroute.php
  *
- * part of pfSense (https://www.pfsense.org)
+ * part of pense (https://www.pense.org)
  * Copyright (c) 2004-2019 Rubicon Communications, LLC (Netgate)
  * Copyright (c) 2005 Paul Taylor (paultaylor@winndixie.com)
  * All rights reserved.

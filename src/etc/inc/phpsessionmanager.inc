@@ -2,7 +2,7 @@
 /*
  * phpsessionmanager.inc
  *
- * part of pfSense (https://www.pfsense.org)
+ * part of pense (https://www.pense.org)
  * Copyright (c) 2016-2019 Rubicon Communications, LLC (Netgate)
  * All rights reserved.
  *
