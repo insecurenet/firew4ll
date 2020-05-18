@@ -3983,7 +3983,7 @@ msgstr "L'operazione può richiedere alcuni minuti"
 #: src/usr/local/www/pkg_mgr_install.php:864 src/usr/local/www/diag_reboot.php:79
 #, php-format
 msgid "Rebooting%1$sPage will automatically reload in %2$s seconds"
-msgstr "Rebooting%1$sLa pagina si ricaricherà in %2$s secondi"
+msgstr "Riavviando%1$sLa pagina si ricaricherà in %2$s secondi"
 
 #: src/usr/local/www/pkg_mgr_install.php:872 src/usr/local/www/diag_reboot.php:87
 #, php-format
@@ -34953,11 +34953,11 @@ msgstr "è stata invocata interfaces_bring_up() senza definire alcuna variabile.
 
 #: src/etc/inc/interfaces.inc:193
 msgid "Configuring loopback interface..."
-msgstr "Configuro interfaccia di loopback..."
+msgstr "Configurando interfaccia di loopback..."
 
 #: src/etc/inc/interfaces.inc:427
 msgid "Configuring VLAN interfaces..."
-msgstr "Configuro interfacce VLAN..."
+msgstr "Configurando interfacce VLAN..."
 
 #: src/etc/inc/interfaces.inc:451
 msgid "VLAN: called with wrong options. Problems with config!"
@@ -34994,7 +34994,7 @@ msgstr "La configurazione_qinq_interfaccia non può creare un'interfaccia VLAN"
 
 #: src/etc/inc/interfaces.inc:594
 msgid "Configuring QinQ interfaces..."
-msgstr "Configurazione iterfacce QinQ..."
+msgstr "Configurando interfacce QinQ..."
 
 #: src/etc/inc/interfaces.inc:617
 #, php-format
@@ -35027,7 +35027,7 @@ msgstr "bridgeif non definito -- Impossibile avviare l'interfaccia"
 
 #: src/etc/inc/interfaces.inc:983
 msgid "Configuring LAGG interfaces..."
-msgstr "Configuro interfacce LAGG..."
+msgstr "Configurando interfacce LAGG..."
 
 #: src/etc/inc/interfaces.inc:1139
 msgid "Could not bring greif up -- variable not defined."
@@ -35051,19 +35051,19 @@ msgstr "VTI di IPsec "
 
 #: src/etc/inc/interfaces.inc:1463
 msgid "Configuring IPsec VTI interfaces..."
-msgstr "Configurazione delle interfacce IPsec VTI..."
+msgstr "Configurando interfacce IPsec VTI..."
 
 #: src/etc/inc/interfaces.inc:1526 src/etc/inc/interfaces.inc:1556
 #: src/etc/inc/interfaces.inc:1580 src/etc/inc/interfaces.inc:1598
 #, php-format
 msgid "Configuring %s interface..."
-msgstr "Configuro interfaccia %s..."
+msgstr "Configurando interfaccia %s..."
 
 #: src/etc/inc/interfaces.inc:1530 src/etc/inc/interfaces.inc:1559
 #: src/etc/inc/interfaces.inc:1583 src/etc/inc/interfaces.inc:1601
 #, php-format
 msgid "Configuring %s"
-msgstr "Configuro %s"
+msgstr "Configurando %s"
 
 #: src/etc/inc/interfaces.inc:1684
 #, php-format
@@ -35127,7 +35127,7 @@ msgstr "Avvio di 3gstats.php sul dispositivo '%1$s' per l'interfaccia '%2$s'"
 
 #: src/etc/inc/interfaces.inc:2635
 msgid "Configuring CARP settings..."
-msgstr "Configuro impostazioni CARP..."
+msgstr "Configurando impostazioni CARP..."
 
 #: src/etc/inc/interfaces.inc:2676
 msgid "waiting for pfsync..."
@@ -35200,7 +35200,7 @@ msgstr "Nega i router advertisements per l'interfaccia %s"
 
 #: src/etc/inc/interfaces.inc:3881
 msgid "Generating new MAC address."
-msgstr "Genero nuovo indirizzo MAC."
+msgstr "Generando nuovo indirizzo MAC."
 
 #: src/etc/inc/interfaces.inc:3885 src/etc/inc/interfaces.inc:3888
 #, php-format
@@ -37406,11 +37406,11 @@ msgstr "Richiesta chi-sei"
 
 #: src/etc/inc/filter.inc:236
 msgid "Initializing"
-msgstr "Inizializzo"
+msgstr "Inizializzando"
 
 #: src/etc/inc/filter.inc:248
 msgid "Configuring firewall"
-msgstr "Configuro il firewall"
+msgstr "Configurando il firewall"
 
 #: src/etc/inc/filter.inc:255
 msgid "Creating aliases"
@@ -37418,15 +37418,15 @@ msgstr "Creo gli alias"
 
 #: src/etc/inc/filter.inc:261
 msgid "Generating Limiter rules"
-msgstr "Genero le regole delle limitazioni"
+msgstr "Generando le regole delle limitazioni"
 
 #: src/etc/inc/filter.inc:264
 msgid "Generating NAT rules"
-msgstr "Genero le regole NAT"
+msgstr "Generando le regole NAT"
 
 #: src/etc/inc/filter.inc:270
 msgid "Generating filter rules"
-msgstr "Genero le regole di Filtro"
+msgstr "Generando regole di filtraggio"
 
 #: src/etc/inc/filter.inc:277
 msgid "Generating ALTQ queues"
