@@ -34,7 +34,7 @@ $GITSYNC_MERGE = "/root/.gitsync_merge";
 
 /* NOTE: Set branches here */
 $branches = array(
-	"master" => "2.4.5 development branch",
+	"master" => "0.1 development branch",
 	"RELENG_0_1" => "0.1 test branch",
 	"build_commit" => "The commit originally used to build the image"
 );
@@ -342,7 +342,7 @@ if ($branch == "build_commit") {
 
 // Git 'er done!
 if (is_dir("$CODIR/pfSenseGITREPO/pfSenseGITREPO")) {
-	echo "===> Fetching updates...\n";
+	echo "===> Recuperando aggiornamenti...\n";
 	exec("cd $CODIR/pfSenseGITREPO/pfSenseGITREPO && {$GIT_BIN} config remote.origin.url " . escapeshellarg($GIT_REPO));
 	exec("cd $CODIR/pfSenseGITREPO/pfSenseGITREPO && {$GIT_BIN} fetch");
 	exec("cd $CODIR/pfSenseGITREPO/pfSenseGITREPO && {$GIT_BIN} clean -f -x -d");
