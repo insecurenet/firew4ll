@@ -3733,13 +3733,13 @@ msgstr "Sistema"
 #: src/usr/local/www/widgets/widgets/installed_packages.widget.php:118
 #: src/usr/local/www/system_update_settings.php:106
 msgid "Update"
-msgstr "Aggiorna"
+msgstr "Aggiornamenti"
 
 #: src/usr/local/www/pkg_mgr_install.php:310
 #: src/usr/local/www/pkg_mgr_install.php:312
 #: src/usr/local/www/system_update_settings.php:120
 msgid "System Update"
-msgstr "Aggiornamento di sistema"
+msgstr "Aggiornamenti di sistema"
 
 #: src/usr/local/www/pkg_mgr_install.php:313
 #: src/usr/local/www/system_update_settings.php:106
@@ -24445,7 +24445,7 @@ msgstr ""
 #: src/usr/local/www/head.inc:241 src/usr/local/www/head.inc:538
 #: src/etc/inc/captiveportal.inc:313
 msgid "Logout"
-msgstr "Esci"
+msgstr "Uscita"
 
 #: src/usr/local/www/head.inc:245
 msgid "High Avail. Sync"
