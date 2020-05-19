@@ -21,7 +21,7 @@
  * limitations under the License.
  */
 </copyright>
-<totalsteps>10</totalsteps>
+<totalsteps>9</totalsteps>
 <step>
 	<id>1</id>
 	<title>Installazione Firew4ll</title>
@@ -39,7 +39,7 @@
 	<fields>
 		<field>
 			<name>Avanti</name>
-			<type>invia</type>
+			<type>submit</type>
 		</field>
 	</fields>
 	<stepbeforeformdisplay>
@@ -47,7 +47,7 @@
 		unlink_if_exists("{$g['conf_path']}/assign_complete");
 	</stepbeforeformdisplay>
 </step>
-<step>
+<!-- <step>
 	<id>2</id>
 	<title>Netgate® Global Support is available 24/7</title>
 	<disableheader>true</disableheader>
@@ -68,63 +68,64 @@
   </description>
 	<fields>
 		<field>
-			<name>Next</name>
+			<name>Avanti</name>
 			<type>submit</type>
 		</field>
-	</fields>
+	</fields> -->
+*/
 </step>
 <step>
-	<id>3</id>
-	<title>General Information</title>
-	<description>On this screen the general pfSense parameters will be set.</description>
+	<id>2</id>
+	<title>Informazioni Generali</title>
+	<description>In questa pagina saranno impostati i parametri generali di Firew4ll.</description>
 	<fields>
 		<field>
 			<name>Hostname</name>
 			<type>input</type>
 			<bindstofield>wizardtemp->system->hostname</bindstofield>
-			<description>EXAMPLE: myserver</description>
+			<description>ESEMPIP: firew4ll-casa</description>
 			<validate>^[a-zA-Z0-9-]+$</validate>
-			<message>Invalid Hostname</message>
+			<message>Hostname non valido</message>
 		</field>
 		<field>
-			<name>Domain</name>
+			<name>Dominio</name>
 			<type>input</type>
 			<bindstofield>wizardtemp->system->domain</bindstofield>
-			<description>EXAMPLE: mydomain.com</description>
+			<description>ESEMPIO: miodominio.com</description>
 			<validate>^[a-zA-Z0-9.-]+$</validate>
-			<message>Domain name field is invalid</message>
+			<message>Dominio non valido</message>
 		</field>
 		<field>
-			<name>DNS Resolver Behavior</name>
+			<name>DNS Ricorsivo Behavior</name>
 			<type>text</type>
-			<description>The default behavior of the DNS Resolver will ignore manually configured DNS servers for client queries and query root DNS servers directly. To use the manually configured DNS servers below for client queries, visit Services &gt; DNS Resolver and enable DNS Query Forwarding after completing the wizard.</description>
+			<description>Il DNS Ricorsivo ignorerà i server DNS configurati manualmente sia per le query client che per i server DNS root interrogati direttamente. Per utilizzare i server DNS configurati manualmente per le query dei client, andare su Servizi &gt; DNS Ricorsivo e abilita DNS Query Forwarding dopo aver completato la procedura guidata.</description>
 		</field>
 		<field>
-			<name>Primary DNS Server</name>
+			<name>DNS Server Primario</name>
 			<type>input</type>
 			<bindstofield>system->dnsserver</bindstofield>
 			<!-- we must unset the fields because this is an array. -->
 			<unsetfield>yes</unsetfield>
 			<arraynum>0</arraynum>
 			<validate>^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$</validate>
-			<message>Primary DNS Server field is invalid</message>
+			<message>DNS Server Primario non valido</message>
 		</field>
 		<field>
-			<name>Secondary DNS Server</name>
+			<name>DNS Server Secondario</name>
 			<type>input</type>
 			<bindstofield>system->dnsserver</bindstofield>
 			<arraynum>1</arraynum>
 			<validate>^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$</validate>
-			<message>Secondary DNS Server field is invalid</message>
+			<message>DNS Server Secondario non valido</message>
 		</field>
 		<field>
-			<name>Override DNS</name>
-			<description>Allow DNS servers to be overridden by DHCP/PPP on WAN</description>
+			<name>Sovrascrivi DNS</name>
+			<description>Abilita i DNS server a essere sovrascritti da DHCP/PPP su WAN</description>
 			<type>checkbox</type>
 			<bindstofield>system->dnsallowoverride</bindstofield>
 		</field>
 		<field>
-			<name>Next</name>
+			<name>Avanti</name>
 			<type>submit</type>
 		</field>
 	</fields>
@@ -169,13 +170,13 @@
 	</stepsubmitphpaction>
 </step>
 <step>
-	<id>4</id>
-	<title>Time Server Information</title>
-	<description>Please enter the time, date and time zone.</description>
+	<id>3</id>
+	<title>Informazioni Time Server</title>
+	<description> Inserisci l'ora, la data e il timezone.</description>
 	<fields>
 		<field>
-			<name>Time server hostname</name>
-			<description>Enter the hostname (FQDN) of the time server.</description>
+			<name>Hostname Time server</name>
+			<description>Inserisci hostname (FQDN) del time server.</description>
 			<type>input</type>
 			<bindstofield>system->timeservers</bindstofield>
 		</field>
@@ -185,7 +186,7 @@
 			<bindstofield>system->timezone</bindstofield>
 		</field>
 		<field>
-			<name>Next</name>
+			<name>Avanti</name>
 			<type>submit</type>
 		</field>
 	</fields>
@@ -203,11 +204,11 @@
 	</stepsubmitphpaction>
 </step>
 <step>
-	<id>5</id>
+	<id>4</id>
 	<skip_flavors>ec2,ec2-ic</skip_flavors>
 	<disableallfieldsbydefault>true</disableallfieldsbydefault>
-	<title>Configure WAN Interface</title>
-	<description>On this screen the Wide Area Network information will be configured.</description>
+	<title>Configura Interfaccia WAN</title>
+	<description>In questa schermata verranno configurate le informazioni sulla rete WAN.</description>
 	<javascriptafterformdisplay>
 		var selectedItem = 0;
 		if (document.forms[0].ipaddress.value == 'dhcp') {
@@ -248,7 +249,7 @@
 	</javascriptafterformdisplay>
 	<fields>
 		<field>
-			<name>SelectedType</name>
+			<name>Seleziona Tipo</name>
 			<type>select</type>
 			<donotdisable>true</donotdisable>
 			<options>
@@ -459,7 +460,7 @@
 			<typehint>Block non-Internet routed networks from entering via WAN</typehint>
 		</field>
 		<field>
-			<name>Next</name>
+			<name>Avanti</name>
 			<type>submit</type>
 		</field>
 	</fields>
@@ -607,7 +608,7 @@
 			<bindstofield>interfaces->lan->subnet</bindstofield>
 		</field>
 		<field>
-			<name>Next</name>
+			<name>Avanti</name>
 			<type>submit</type>
 		</field>
 	</fields>
@@ -711,7 +712,7 @@
 			<type>password</type>
 		</field>
 		<field>
-			<name>Next</name>
+			<name>Avanti</name>
 			<type>submit</type>
 		</field>
 	</fields>
