@@ -24,22 +24,22 @@
 <totalsteps>10</totalsteps>
 <step>
 	<id>1</id>
-	<title>pfSense Setup</title>
+	<title>Installazione Firew4ll</title>
 	<disableheader>true</disableheader>
 	<description>
 		<![CDATA[
-		<p><h4>Welcome to pfSense® software!</h4></p>
-		<p>This wizard will provide guidance through the initial configuration of pfSense.</p>
-		<p>The wizard may be stopped at any time by clicking the logo image at the top of the screen.</p>
-		<p><strong>pfSense® software is developed and maintained by Netgate®<strong></p>
+		<p><h4>Benvenuti in Firew4ll!</h4></p>
+		<p>Questa procedura guidata vi aiuterà nella configurazione iniziale di Firew4ll.</p>
+		<p>Il wizard può essere interrotto in ogni momento cliccando sul logo in alto.</p>
+		<p><strong>Firew4ll® è gestito da INSECURENET SRL<strong></p>
 		<br />
-		<p><a href="https://www.netgate.com/pfw1" class="btn btn-info" target="_blank">Learn more</a></p>
+		<p><a href="https://www.firew4ll.com" class="btn btn-info" target="_blank">Learn more</a></p>
 		]]>
 	</description>
 	<fields>
 		<field>
-			<name>Next</name>
-			<type>submit</type>
+			<name>Avanti</name>
+			<type>invia</type>
 		</field>
 	</fields>
 	<stepbeforeformdisplay>

@@ -762,15 +762,15 @@ msgstr "Stato"
 #: src/usr/local/www/services_unbound_host_edit.php:178
 #: src/etc/inc/service-utils.inc:262
 msgid "DNS Resolver"
-msgstr "DNS Resolver"
+msgstr "DNS Ricorsivo"
 
-#: src/usr/local/www/status_unbound.php:42
+#: src/usr/local/www/status_unbound.php:42D
 msgid "The DNS Resolver is disabled or stopped."
-msgstr "Il servizio DNS Resolver è disabilitato o spento."
+msgstr "Il servizio di DNS Ricorsivo è disabilitato o spento."
 
 #: src/usr/local/www/status_unbound.php:50
 msgid "DNS Resolver Infrastructure Cache Speed"
-msgstr "Velocità della Cache dell'infrastruttura del DNS Resolver"
+msgstr "Velocità della Cache dell'infrastruttura del DNS Ricorsivo"
 
 #: src/usr/local/www/status_unbound.php:56
 #: src/usr/local/www/status_unbound.php:142
@@ -833,7 +833,7 @@ msgstr "Nessun Dato"
 
 #: src/usr/local/www/status_unbound.php:136
 msgid "DNS Resolver Infrastructure Cache Stats"
-msgstr "DNS Resolver Statistiche Cache dell'Infrastruttura"
+msgstr "Statistiche Cache del DNS Ricorsivo"
 
 #: src/usr/local/www/status_unbound.php:144
 msgid "eDNS Lame Known"
@@ -5933,7 +5933,7 @@ msgstr "Per cancellare questa voce P2 è necessario confermare."
 
 #: src/usr/local/www/services_unbound_acls.php:57
 msgid "Access list deleted from DNS Resolver."
-msgstr "Access list eliminata dal DNS Resolver."
+msgstr "Access list eliminata dal DNS Ricorsivo."
 
 #: src/usr/local/www/services_unbound_acls.php:101
 #: src/usr/local/www/services_unbound_acls.php:115
@@ -5958,7 +5958,7 @@ msgstr "salva"
 
 #: src/usr/local/www/services_unbound_acls.php:143
 msgid "Access list configured for DNS Resolver."
-msgstr "Lista di accesso configurata per il DNS Resolver."
+msgstr "Access list configurata per il DNS Ricorsivo."
 
 #: src/usr/local/www/services_unbound_acls.php:152
 #, php-format
@@ -6031,7 +6031,7 @@ msgstr "Access Lists"
 #: src/usr/local/www/services_unbound.php:284
 #: src/usr/local/www/services_unbound_advanced.php:238
 msgid "The DNS resolver configuration has been changed."
-msgstr "La configurazione del DNS Resolver è stata modificata."
+msgstr "La configurazione del DNS Ricorsivo è stata modificata."
 
 #: src/usr/local/www/services_unbound_acls.php:181
 #: src/usr/local/www/services_unbound_domainoverride_edit.php:111
@@ -6096,7 +6096,7 @@ msgstr "Aggiungi rete"
 
 #: src/usr/local/www/services_unbound_acls.php:276
 msgid "Access Lists to Control Access to the DNS Resolver"
-msgstr "Access List per controllare l'accesso al DNS Resolver"
+msgstr "Access List per controllare l'accesso al DNS Ricorsivo"
 
 #: src/usr/local/www/services_unbound_acls.php:282
 msgid "Access List Name"
@@ -6271,11 +6271,11 @@ msgstr ""
 
 #: src/usr/local/www/services_unbound_domainoverride_edit.php:85
 msgid "The supplied TLS hostname is not valid."
-msgstr "Il nome host del TLS fornito non è valido."
+msgstr "L'hostname del TLS fornito non è valido."
 
 #: src/usr/local/www/services_unbound_domainoverride_edit.php:104
 msgid "Domain override configured for DNS Resolver."
-msgstr "Dominio di override configurato per il risolutore del DNS."
+msgstr "Sovrascrittura dominio configurato per il DNS Ricorsivo."
 
 #: src/usr/local/www/services_unbound_domainoverride_edit.php:111
 #: src/usr/local/www/services_dnsmasq_domainoverride_edit.php:114
@@ -7729,7 +7729,7 @@ msgid ""
 "DHCP Registration features in the DNS Resolver are active and require at least "
 "one enabled DHCP Server."
 msgstr ""
-"Le funzionalità di registrazione DHCP nel risolutore DNS sono attive e "
+"Le funzionalità di registrazione DHCP nel DNS Ricorsivo sono attive e "
 "richiedono almeno un server DHCP abilitato."
 
 #: src/usr/local/www/services_dhcp.php:463
@@ -8247,7 +8247,7 @@ msgid ""
 "This system is configured to use the DNS Resolver as its DNS server, so "
 "Localhost or All must be selected in Network Interfaces."
 msgstr ""
-"Questo sistema è configurato per utilizzare il risolutore del DNS come server "
+"Questo sistema è configurato per utilizzare il DNS Ricorsivo come server "
 "DNS, quindi gli host locali o tutti devono essere selezionati nelle interfacce "
 "di rete."
 
@@ -8270,7 +8270,7 @@ msgstr "È necessario specificare un numero di porta SSL/TLS valido."
 msgid "DHCP Server must be enabled for DHCP Registration to work in DNS Resolver."
 msgstr ""
 "Il server DHCP deve essere abilitato affinché la registrazione DHCP funzioni "
-"nel risolutore del DNS."
+"nel DNS Ricorsivo."
 
 #: src/usr/local/www/services_unbound.php:177
 msgid ""
@@ -8291,19 +8291,19 @@ msgstr ""
 #: src/usr/local/www/services_unbound.php:211
 #: src/usr/local/www/services_unbound_advanced.php:217
 msgid "DNS Resolver configured."
-msgstr "DNS Resolver configurato."
+msgstr "DNS Ricorsivo configurato."
 
 #: src/usr/local/www/services_unbound.php:231
 msgid "Host override deleted from DNS Resolver."
-msgstr "L'override dell'host è stato eliminato dal risolutore DNS."
+msgstr "Host sovrascritto cancellato dal DNS Ricorsivo."
 
 #: src/usr/local/www/services_unbound.php:239
 msgid "Domain override deleted from DNS Resolver."
-msgstr "L'override del dominio è stato eliminato dal risolutore DNS."
+msgstr "Dominio sovracritto eliminato dal DNS Ricorsivo."
 
 #: src/usr/local/www/services_unbound.php:295
 msgid "General DNS Resolver Options"
-msgstr "Opzioni del resolver DNS generale"
+msgstr "Opzioni generali DNS Ricorsivo"
 
 #: src/usr/local/www/services_unbound.php:306
 #: src/usr/local/www/services_dnsmasq.php:321
@@ -8331,7 +8331,7 @@ msgid ""
 "option disables automatic interface response routing behavior, thus it works "
 "best with specific interface bindings."
 msgstr ""
-"Configura il risolutore del DNS per fungere da DNS sul server SSL/TLS in grado "
+"Configura il DNS Ricorsivo per fungere da DNS su server SSL/TLS in grado "
 "di rispondere alle query dei client che supportano anche DNS su TLS. "
 "L'attivazione di questa opzione disabilita il comportamento di routing della "
 "risposta dell'interfaccia automatica, quindi funziona meglio con binding di "
@@ -8374,7 +8374,7 @@ msgid ""
 "interface IPs not selected below are discarded. The default behavior is to "
 "respond to queries on every available IPv4 and IPv6 address."
 msgstr ""
-"IP di interfaccia utilizzati dal risolutore del DNS per rispondere alle query "
+"Gli IP delle interfacce utilizzati dal DNS Ricorsivo per rispondere alle query "
 "dei client. Se un'interfaccia ha IPv4 e IPv6, vengono utilizzati entrambi. Le "
 "query su altri IP dell'interfaccia non selezionati di seguito vengono scartate. "
 "Il comportamento predefinito è rispondere alle query su ogni indirizzo IPv4 e "
@@ -8390,7 +8390,7 @@ msgid ""
 "queries to authoritative servers and receive their replies. By default all "
 "interfaces are used."
 msgstr ""
-"Utilizzare diverse interfacce di rete che il risolutore DNS utilizzerà per "
+"Utilizza diverse interfacce di rete che il DNS Ricorsivo utilizzerà per "
 "inviare query a server autorevoli e ricevere le loro risposte. Per impostazione "
 "predefinita vengono utilizzate tutte le interfacce."
 
@@ -8451,8 +8451,8 @@ msgid ""
 "should also be set to the proper value."
 msgstr ""
 "Se questa opzione è impostata, le macchine che specificano il loro nome host "
-"quando richiedono una locazione DHCP IPv4 verranno registrate nel risolutore "
-"del DNS in modo che il loro nome possa essere risolto. Il dominio in "
+"quando richiedono un lease DHCP IPv4 verranno registrate nel DNS"
+"Ricorsivo in modo che il loro nome possa essere risolto. Il dominio in "
 "%1$sSistema &gt; configurazione generale%2$s dovrebbe anche essere impostato "
 "sul valore corretto."
 
@@ -8483,8 +8483,8 @@ msgid ""
 "Enter any additional configuration parameters to add to the DNS Resolver "
 "configuration here, separated by a newline."
 msgstr ""
-"Immettere i parametri di configurazione aggiuntivi da aggiungere alla "
-"configurazione del risolutore del DNS qui, separati da una nuova riga."
+"Immettere i parametri che saranno aggiunti alla configurazione "
+"del DNS Ricorsivo qui, separati da una nuova riga."
 
 #: src/usr/local/www/services_unbound.php:468
 msgid "Hide Custom Options"
@@ -8549,7 +8549,7 @@ msgid ""
 "via DHCP or PPP on WAN if &quot;Allow DNS server list to be overridden by DHCP/"
 "PPP on WAN&quot; is checked."
 msgstr ""
-"Se il risolutore del DNS è abilitato, il servizio DHCP (se abilitato) servirà "
+"Se il DNS Ricorsivo è abilitato, il servizio DHCP (se abilitato) servirà "
 "automaticamente L'indirizzo IP della LAN come server DNS ai client DHCP in modo "
 "che utilizzino il risolutore del DNS. Se l'inoltro è abilitato, il risolutore "
 "del DNS utilizzerà i server DNS inseriti in %1$sSistema &gt; configurazione "
@@ -8805,7 +8805,7 @@ msgid ""
 "The DNS Resolver is enabled using this port. Choose a non-conflicting port, or "
 "disable DNS Resolver."
 msgstr ""
-"Il risolutore del DNS è abilitato utilizzando questa porta. Scegliere una porta "
+"Il DNS Ricorsivo è abilitato utilizzando questa porta. Scegliere una porta "
 "non conflittuale o disabilitare il risolutore del DNS."
 
 #: src/usr/local/www/services_dnsmasq.php:146
@@ -15591,15 +15591,15 @@ msgid ""
 "These are also used for the DHCP service, DNS Forwarder and DNS Resolver when "
 "it has DNS Query Forwarding enabled."
 msgstr ""
-"Questi vengono utilizzati anche per il servizio DHCP, il forwarder del DNS e il "
-"risolutore del DNS quando è abilitato l'inoltro delle query del DNS."
+"Questi vengono utilizzati anche per il servizio DHCP, il DNS Forward e il "
+"DNS Ricorsivo quando è abilitato l'inoltro delle query del DNS."
 
 #: src/usr/local/www/system.php:516
 msgid ""
 "Enter the DNS Server Hostname for TLS Verification in the DNS Resolver "
 "(optional)."
 msgstr ""
-"Inserire il nome host del server DNS per la verifica TLS nel risolutore DNS "
+"Inserire hostname del server DNS per la verifica TLS nel DNS Ricorsivo "
 "(opzionale)."
 
 #: src/usr/local/www/system.php:517
@@ -15634,8 +15634,8 @@ msgid ""
 "they will not be assigned to DHCP clients."
 msgstr ""
 "Se questa opzione è impostata, %s utilizzerà i server DNS assegnati da un "
-"server DHCP/PPP su WAN per i propri scopi (incluso il forwarder del DNS/"
-"risolutore del DNS). Tuttavia, non saranno assegnati ai client DHCP."
+"server DHCP/PPP su WAN per i propri scopi (incluso il DNS Forward/"
+"DNS Ricorsivo). Tuttavia, non saranno assegnati ai client DHCP."
 
 #: src/usr/local/www/system.php:598
 msgid "Disable DNS Forwarder"
@@ -15648,9 +15648,9 @@ msgid ""
 "system can use the local DNS service to perform lookups. Checking this box "
 "omits localhost from the list of DNS servers in resolv.conf."
 msgstr ""
-"Per default l'host locale (127.0.0.0.1) sarà usato come primo server DNS dove "
-"il forwarder del DNS o il risolutore del DNS è abilitato e impostato per "
-"ascoltare sull'host locale , così il sistema può usare il servizio DNS locale "
+"Il default localhost (127.0.0.1) sarà usato come server DNS primario dove "
+"il forwarder del DNS o il DNS Ricorsivo è abilitato e impostato per "
+"ascoltare sul localhost , così il sistema può usare il servizio DNS locale "
 "per eseguire ricerche. Selezionando questa casella si omette l'host locale "
 "dalla lista dei server DNS in resolv.conf."
 
@@ -28315,11 +28315,11 @@ msgstr ""
 #: src/usr/local/www/services_dnsmasq_edit.php:137
 msgid "This host/domain override combination already exists with an IPv6 address."
 msgstr ""
-"Questa combinazione di override host/dominio esiste già con un indirizzo IPv6."
+"Questa combinazione di sovrascrittura host/dominio esiste già con un indirizzo IPv6."
 
 #: src/usr/local/www/services_unbound_host_edit.php:171
 msgid "Host override configured for DNS Resolver."
-msgstr "Override dell'host configurato per il risolutore del DNS."
+msgstr "Sovrascrittura dell'host configurato per il DNS Ricorsivo."
 
 #: src/usr/local/www/services_unbound_host_edit.php:178
 #: src/usr/local/www/services_dnsmasq_edit.php:184
@@ -32242,7 +32242,7 @@ msgstr "Avvio il DNS forwarder..."
 
 #: src/etc/inc/services.inc:2208
 msgid "Starting DNS Resolver..."
-msgstr "Avvio il DNS Resolver..."
+msgstr "Avvio DNS Ricorsivo..."
 
 #: src/etc/inc/services.inc:2224
 msgid "Unbound start waiting on dhcp6c."
@@ -36352,45 +36352,45 @@ msgstr "Permetti l'accesso alla pagina 'Servizi: SNMP'."
 
 #: src/etc/inc/priv.defs.inc:799
 msgid "WebCfg - Services: DNS Resolver"
-msgstr "WebCfg - Servizi: Resolver DNS"
+msgstr "WebCfg - Servizi: DNS Ricorsivo"
 
 #: src/etc/inc/priv.defs.inc:800
 msgid "Allow access to the 'Services: DNS Resolver' page."
-msgstr "Permetti l'accesso alla pagina 'Servizi: Resolver DNS'."
+msgstr "Permetti l'accesso alla pagina 'Servizi: DNS Ricorsivo'."
 
 #: src/etc/inc/priv.defs.inc:805
 msgid "WebCfg - Services: DNS Resolver: Access Lists"
-msgstr "WebCfg - Diagnostica: Resolver DNS: lista d'accesso"
+msgstr "WebCfg - Diagnostica: DNS Ricorsivo: Access List"
 
 #: src/etc/inc/priv.defs.inc:806
 msgid "Allow access to the 'Services: DNS Resolver: Access Lists' page."
-msgstr "Permetti l'accesso alla pagina 'Servizi: Resolver DNS: lista d'accesso'."
+msgstr "Permetti l'accesso alla pagina 'Servizi: DNS Ricorsivo: Access List'."
 
 #: src/etc/inc/priv.defs.inc:811
 msgid "WebCfg - Services: DNS Resolver: Advanced"
-msgstr "WebCfg - Servizi: Resolver DNS: Avanzate"
+msgstr "WebCfg - Servizi: DNS Ricorsivo: Avanzate"
 
 #: src/etc/inc/priv.defs.inc:812
 msgid "Allow access to the 'Services: DNS Resolver: Advanced' page."
-msgstr "Permetti l'accesso alla pagina 'Servizi: Resolver DNS: Avanzate'."
+msgstr "Permetti l'accesso alla pagina 'Servizi: DNS Ricorsivo: Avanzate'."
 
 #: src/etc/inc/priv.defs.inc:817
 msgid "WebCfg - Services: DNS Resolver: Edit Domain Override"
-msgstr "WebCfg - Servizi: Risolutore DNS: Modificare il dominio di override"
+msgstr "WebCfg - Servizi: DNS Ricorsivo: Modificare il dominio di override"
 
 #: src/etc/inc/priv.defs.inc:818
 msgid "Allow access to the 'Services: DNS Resolver: Edit Domain Override' page."
 msgstr ""
-"Consentire l'accesso alla pagina 'Servizi: Risolutore DNS: Modificare il "
+"Consentire l'accesso alla pagina 'Servizi: DNS Ricorsivo: Modificare il "
 "dominio di override'."
 
 #: src/etc/inc/priv.defs.inc:823
 msgid "WebCfg - Services: DNS Resolver: Edit host"
-msgstr "WebCfg - Servizi: Resolver DNS: modifica host"
+msgstr "WebCfg - Servizi: DNS Ricorsivo: Modifica host"
 
 #: src/etc/inc/priv.defs.inc:824
 msgid "Allow access to the 'Services: DNS Resolver: Edit host' page."
-msgstr "Permetti l'accesso alla pagina 'Servizi: Resolver DNS: modifica host'."
+msgstr "Permetti l'accesso alla pagina 'Servizi: DNS Ricorsivo: Modifica host'."
 
 #: src/etc/inc/priv.defs.inc:829
 msgid "WebCfg - Services: Wake-on-LAN"
@@ -36674,11 +36674,11 @@ msgstr "Permetti l'accesso alla pagina 'Status: Servizi'."
 
 #: src/etc/inc/priv.defs.inc:1036
 msgid "WebCfg - Status: DNS Resolver"
-msgstr "WebCfg - Stato: Risolutore del DNS"
+msgstr "WebCfg - Stato: DNS Ricorsivo"
 
 #: src/etc/inc/priv.defs.inc:1037
 msgid "Allow access to the 'Status: DNS Resolver' page."
-msgstr "Consentire l'accesso alla pagina 'Stato: Risolutore del DNS'."
+msgstr "Consentire l'accesso alla pagina 'Stato: DNS Ricorsivo'."
 
 #: src/etc/inc/priv.defs.inc:1042
 msgid "WebCfg - Status: UPnP Status"
@@ -39140,7 +39140,7 @@ msgstr "<div class=\"alert alert-info\"> "
 
 #: src/usr/local/www/services_unbound.php:300
 msgid "Enable DNS resolver"
-msgstr "Abilita DNS resolver"
+msgstr "Abilita DNS ricorsivo"
 
 #: src/usr/local/www/services_unbound.php:315
 msgid "Respond to incoming SSL/TLS queries from local clients"
@@ -39161,15 +39161,15 @@ msgstr "Utilizzare SSL/TLS per le query DNS in uscita verso i server di inoltro"
 
 #: src/usr/local/www/services_unbound.php:402
 msgid "Register DHCP leases in the DNS Resolver"
-msgstr "Registrare le locazioni DHCP nel risolutore del DNS"
+msgstr "Registrare i lease DHCP nel DNS Ricorsivo"
 
 #: src/usr/local/www/services_unbound.php:411
 msgid "Register DHCP static mappings in the DNS Resolver"
-msgstr "Registrare le mappature statiche DHCP nel risolutore DNS"
+msgstr "Registrare gli indirizzi riservati DHCP nel DNS Ricorsivo"
 
 #: src/usr/local/www/services_unbound.php:419
 msgid "Register connected OpenVPN clients in the DNS Resolver"
-msgstr "Registrare i client OpenVPN collegati nel risolutore DNS"
+msgstr "Registrare i client OpenVPN collegati nel DNS Ricorsivo"
 
 #: src/usr/local/www/services_dnsmasq.php:250
 msgid "Enable DNS forwarder"
@@ -39353,7 +39353,7 @@ msgstr "Configura i limitatori del Traffic Shaper"
 
 #: src/usr/local/www/system_hasync.php:310
 msgid "DNS Forwarder and DNS Resolver configurations "
-msgstr "Configurazioni DNS Forwarder e DNS Resolver"
+msgstr "Configurazioni DNS Forwarder e DNS Ricorsivo"
 
 #: src/usr/local/www/system_hasync.php:318
 msgid "Captive Portal "
@@ -39593,7 +39593,7 @@ msgstr ""
 #: src/usr/local/www/system.php:599
 msgid "Do not use the DNS Forwarder/DNS Resolver as a DNS server for the firewall"
 msgstr ""
-"Non utilizzare il Forwarder DNS/Risolutore DNS come server DNS per il firewall"
+"Non utilizzare il DNS Forward/DNS Ricorsivo come server DNS per il firewall"
 
 #: src/usr/local/www/system.php:655
 msgid "Disable dragging of firewall/nat rules."
