@@ -21,7 +21,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-05-18 16:55+0200\n"
+"PO-Revision-Date: 2020-05-19 12:25+0200\n"
 "Last-Translator: Eligio Greco <eligio.greco@gmail.com>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -4381,10 +4381,10 @@ msgstr ""
 
 #: src/usr/local/www/services_router_advertisements.php:123
 msgid ""
-"It is not required to activate DHCPv6 server on pfSense when set to \"Managed"
+"It is not required to activate DHCPv6 server on Firew4ll when set to \"Managed"
 "\", \"Assisted\" or \"Stateless DHCP\", it can be another host on the network."
 msgstr ""
-"Non è necessario attivare il server DHCP6 in pfSense quando impostato su "
+"Non è necessario attivare il server DHCP6 in Firew4ll quando impostato su "
 "\"Managed\", \"Assisted\" o \"Stateless DHCP\", perchè può essere un altro host "
 "nella rete."
 
@@ -6549,7 +6549,7 @@ msgstr ""
 #: src/usr/local/www/head.inc:253
 #: src/usr/local/www/system_usermanager_addprivs.php:41
 msgid "User Manager"
-msgstr "Manager Utenti"
+msgstr "Gestione Utenti"
 
 #: src/usr/local/www/system_groupmanager.php:318
 #: src/usr/local/www/system_groupmanager.php:338
@@ -8400,11 +8400,11 @@ msgstr "*Tipo di zona locale del dominio di sistema"
 
 #: src/usr/local/www/services_unbound.php:374
 msgid ""
-"The local-zone type used for the pfSense system domain (System | General Setup "
+"The local-zone type used for the Firew4ll system domain (System | General Setup "
 "| Domain).  Transparent is the default.  Local-Zone type descriptions are "
 "available in the unbound.conf(5) manual pages."
 msgstr ""
-"Il tipo di zona locale utilizzato per il dominio di sistema pfSense (Sistema | "
+"Il tipo di zona locale utilizzato per il dominio di sistema Firew4ll (Sistema | "
 "Impostazioni generli / Dominio). Trasparente è il valore predefinito. Le "
 "descrizioni dei tipi di zona locale sono disponibili in pagine di manuale "
 "unbound.conf(5)."
@@ -8658,9 +8658,9 @@ msgid "No backups could be located for this device."
 msgstr "Non è stato possibile localizzare alcun backup per questo dispositivo."
 
 #: src/usr/local/www/services_acb.php:556
-msgid "Current count of hosted backups for this hostname on portal.pfsense.org"
+msgid "Current count of hosted backups for this hostname on portal.Firew4ll.org"
 msgstr ""
-"Conteggio attuale dei backup ospitati per questo nome host su portale.pfsense."
+"Conteggio attuale dei backup ospitati per questo nome host su portale.Firew4ll."
 "org"
 
 #: src/usr/local/www/services_acb.php:558
@@ -8669,7 +8669,7 @@ msgstr "Conteggio attuale dei backup ospitati"
 
 #: src/usr/local/www/services_acb.php:580
 msgid ""
-"<p align=\"center\"><strong>pfSense&copy; &quot;Gold&quot; configuration backup "
+"<p align=\"center\"><strong>Firew4ll&copy; &quot;Gold&quot; configuration backup "
 "system access.</strong>\n"
 "\t\t\t</p>\n"
 "\t\t\t<p>The &quot;Gold&quot; backup system may be available to allow the "
@@ -8682,9 +8682,9 @@ msgid ""
 "the firewall</p>\n"
 "\t\t\t</div>"
 msgstr ""
-"<p align=\"center\"><strong>pfSense&copy; &quot;Gold&quot;accesso al sistema di "
+"<p align=\"center\"><strong>Firew4ll&copy; &quot;Gold&quot;accesso al sistema di "
 "backup della configurazione.</strong>\n"
-"<p align=\"center\"><strong>pfSense&copy; &quot;Gold&quot;accesso al sistema di "
+"<p align=\"center\"><strong>Firew4ll&copy; &quot;Gold&quot;accesso al sistema di "
 "backup di configurazione</strong>\n"
 "\t\t\t</p>\n"
 "\t\t\t<p>The &quot;Gold&quot;sistema di backup può essere disponibile per "
@@ -9214,10 +9214,10 @@ msgstr ""
 #: src/usr/local/www/system_certmanager.php:710
 msgid ""
 "Optionally paste a private key here. The key will be associated with the newly "
-"signed certificate in pfSense"
+"signed certificate in Firew4ll"
 msgstr ""
 "Opzionalmente, incollare qui una chiave privata. La chiave sarà associata al "
-"certificato appena firmato in pfSense"
+"certificato appena firmato in Firew4ll"
 
 #: src/usr/local/www/system_certmanager.php:714
 msgid "*Certificate Lifetime (days)"
@@ -9756,10 +9756,9 @@ msgstr ""
 "Non è stato possibile analizzare il file %1$s/configurazione guidata/%2$s."
 
 #: src/usr/local/www/wizard.php:117
-msgid "Configuration changed via the pfSense wizard subsystem."
+msgid "Configuration changed via the Firew4ll wizard subsystem."
 msgstr ""
-"Configurazione modificata tramite il sottosistema della procedura guidata "
-"pfSense."
+"Configurazione modificata dalla procedura guidata di Firew4ll."
 
 #: src/usr/local/www/wizard.php:215
 msgid "Wizard"
@@ -11169,11 +11168,11 @@ msgstr "ID dispositivo Netgate"
 
 #: src/usr/local/www/system_advanced_misc.php:615
 msgid ""
-"Enable this option to not send Netgate Device ID to pfSense as part of User-"
+"Enable this option to not send Netgate Device ID to Firew4ll as part of User-"
 "Agent header."
 msgstr ""
 "Attivare questa opzione per non inviare l'ID del dispositivo del Netgate a "
-"pfSense come parte dell'intestazione dell'agente-utente."
+"Firew4ll come parte dell'intestazione dell'agente-utente."
 
 #: src/usr/local/www/system_advanced_misc.php:621
 msgid ""
@@ -12670,11 +12669,11 @@ msgstr "La password e la password di conferma devono coincidere."
 #: src/usr/local/www/services_captiveportal_vouchers.php:309
 #, php-format
 msgid ""
-"The Captive Portal voucher database has been synchronized with %s (pfsense."
+"The Captive Portal voucher database has been synchronized with %s (Firew4ll."
 "exec_php)."
 msgstr ""
 "Il database dei voucher del portale captive è stato sincronizzato con %s "
-"(pfsense.exec_php)."
+"(Firew4ll.exec_php)."
 
 #: src/usr/local/www/services_captiveportal_vouchers.php:341
 #, php-format
@@ -15286,14 +15285,14 @@ msgstr "Attenzione, impossibile leggere il file %s"
 
 #: src/usr/local/www/diag_backup.php:253
 msgid ""
-"The uploaded file does not appear to contain an encrypted pfsense configuration."
+"The uploaded file does not appear to contain an encrypted Firew4ll configuration."
 msgstr ""
-"Il file caricato non sembra contenere un file di configurazione pfSense "
+"Il file caricato non sembra contenere un file di configurazione Firew4ll "
 "crittato."
 
 #: src/usr/local/www/diag_backup.php:260
-msgid "Upgrading m0n0wall configuration to pfsense."
-msgstr "Aggiornando la configurazione m0n0wall a pfSense"
+msgid "Upgrading m0n0wall configuration to Firew4ll."
+msgstr "Aggiornando la configurazione m0n0wall a Firew4ll"
 
 #: src/usr/local/www/diag_backup.php:275 src/usr/local/www/diag_backup.php:278
 msgid ""
@@ -15342,8 +15341,8 @@ msgid "Imported m0n0wall configuration"
 msgstr "Configurazione m0n0wall importata"
 
 #: src/usr/local/www/diag_backup.php:405
-msgid "The m0n0wall configuration has been restored and upgraded to pfSense."
-msgstr "La configurazione m0n0wall è stata ripristinata e aggiornata a pfSense."
+msgid "The m0n0wall configuration has been restored and upgraded to Firew4ll."
+msgstr "La configurazione m0n0wall è stata ripristinata e aggiornata a Firew4ll."
 
 #: src/usr/local/www/diag_backup.php:433
 msgid "The configuration could not be restored."
@@ -15572,11 +15571,11 @@ msgid ""
 "These will not network correctly if the router uses '.local'. Alternatives such "
 "as '.local.lan' or '.mylocal' are safe."
 msgstr ""
-"Non usare '.locale' come parte finale del dominio (TLD), Il dominio '.locale' è "
+"Non usare '.local' come parte finale del dominio (TLD), Il dominio '.local' è "
 "%1$sampiamente usato%2$s da mDNS (incluso Bonjour/Rendezvous/Airprint/Airplay "
 "di Avahi e Apple OS X), e alcuni sistemi Windows e dispositivi in rete. Questi "
-"non si collegano correttamente in rete se il router usa '.locale'. Alternative "
-"come '.locale.lan' o '.miolocale' sono sicure."
+"non si collegano correttamente in rete se il router usa '.local'. Alternative "
+"come '.local.lan' o '.miolocale' sono sicure."
 
 #: src/usr/local/www/system.php:506
 msgid "DNS Server Settings"
@@ -18153,11 +18152,11 @@ msgstr "Console primaria"
 #: src/usr/local/www/system_advanced_admin.php:706
 msgid ""
 "Select the preferred console if multiple consoles are present. The preferred "
-"console will show pfSense boot script output. All consoles display OS boot "
+"console will show Firew4ll boot script output. All consoles display OS boot "
 "messages, console messages, and the console menu."
 msgstr ""
 "Selezionare la console preferita se sono presenti più console. La console "
-"preferita mostrerà l'output dello script di avvio di pfSense. Tutte le console "
+"preferita mostrerà l'output dello script di avvio di Firew4ll. Tutte le console "
 "visualizzano i messaggi di avvio del sistema operativo, i messaggi della "
 "console e il menu della console."
 
@@ -22507,11 +22506,11 @@ msgstr "Il firewall ha segnalato un errore"
 
 #: src/usr/local/www/crash_reporter.php:112
 msgid ""
-"Debugging output can be collected to share with pfSense developers or others "
+"Debugging output can be collected to share with Firew4ll developers or others "
 "providing support or assistance."
 msgstr ""
 "I risultati del debug possono essere raccolti per essere condivisi con gli "
-"sviluppatori di pfSense o con altri che forniscono supporto o assistenza."
+"sviluppatori di Firew4ll o con altri che forniscono supporto o assistenza."
 
 #: src/usr/local/www/crash_reporter.php:114
 msgid ""
@@ -22751,12 +22750,12 @@ msgstr "Tipologia GPS"
 #, php-format
 msgid ""
 "This option allows a predefined configuration to be selected. Default is the "
-"configuration of pfSense 2.1 and earlier (not recommended). Select Generic if "
+"configuration of Firew4ll 2.1 and earlier (not recommended). Select Generic if "
 "the GPS is not listed.%1$sThe predefined configurations assume the GPS has "
 "already been set to NMEA mode."
 msgstr ""
 "Questa opzione permette di selezionare una configurazione predefinita. "
-"Predefinita è la configurazione di pfSense 2.1 e precedenti (non raccomandata). "
+"Predefinita è la configurazione di Firew4ll 2.1 e precedenti (non raccomandata). "
 "Selezionare Generico se il GPS non è elencato.%1$sLe configurazioni predefinite "
 "presuppongono che il GPS sia già stato impostato in modalità NMEA."
 
@@ -23880,12 +23879,12 @@ msgid ""
 "If enabled no attempts will be made to ensure that the MAC address of clients "
 "stays the same while they are logged in. This is required when the MAC address "
 "of the client cannot be determined (usually because there are routers between "
-"pfSense and the clients). If this is enabled, RADIUS MAC authentication cannot "
+"Firew4ll and the clients). If this is enabled, RADIUS MAC authentication cannot "
 "be used."
 msgstr ""
 "Se abilitato non verrà verificato che l'indirizzo MAC dei client non cambi "
 "mentre sono connessi. Questo è necessario quando non si possono determinare gli "
-"indirizzi MAC (solitamente perché sono presenti router tra pfSense e i client). "
+"indirizzi MAC (solitamente perché sono presenti router tra Firew4ll e i client). "
 "Se abilitato, non può essere usata l'autenticazione MAC RADIUS."
 
 #: src/usr/local/www/services_captiveportal.php:655
@@ -24237,11 +24236,11 @@ msgstr "Quota di traffico"
 msgid ""
 "When enabled, clients will be disconnected after exceeding the amount of "
 "traffic, inclusive of both downloads and uploads, retrieved from the RADIUS "
-"pfSense-Max-Total-Octets attribute."
+"Firew4ll-Max-Total-Octets attribute."
 msgstr ""
 "Una volta abilitati, i client verranno disconnessi dopo aver superato la "
 "quantità di traffico, inclusi sia i download che gli upload, recuperati "
-"dall'attributo ottetti massimi totali di pfSEnse per RADIUS."
+"dall'attributo ottetti massimi totali di Firew4ll per RADIUS."
 
 #: src/usr/local/www/services_captiveportal.php:975
 msgid "Per-user bandwidth restrictions"
@@ -24250,12 +24249,12 @@ msgstr "Restrizioni della larghezza di banda per utente"
 #: src/usr/local/www/services_captiveportal.php:978
 msgid ""
 "When enabled, the bandwidth assigned to a client will be limited to the values "
-"retrieved from the RADIUS pfSense-Bandwidth-Max-Up and pfSense-Bandwidth-Max-"
+"retrieved from the RADIUS Firew4ll-Bandwidth-Max-Up and Firew4ll-Bandwidth-Max-"
 "Down attributes or from the comparable WISPr attributes."
 msgstr ""
 "Quando è abilitata, la larghezza di banda assegnata ad un client sarà limitata "
 "ai valori recuperati dagli attributi Up massimo della larghezza di banda di "
-"pfSense e Down massimo della larghezza di banda  di pfSense per il RADIUS per "
+"Firew4ll e Down massimo della larghezza di banda  di Firew4ll per il RADIUS per "
 "il  o dagli attributi WISPr comparabili."
 
 #: src/usr/local/www/services_captiveportal.php:985
@@ -24388,14 +24387,14 @@ msgid ""
 "the Common Name (CN) in the certificate (otherwise, the client browser will "
 "most likely display a security warning). Make sure captive portal clients can "
 "resolve this name in DNS and verify on the client that the IP resolves to the "
-"correct interface IP on pfSense."
+"correct interface IP on Firew4ll."
 msgstr ""
 "Questo nome sarà utilizzato nell'azione di modulo per il POST HTTPS e dovrebbe "
 "corrispondere al Nome comune (CN) nel certificato (altrimenti, il browser del "
 "client visualizzerà molto probabilmente un avviso di sicurezza). Assicurarsi "
 "che i client del portale captive possano risolvere questo nome nel DNS e "
 "verificare sul client che l'IP si risolva nell'IP dell'interfaccia corretta su "
-"pfSense."
+"Firew4ll."
 
 #: src/usr/local/www/services_captiveportal.php:1111
 msgid "*SSL Certificate"
@@ -24454,11 +24453,11 @@ msgstr "Sincronizzazione dell'elevata disponibilità"
 
 #: src/usr/local/www/head.inc:247
 msgid "Setup Wizard"
-msgstr "Installazione facilitata"
+msgstr "Installazione Guidata"
 
 #: src/usr/local/www/head.inc:249
 msgid "Cert. Manager"
-msgstr "Manager Cert."
+msgstr "Gestione Certificati"
 
 #: src/usr/local/www/head.inc:257 src/usr/local/www/system_user_settings.php:32
 msgid "User Settings"
@@ -24505,8 +24504,8 @@ msgid "S.M.A.R.T. Status"
 msgstr "Stato S.M.A.R.T."
 
 #: src/usr/local/www/head.inc:422
-msgid "pfSense Gold"
-msgstr "pfSense Gold"
+msgid "Firew4ll Gold"
+msgstr "Firew4ll Gold"
 
 #: src/usr/local/www/head.inc:429
 msgid "Bug Database"
@@ -24525,8 +24524,8 @@ msgid "Paid Support"
 msgstr "Supporto a pagamento"
 
 #: src/usr/local/www/head.inc:435
-msgid "pfSense Book"
-msgstr "Libro pfSense"
+msgid "Firew4ll Book"
+msgstr "Libro Firew4ll"
 
 #: src/usr/local/www/head.inc:436
 msgid "FreeBSD Handbook"
@@ -26765,10 +26764,10 @@ msgstr "Connessioni al server SIP di upstream"
 
 #: src/usr/local/www/wizards/traffic_shaper_wizard_multi_all.inc:1769
 #: src/usr/local/www/wizards/traffic_shaper_wizard_dedicated.inc:1680
-msgid "Shaper configuration saved via pfSense traffic shaper wizard."
+msgid "Shaper configuration saved via Firew4ll traffic shaper wizard."
 msgstr ""
 "Configurazione dello shaper salvata tramite la configurazione dello shaper del "
-"traffico di pfSense."
+"traffico di Firew4ll."
 
 #: src/usr/local/www/interfaces.php:427
 msgid "The settings have already been applied!"
@@ -30159,11 +30158,11 @@ msgstr "Contenuti del Syslog remoto"
 msgid ""
 "Syslog sends UDP datagrams to port 514 on the specified remote syslog server, "
 "unless another port is specified. Be sure to set syslogd on the remote server "
-"to accept syslog messages from pfSense."
+"to accept syslog messages from Firew4ll."
 msgstr ""
 "Syslog invia i datagrammi UDP alla porta 514 sul server syslog remoto "
 "specificato, a meno che non sia specificata un'altra porta. Assicurarsi di "
-"impostare syslogd sul server remoto per accettare i messaggi syslog da pfSense."
+"impostare syslogd sul server remoto per accettare i messaggi syslog da Firew4ll."
 
 #: src/usr/local/www/widgets/include/services_status.inc:24
 msgid "Services Status"
@@ -31208,11 +31207,11 @@ msgstr "Solo Funzionamento dry.%1$sNessun file copiato."
 
 #: src/usr/local/www/system_update_settings.php:247
 msgid ""
-"See \"playback gitsync --help\" in console \"PHP Shell + pfSense tools\" for "
+"See \"playback gitsync --help\" in console \"PHP Shell + Firew4ll tools\" for "
 "additional information."
 msgstr ""
 "Vedere \"riproduzione gitsync --aiuto\" nella console \"PHP Shell + strumenti "
-"pfSense\" per ulteriori informazioni."
+"Firew4ll\" per ulteriori informazioni."
 
 #: src/usr/local/www/status_graph.php:142
 msgid "Graph Settings"
@@ -31951,11 +31950,11 @@ msgstr "Inizializzando la sincronizzazione dei dati XMLRPC in %s"
 #: src/etc/inc/xmlrpc_client.inc:94
 #, php-format
 msgid ""
-"A communications error occurred while attempting XMLRPC sync with %s (pfsense."
+"A communications error occurred while attempting XMLRPC sync with %s (Firew4ll."
 "%s)."
 msgstr ""
 "Un errore di comunicazione si è verificato durante il tentativo di "
-"sincronizzazione XMLRPC con %s (pfsense.%s)."
+"sincronizzazione XMLRPC con %s (Firew4ll.%s)."
 
 #: src/etc/inc/xmlrpc_client.inc:126
 msgid "Error code received"
@@ -32054,12 +32053,12 @@ msgid "PC Engines ALIX"
 msgstr "Macchine ALIX per PC"
 
 #: src/etc/inc/config.inc:74
-msgid "Upgrading m0n0wall configuration to pfSense... "
-msgstr "Aggiorno la configurazione di m0n0wall su pfSense..."
+msgid "Upgrading m0n0wall configuration to Firew4ll... "
+msgstr "Aggiorno la configurazione di m0n0wall su Firew4ll..."
 
 #: src/etc/inc/config.inc:77
-msgid "ERROR!  Could not convert m0n0wall -> pfsense in config.xml"
-msgstr "ERRORE! Impossibile convertire m0n0wall -> pfsense in config.xml"
+msgid "ERROR!  Could not convert m0n0wall -> Firew4ll in config.xml"
+msgstr "ERRORE! Impossibile convertire m0n0wall -> Firew4ll in config.xml"
 
 #: src/etc/inc/config.inc:105 src/etc/inc/config.inc:123
 #, php-format
@@ -34813,8 +34812,8 @@ msgid "Login to %1$s"
 msgstr "Accesso a %1$s"
 
 #: src/etc/inc/authgui.inc:273
-msgid "pfSense - Login"
-msgstr "pfSense - Accesso"
+msgid "Firew4ll - Login"
+msgstr "Firew4ll - Accesso"
 
 #: src/etc/inc/authgui.inc:332
 msgid ""
@@ -35311,8 +35310,8 @@ msgid "WebCfg - Crash reporter"
 msgstr "WebCfg - segnalazione crash"
 
 #: src/etc/inc/priv.defs.inc:25
-msgid "Uploads crash reports to pfSense and or deletes crash reports."
-msgstr "Invia i report dei crash a pfSense e/o eliminali."
+msgid "Uploads crash reports to Firew4ll and or deletes crash reports."
+msgstr "Invia i report dei crash a Firew4ll e/o eliminali."
 
 #: src/etc/inc/priv.defs.inc:30
 msgid "WebCfg - Diagnostics: ARP Table"
@@ -37024,14 +37023,14 @@ msgid "Allow access to the 'OpenVPN: Servers' page."
 msgstr "Permetti l'accesso alla pagina 'OpenVPN: Servers'."
 
 #: src/etc/inc/priv.defs.inc:1300
-msgid "WebCfg - pfSense wizard subsystem"
-msgstr "WebCfg - Sottosistema della configurazione guidata di pfSense"
+msgid "WebCfg - Firew4ll wizard subsystem"
+msgstr "WebCfg - Configurazione guidata di Firew4ll"
 
 #: src/etc/inc/priv.defs.inc:1301
-msgid "Allow access to the 'pfSense wizard subsystem' page."
+msgid "Allow access to the 'Firew4ll wizard subsystem' page."
 msgstr ""
-"Consentire l'accesso alla pagina 'Sottosistema della configurazione guidata di "
-"pfSense'."
+"Consentire l'accesso alla pagina 'Configurazione guidata di "
+"Firew4ll'."
 
 #: src/etc/inc/priv.defs.inc:1306
 msgid "WebCfg - XMLRPC Library"
@@ -38437,14 +38436,14 @@ msgid ""
 "<p align=\"center\"><font size=\"3\">Copyright &copy; 2004-2019. Electric Sheep "
 "Fencing LLC (\"ESF\"). All Rights Reserved.</p>\n"
 "\t\t\t\t\t<p align=\"center\"><strong>NO COMMERCIAL DISTRIBUTION OF THE "
-"PFSENSE&reg; CE SOFTWARE IS ALLOWED.</strong>\n"
+"Firew4ll&reg; CE SOFTWARE IS ALLOWED.</strong>\n"
 "\t\t\t\t\t</p>\n"
-"\t\t\t\t\t<p>pfSense&reg; is a federally and internationally registered "
+"\t\t\t\t\t<p>Firew4ll&reg; is a federally and internationally registered "
 "trademark and service mark of ESF, and is exclusively licensed to Rubicon "
 "Communications, LLC (d/b/a Netgate) (\"Netgate\").</p>\n"
-"\t\t\t\t\t<p>Any unauthorized use of the pfSense&reg; mark is prohibited by "
+"\t\t\t\t\t<p>Any unauthorized use of the Firew4ll&reg; mark is prohibited by "
 "United States and international law. Please refer to the Netgate <a href="
-"\"https://www.pfsense.org/trademarks.html\" target=\"_blank\"> Trademark Usage "
+"\"https://www.Firew4ll.org/trademarks.html\" target=\"_blank\"> Trademark Usage "
 "Guidelines</a> for how to properly use the mark.</p>\n"
 "\t\t\t\t\t</div>\n"
 "\t\t\t\t\t<div class=\"modal-footer\" style=\"background-color:#1e3f75; color:"
@@ -38458,14 +38457,14 @@ msgstr ""
 "<p align=\"center\"><font size=\"3\">Copyright &copy; 2004-2019. Electric Sheep "
 "Fencing LLC (\"ESF\"). Tutti i diritti riservati.</p>\n"
 "\t\t\t\t\t<p align=\"centro\"><strong>NESSUNA DISTRIBUZIONE COMMERCIALE DI "
-"PFSENSE&reg; IL SOFTWARE CE È CONSENTITO.</strong>\n"
+"Firew4ll&reg; IL SOFTWARE CE È CONSENTITO.</strong>\n"
 "\t\t\t\t\t</p>\n"
-"\t\t\t\t\t<p>pfSense&reg; è un marchio registrato a livello federale e "
+"\t\t\t\t\t<p>Firew4ll&reg; è un marchio registrato a livello federale e "
 "internazionale e un marchio di servizio di ESF, ed è concesso in licenza "
 "esclusiva a Rubicon Communications, LLC (d/b/a Netgate) (\"Netgate\").</p>.\n"
-"\t\t\t\t\t<p>Ogni uso non autorizzato del pfSense&reg; il marchio è proibito "
+"\t\t\t\t\t<p>Ogni uso non autorizzato del Firew4ll&reg; il marchio è proibito "
 "dalla legge statunitense e internazionale. Si prega di fare riferimento al "
-"Netgate <a href=\"https://www.pfsense.org/trademarks.html\" target=\"_blank\"> "
+"Netgate <a href=\"https://www.Firew4ll.org/trademarks.html\" target=\"_blank\"> "
 "Linee guida per l'uso del marchio</a> per come utilizzare correttamente il "
 "marchio.</p>\n"
 "\t\t\t\t\t</div>\n"
@@ -39206,9 +39205,9 @@ msgstr "Disabilita questa route statica"
 
 #: src/usr/local/www/system_usermanager_settings.php:242
 msgid ""
-"<span id=\"ldaptestop\">Testing pfSense LDAP settings... One moment please..."
+"<span id=\"ldaptestop\">Testing Firew4ll LDAP settings... One moment please..."
 msgstr ""
-"<span id=\"ldaptestop\">Testo le impostazioni LDAP pfSense... Un momento,,,"
+"<span id=\"ldaptestop\">Testo le impostazioni LDAP Firew4ll... Un momento,,,"
 
 #: src/usr/local/www/services_ntpd_pps.php:129
 msgid ""
@@ -40197,16 +40196,16 @@ msgid "Use RADIUS Session-Timeout attributes"
 msgstr "Usa gli attributi timeout-sessione RADIUS"
 
 #: src/usr/local/www/services_captiveportal.php:969
-msgid "Use RADIUS pfSense-Max-Total-Octets attribute"
+msgid "Use RADIUS Firew4ll-Max-Total-Octets attribute"
 msgstr ""
-"Utilizzare l'attributo degli ottetti totali massimi di pfSense per il RADIUS"
+"Utilizzare l'attributo degli ottetti totali massimi di Firew4ll per il RADIUS"
 
 #: src/usr/local/www/services_captiveportal.php:976
 msgid ""
-"Use RADIUS pfSense-Bandwidth-Max-Up and pfSense-Bandwidth-Max-Down attributes"
+"Use RADIUS Firew4ll-Bandwidth-Max-Up and Firew4ll-Bandwidth-Max-Down attributes"
 msgstr ""
 "Utilizzare gli attributi della lunghezza di banda massima in caricamento per "
-"pfSense e della lunghezza di banda massima in scaricamento per pfSense di "
+"Firew4ll e della lunghezza di banda massima in scaricamento per Firew4ll di "
 "RADIUS "
 
 #: src/usr/local/www/services_captiveportal.php:1001
@@ -40465,8 +40464,8 @@ msgid "FreeBSD default"
 msgstr "FreeBSD predefinito"
 
 #: src/usr/local/www/interfaces.php:2199
-msgid "pfSense Default"
-msgstr "pfSense predefinito"
+msgid "Firew4ll Default"
+msgstr "Firew4ll predefinito"
 
 #: src/usr/local/www/interfaces.php:2207
 msgid "Saved Cfg"
