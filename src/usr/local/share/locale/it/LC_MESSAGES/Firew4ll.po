@@ -34813,7 +34813,7 @@ msgstr "Accesso a %1$s"
 
 #: src/etc/inc/authgui.inc:273
 msgid "Firew4ll - Login"
-msgstr "Firew4ll - Accesso"
+msgstr "Firew4ll - Login"
 
 #: src/etc/inc/authgui.inc:332
 msgid ""
