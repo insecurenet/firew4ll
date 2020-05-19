@@ -2191,7 +2191,7 @@ function upgrade_054_to_055() {
 	exec("cd /; LANG=C RRDDBPATH='{$rrddbpath}' CF_CONF_PATH='{$g['cf_conf_path']}' /etc/rc.backup_rrd.sh");
 	unlink_if_exists("{$g['vardb_path']}/rrd/*.xml");
 	if (platform_booting()) {
-		echo "Updating configuration...";
+		echo "Aggiornamento configurazione...";
 	}
 }
 
@@ -2916,7 +2916,7 @@ function upgrade_080_to_081() {
 	/* The function will restore the rrd.tgz so we will save it after */
 	exec("cd /; LANG=C RRDDBPATH='{$rrddbpath}' CF_CONF_PATH='{$g['cf_conf_path']}' /etc/rc.backup_rrd.sh");
 	if (platform_booting()) {
-		echo "Updating configuration...";
+		echo "Aggiornamento configurazione...";
 	}
 	foreach ($config['filter']['rule'] as & $rule) {
 		if (isset($rule['protocol']) && !empty($rule['protocol'])) {
