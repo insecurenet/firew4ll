@@ -588,7 +588,7 @@
 	</stepsubmitbeforesave>
 </step>
 <step>
-	<id>6</id>
+	<id>5</id>
 	<skip_flavors>ec2,ec2-ic</skip_flavors>
 	<title>Configure LAN Interface</title>
 	<description>On this screen the Local Area Network information will be configured.</description>
@@ -699,7 +699,7 @@
 	</stepsubmitphpaction>
 </step>
 <step>
-	<id>7</id>
+	<id>6</id>
 	<title>Set Admin WebGUI Password</title>
 	<description>On this screen the admin password will be set, which is used to access the WebGUI and also SSH services if enabled.</description>
 	<fields>
@@ -733,7 +733,7 @@
 	</stepsubmitphpaction>
 </step>
 <step>
-	<id>8</id>
+	<id>7</id>
 	<title>Reload configuration</title>
 	<disableheader>true</disableheader>
 	<description>Click 'Reload' to reload pfSense with new changes.</description>
@@ -745,7 +745,7 @@
 	</fields>
 </step>
 <step>
-	<id>9</id>
+	<id>8</id>
 	<title>Reload in progress</title>
 	<description>
 		A reload is now in progress.  Please wait. &lt;p&gt;
@@ -795,7 +795,7 @@
 	</stepafterformdisplay>
 </step>
 <step>
-	<id>10</id>
+	<id>9</id>
 	<title>Wizard completed.</title>
 	<stepbeforeformdisplay>
 	<![CDATA[
