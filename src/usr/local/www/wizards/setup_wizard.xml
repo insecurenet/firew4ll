@@ -47,7 +47,7 @@
 		unlink_if_exists("{$g['conf_path']}/assign_complete");
 	</stepbeforeformdisplay>
 </step>
-<step>
+<!-- <step>
 	<id>2</id>
 	<title>Netgate® Global Support is available 24/7</title>
 	<disableheader>true</disableheader>
@@ -72,7 +72,8 @@
 			<type>submit</type>
 		</field>
 	</fields>
-</step>
+</step> -->
+
 <step>
 	<id>3</id>
 	<title>General Information</title>
