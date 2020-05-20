@@ -44,7 +44,7 @@ load_rc_config $name
 
 tempdir=/tmp
 
-echo "Generating MFS /etc partition"
+echo "Generando la partizione MFS /etc"
 
 device=$(mdconfig -a -t malloc -o compress -s ${etcsize})
 bsdlabel -w ${device} auto

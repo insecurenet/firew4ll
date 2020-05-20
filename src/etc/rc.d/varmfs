@@ -42,7 +42,7 @@ load_rc_config $name
 
 tempdir=/tmp
 
-echo "Generating MFS /var partition"
+echo "Generando la partizione MFS /var"
 
 device=$(mdconfig -a -t malloc -o compress -s ${varsize})
 bsdlabel -w ${device} auto

@@ -65,16 +65,16 @@ if (is_array($config['installedpackages']['package'])) {
 		$internal_name = get_package_internal_name($package);
 		start_service($internal_name, true);
 		unset($rcfiles[RCFILEPREFIX . strtolower($internal_name) . ".sh"]);
-		echo "done.\n";
+		echo "fatto.\n";
 	}
 }
 
 $shell = @popen("/bin/sh", "w");
 if ($shell) {
 	foreach ($rcfiles as $rcfile => $number) {
-		echo " Starting {$rcfile}...";
+		echo " Avviando {$rcfile}...";
 		fwrite($shell, "{$rcfile} start >>/tmp/bootup_messages 2>&1 &");
-		echo "done.\n";
+		echo "fatto.\n";
 	}
 
 	pclose($shell);

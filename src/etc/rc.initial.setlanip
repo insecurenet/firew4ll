@@ -288,13 +288,13 @@ function console_configure_ip_address($version) {
 					echo "\n" . sprintf(gettext("Subnet masks are entered as bit counts (as in CIDR notation) in %s."),
 							$g['product_name']) . "\n";
 					if ($version === 6) {
-						echo "e.g. ffff:ffff:ffff:ffff:ffff:ffff:ffff:ff00 = 120\n";
+						echo "es.  ffff:ffff:ffff:ffff:ffff:ffff:ffff:ff00 = 120\n";
 						echo "     ffff:ffff:ffff:ffff:ffff:ffff:ffff:0    = 112\n";
 						echo "     ffff:ffff:ffff:ffff:ffff:ffff:0:0       =  96\n";
 						echo "     ffff:ffff:ffff:ffff:ffff:0:0:0          =  80\n";
 						echo "     ffff:ffff:ffff:ffff:0:0:0:0             =  64\n";
 					} else {
-						echo "e.g. 255.255.255.0 = 24\n";
+						echo "es.  255.255.255.0 = 24\n";
 						echo "     255.255.0.0   = 16\n";
 						echo "     255.0.0.0     = 8\n";
 					}
