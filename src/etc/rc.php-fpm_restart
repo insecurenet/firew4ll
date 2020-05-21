@@ -22,11 +22,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-echo ">>> Killing check_reload_status"
+echo ">>> Fermando check_reload_status"
 /bin/pkill -9 check_reload_status
 sleep 2
 
-echo ">>> Killing php-fpm"
+echo ">>> Fermando php-fpm"
 /bin/pkill -F /var/run/php-fpm.pid
 sleep 2
 
@@ -36,14 +36,14 @@ sleep 2
 /bin/rm -f /var/run/php-fpm.pid 2>/dev/null
 /bin/rm -f /var/run/php-fpm.socket 2>/dev/null
 if [ -f /tmp/xmlrpc.lock ]; then
-	echo ">>> Found XMLRPC lock. Removing."
-	echo ">>> Found XMLRPC lock. Removing." | /usr/bin/logger -p daemon.info -i -t rc.php-fpm_restart
+	echo ">>> Trovato XMLRPC bloccato. Rimuovendo."
+	echo ">>> Trovato XMLRPC bloccato. Rimuovendo." | /usr/bin/logger -p daemon.info -i -t rc.php-fpm_restart
 	rm /tmp/xmlrpc.lock
 fi
-echo ">>> Restarting php-fpm" | /usr/bin/logger -p daemon.info -i -t rc.php-fpm_restart
-echo ">>> Starting php-fpm"
+echo ">>> Riavviando php-fpm" | /usr/bin/logger -p daemon.info -i -t rc.php-fpm_restart
+echo ">>> Avvio php-fpm"
 /usr/local/sbin/php-fpm -c /usr/local/etc/php.ini -y /usr/local/lib/php-fpm.conf -RD 2>&1 >/dev/null
 
 # restart check_reload_status
-echo ">>> Starting check_reload_status"
+echo ">>> Avvio check_reload_status"
 /usr/bin/nice -n20 /usr/local/sbin/check_reload_status

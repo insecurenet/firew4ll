@@ -162,7 +162,7 @@ if (!empty($generate_keys)) {
 	/* remove previous keys and regen later */
 	file_notice("SSH", "{$g['product_name']} has started creating missing SSH keys.  SSH Startup will be delayed.  Please note that reloading the filter rules and changes will be delayed until this operation is completed.", "SSH KeyGen", "");
 	mark_subsystem_dirty('sshdkeys');
-	echo " Generating Keys:\n";
+	echo " Generando le Chiavi:\n";
 	foreach ($generate_keys as $key) {
 		$_gb = exec("/usr/bin/nice -n20 /usr/bin/ssh-keygen -t {$key['type']} -b 4096 -N '' -f {$sshConfigDir}/ssh_host_{$key['suffix']}key");
 	}
@@ -173,16 +173,16 @@ if (!empty($generate_keys)) {
 /* kill existing sshd process, server only, not the childs */
 $sshd_pid = exec("ps ax | egrep '/usr/sbin/[s]shd' | awk '{print $1}'");
 if ($sshd_pid <> "") {
-	echo "stopping ssh process $sshd_pid \n";
+	echo "interrompendo i processi ssh $sshd_pid \n";
 	@posix_kill($sshd_pid, SIGTERM);
 }
 /* Launch new server process */
 $status = mwexec("/usr/sbin/sshd");
 if ($status <> 0) {
 	file_notice("sshd_startup", "SSHD failed to start.", "SSHD Daemon", "");
-	echo "error!\n";
+	echo "errore!\n";
 } else {
-	echo "done.\n";
+	echo "fatto.\n";
 }
 
 unset($keys, $keyfiles);

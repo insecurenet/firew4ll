@@ -19,7 +19,7 @@
 # limitations under the License.
 
 if ! /usr/bin/lockf -s -t 30 /tmp/config.lock /usr/bin/true; then
-	echo "Cannot reboot at this moment, a config write operation is in progress, and 30 seconds have passed."
+	echo "Non è possibile riavviare in questo momento, è in corso un'operazione di scrittura della configurazione e sono passati 30 secondi."
 	exit 1
 fi
 

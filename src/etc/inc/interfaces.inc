@@ -1530,7 +1530,7 @@ function interfaces_configure() {
 		} else if (strstr($realif, "gif")) {
 			$delayed_list[$if] = $ifname;
 		} else if (strstr($realif, "ovpn")) {
-			//echo "Delaying OpenVPN interface configuration...done.\n";
+			//echo "Postponi la configurazione dell'interfaccia OpenVPN...fatto.\n";
 			continue;
 		} else if (strstr($realif, "ipsec")) {
 			continue;

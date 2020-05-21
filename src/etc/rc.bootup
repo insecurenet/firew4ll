@@ -92,7 +92,7 @@ if (file_exists("{$g['conf_path']}/trigger_initial_wizard_after_reboot")) {
 }
 
 /* start devd (dhclient now uses it) */
-echo "Avviando Gestione Dispositivi (devd)...";
+echo "Avvio Gestione Dispositivi (devd)...";
 mute_kernel_msgs();
 start_devd();
 set_device_perms();
@@ -131,7 +131,7 @@ while (is_interface_mismatch() == true) {
 	led_assigninterfaces();
 	if (isset($config['revision'])) {
 		if (file_exists("{$g['tmp_path']}/missing_interfaces")) {
-			echo "Warning: La configurazione fa riferimento a interfacce che non esistono: " . file_get_contents("{$g['tmp_path']}/missing_interfaces") . "\n";
+			echo "Attenzione: La configurazione fa riferimento a interfacce che non esistono: " . file_get_contents("{$g['tmp_path']}/missing_interfaces") . "\n";
 		}
 		echo "\nInterfacce non corrispondenti -- Avvio opzioni configurazione e assegnamento.\n";
 	} else {
@@ -158,7 +158,7 @@ cleanup_backupcache(true);
 echo "fatto.\n";
 
 /* read in /etc/sysctl.conf and set values if needed */
-echo "Configurando sysctls...";
+echo "Configurazione sysctls...";
 system_setup_sysctl();
 echo "fatto.\n";
 
@@ -188,12 +188,12 @@ if (file_exists("/var/log/restore_ramdisk_store.boot")) {
 	exec("logger -f /var/log/restore_ramdisk_store.boot");
 }
 
-echo "Avviando Secure Shell Services (SSH)...";
+echo "Avvio SSH (Secure Shell Services)...";
 send_event("service reload sshd");
 echo "fatto.\n";
 
 /* setup interface microcode which improves tcp/ip speed */
-echo "Configurando microcode interfacce...";
+echo "Configurazione microcode interfacce...";
 setup_microcode();
 echo "fatto.\n";
 
@@ -237,21 +237,21 @@ system_resolvconf_generate();
 filter_configure_sync();
 
 /* start pflog */
-echo "Avviando PFLOG...";
+echo "Avvio PFLOG...";
 filter_pflog_start();
 echo "fatto.\n";
 
 /* reconfigure our gateway monitor */
-echo "Configurando monitor gateway...";
+echo "Configurazione monitor gateway...";
 setup_gateways_monitor();
 echo "fatto.\n";
 
 /* set up static routes */
-echo "Configurando rotte statiche...";
+echo "Configurazione rotte statiche...";
 system_routing_configure();
 echo "fatto.\n";
 
-echo "Avviando DNSs...\n";
+echo "Avvio DNSs...\n";
 /* start dnsmasq service */
 services_dnsmasq_configure();
 
@@ -263,7 +263,7 @@ local_reset_accounts();
 echo "fatto.\n";
 
 if ($realmem > 0 and $realmem < 65) {
-	echo "Il sistema ha meno di 65 megabyte di ram {$realmem}. Ritardando l'avvio di webConfigurator.\n";
+	echo "Il sistema ha meno di 65 megabyte di ram {$realmem}. Ritardo l'avvio di webConfigurator.\n";
 	/* start webConfigurator up on final pass */
 	mwexec("/usr/local/sbin/pfSctl -c 'service restart webgui'");
 } else {
@@ -272,7 +272,7 @@ if ($realmem > 0 and $realmem < 65) {
 }
 
 /* configure cron service */
-echo "Configurando CRON...";
+echo "Configurazione CRON...";
 configure_cron();
 echo "fatto.\n";
 
@@ -280,7 +280,7 @@ echo "fatto.\n";
 system_routing_enable();
 
 /* Enable ntpd */
-echo "Avviando client NTP...";
+echo "Avvio client NTP...";
 system_ntp_configure();
 echo "fatto.\n";
 
@@ -340,7 +340,7 @@ enable_watchdog();
 
 /* if <system><afterbootupshellcmd> exists, execute the command */
 if ($config['system']['afterbootupshellcmd'] <> "") {
-	echo "Avviando afterbootupshellcmd {$config['system']['afterbootupshellcmd']}\n";
+	echo "Avvio afterbootupshellcmd {$config['system']['afterbootupshellcmd']}\n";
 	mwexec($config['system']['afterbootupshellcmd']);
 }
 
@@ -376,7 +376,7 @@ prefer_ipv4_or_ipv6();
 
 /* Resync / Reinstall packages if need be */
 if (file_exists("{$g['conf_path']}/needs_package_sync")) {
-	echo "Attivando la reinstallazione dei pacchetti in background\n";
+	echo "Avvio reinstallazione dei pacchetti in background\n";
 	mwexec_bg("{$g['etc_path']}/rc.package_reinstall_all");
 } else {
 	/* Detect installed binary pkgs that are not registered in the system */

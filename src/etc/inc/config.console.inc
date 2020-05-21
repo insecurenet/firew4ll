@@ -64,7 +64,7 @@ function set_networking_interfaces_ports() {
 
 	echo <<<EOD
 
-Valid interfaces are:
+Interfacce valide sono:
 
 
 EOD;

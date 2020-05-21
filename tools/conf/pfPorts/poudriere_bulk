@@ -70,6 +70,7 @@ net/py-speedtest-cli
 net/trafshow
 net/trafshow3
 net/vnstat
+net/ocserv
 security/%%PRODUCT_NAME%%-pkg-acme
 security/%%PRODUCT_NAME%%-pkg-nmap
 security/%%PRODUCT_NAME%%-pkg-openvpn-client-export
@@ -106,6 +107,7 @@ sysutils/tmux
 sysutils/usb_modeswitch
 sysutils/vm-bhyve
 sysutils/xe-guest-utilities
+sysutils/bsd-splash-changer
 www/%%PRODUCT_NAME%%-pkg-Lightsquid
 www/%%PRODUCT_NAME%%-pkg-squid
 www/%%PRODUCT_NAME%%-pkg-squidGuard

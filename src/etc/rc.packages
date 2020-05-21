@@ -34,7 +34,7 @@ require_once("pkg-utils.inc");
 require_once("pfsense-utils.inc");
 
 function usage() {
-	print "Usage: rc.packages PKG_NAME (POST-INSTALL|DEINSTALL|POST-DEINSTALL)\n";
+	print "Usa: rc.packages PKG_NAME (POST-INSTALL|DEINSTALL|POST-DEINSTALL)\n";
 	exit(1);
 }
 
