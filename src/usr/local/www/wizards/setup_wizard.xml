@@ -800,17 +800,14 @@
 	<![CDATA[
 		if ($g['product_name'] <> 'pfSense') {
 			header("Location: " . fixup_string("\$myurl"));
-			<!-- exit; -->
 		<div style="padding-right:25px;">
 		<p><h4>Congratulazioni! Firew4ll è ora configurato e pronto all'uso.</h4></p>
 		<p>
-		Si consiglia di verificare se s\ono disponibili aggiornamenti del software. Mantenere il vostro software aggiornato è
-		una delle cose più importanti che potete fare per mantenere la vostra rete SICURA.</p>
+		Si consiglia di verificare se s\ono disponibili aggiornamenti del software. Mantenere il vostro software aggiornato è una delle cose più importanti che potete fare per mantenere la vostra rete SICURA.</p>
 		<input type="button" onclick="window.location.href='$myurlpkg_mgr_install.php?id=firmware'" class="btn btn-xs btn-success" value="Controlla aggiornamenti"/>
 		<input type="button" onclick="window.location.href='$myurl'" class="btn btn-sm btn-primary" value="Finisci"/>
 		</p>
 		</div>
-		exit;
 	}
 	]]>
 	</stepbeforeformdisplay>
