@@ -360,7 +360,7 @@
 			<typehint>Mostra la password</typehint>
 		</field>
 		<field>
-			<name>PPPoE Service name/name>
+			<name>PPPoE Service name</name>
 			<type>input</type>
 			<description>Suggerimento: questo campo viene lasciato vuoto di solito</description>
 			<bindstofield>wizardtemp->wan->provider</bindstofield>
