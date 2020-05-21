@@ -391,9 +391,9 @@ function services_radvd_configure($blacklist = array()) {
 
 	/* write radvd.conf */
 	if (!@file_put_contents("{$g['varetc_path']}/radvd.conf", $radvdconf)) {
-		log_error(gettext("Error: cannot open radvd.conf in services_radvd_configure()."));
+		log_error(gettext("Errore: impossibile aprire radvd.conf in services_radvd_configure()."));
 		if (platform_booting()) {
-			printf("Error: cannot open radvd.conf in services_radvd_configure().\n");
+			printf("Errore: impossibile aprire radvd.conf in services_radvd_configure().\n");
 		}
 	}
 	unset($radvdconf);
@@ -408,7 +408,7 @@ function services_radvd_configure($blacklist = array()) {
 		/* we need to shut down the radvd cleanly, it will send out the prefix
 		 * information with a lifetime of 0 to notify clients of a (possible) new prefix */
 		if (isvalidpid("{$g['varrun_path']}/radvd.pid")) {
-			log_error(gettext("Shutting down Router Advertisment daemon cleanly"));
+			log_error(gettext("Spegnimento RADVD in modo corretto"));
 			killbypid("{$g['varrun_path']}/radvd.pid");
 			@unlink("{$g['varrun_path']}/radvd.pid");
 		}
@@ -497,7 +497,7 @@ function services_dhcpdv4_configure() {
 	}
 
 	if (platform_booting()) {
-		echo gettext("Starting DHCP service...");
+		echo gettext("Avvio servizio DHCP...");
 	} else {
 		sleep(1);
 	}
@@ -608,7 +608,7 @@ EOD;
 					}
 				}
 			} else {
-				log_error(gettext("Warning!  DHCP Failover setup and no CARP virtual IPs defined!"));
+				log_error(gettext("Attenzione! Installazione DHCP Failover nessuno CARP virtual IP definito!"));
 			}
 			if ($skew > 10) {
 				$type = "secondary";
@@ -778,7 +778,7 @@ EOPP;
 				// If the user has changed the subnet from the interfaces page and applied,
 				// but has not updated the DHCP range, then the range to/from of the pool can be outside the subnet.
 				// This can also happen when implementing the batch of changes when the setup wizard reloads the new settings.
-				$error_msg = sprintf(gettext('Invalid DHCP pool %1$s - %2$s for %3$s subnet %4$s/%5$s detected. Please correct the settings in Services, DHCP Server'), $poolconf['range']['from'], $poolconf['range']['to'], convert_real_interface_to_friendly_descr($dhcpif), $subnet, $ifcfgsn);
+				$error_msg = sprintf(gettext('DHCP pool %1$s - %2$s non valido per %3$s subnet %4$s/%5$s rilevata. Correggi le impostazioni in Servizi, DHCP Server'), $poolconf['range']['from'], $poolconf['range']['to'], convert_real_interface_to_friendly_descr($dhcpif), $subnet, $ifcfgsn);
 				$do_file_notice = true;
 				$conf_ipv4_address = $ifcfg['ipaddr'];
 				$conf_ipv4_subnetmask = $ifcfg['subnet'];
@@ -1197,7 +1197,7 @@ EOD;
 
 	/* write dhcpd.conf */
 	if (!@file_put_contents("{$g['dhcpd_chroot_path']}/etc/dhcpd.conf", $dhcpdconf)) {
-		printf(gettext("Error: cannot open dhcpd.conf in services_dhcpdv4_configure().%s"), "\n");
+		printf(gettext("Errore: impossibile apriredhcpd.conf in services_dhcpdv4_configure().%s"), "\n");
 		unset($dhcpdconf);
 		return 1;
 	}
@@ -1326,7 +1326,7 @@ function services_dhcpdv6_configure($blacklist = array()) {
 
 
 	if (platform_booting()) {
-		echo "Starting DHCPv6 service...";
+		echo Avvio servizio DHCPv6...";
 	} else {
 		sleep(1);
 	}
@@ -1624,7 +1624,7 @@ EOD;
 	if (!@file_put_contents("{$g['dhcpd_chroot_path']}/etc/dhcpdv6.conf", $dhcpdv6conf)) {
 		log_error("Error: cannot open {$g['dhcpd_chroot_path']}/etc/dhcpdv6.conf in services_dhcpdv6_configure().\n");
 		if (platform_booting()) {
-			printf("Error: cannot open {$g['dhcpd_chroot_path']}/etc/dhcpdv6.conf in services_dhcpdv6_configure().\n");
+			printf("Errore: impossibile aprire{$g['dhcpd_chroot_path']}/etc/dhcpdv6.conf in services_dhcpdv6_configure().\n");
 		}
 		unset($dhcpdv6conf);
 		return 1;
@@ -1647,7 +1647,7 @@ EOD;
 		mwexec("/usr/local/sbin/dhcpleases6 -c \"/usr/local/bin/php-cgi -f /usr/local/sbin/prefixes.php|/bin/sh\" -l {$g['dhcpd_chroot_path']}/var/db/dhcpd6.leases");
 	}
 	if (platform_booting()) {
-		print gettext("done.") . "\n";
+		print gettext("fatto.") . "\n";
 	}
 
 	return 0;
@@ -1703,7 +1703,7 @@ EOD;
 
 	$igmpfl = fopen($g['varetc_path'] . "/igmpproxy.conf", "w");
 	if (!$igmpfl) {
-		log_error(gettext("Could not write Igmpproxy configuration file!"));
+		log_error(gettext("Impossibile scrivere il file di configurazione di Igmpproxy!"));
 		return;
 	}
 	fwrite($igmpfl, $igmpconf);
@@ -1716,7 +1716,7 @@ EOD;
 		mwexec_bg("/usr/local/sbin/igmpproxy {$g['varetc_path']}/igmpproxy.conf");
 	}
 
-	log_error(gettext("Started IGMP proxy service."));
+	log_error(gettext("Avvio servizio IGMP proxy."));
 
 	return 0;
 }
@@ -1741,7 +1741,7 @@ function services_dhcrelay_configure() {
 	}
 
 	if (platform_booting()) {
-		echo gettext("Starting DHCP relay service...");
+		echo gettext("Avvio servizio DHCP relay...");
 	} else {
 		sleep(1);
 	}
@@ -1768,7 +1768,7 @@ function services_dhcrelay_configure() {
 	 */
 	$srvips = explode(",", $dhcrelaycfg['server']);
 	if (!is_array($srvips)) {
-		log_error(gettext("No destination IP has been configured!"));
+		log_error(gettext("Non è stato configurato alcun IP di destinazione!"));
 		return;
 	}
 	$srvifaces = array();
@@ -1785,11 +1785,11 @@ function services_dhcrelay_configure() {
 
 	/* fire up dhcrelay */
 	if (empty($dhcrelayifs)) {
-		log_error(gettext("No suitable downstream interfaces found for running dhcrelay!"));
+		log_error(gettext("Nessuna interfaccia a valle utile trovata per far partire dhcrelay!"));
 		return; /* XXX */
 	}
 	if (empty($srvifaces)) {
-		log_error(gettext("No suitable upstream interfaces found for running dhcrelay!"));
+		log_error(gettext("Nessuna interfaccia a monte utile trovata per far partire dhcrelay!"));
 		return; /* XXX */
 	}
 
@@ -1828,7 +1828,7 @@ function services_dhcrelay6_configure() {
 	}
 
 	if (platform_booting()) {
-		echo gettext("Starting DHCPv6 relay service...");
+		echo gettext("Avvio servizio DHCPv6 relay...");
 	} else {
 		sleep(1);
 	}
@@ -1863,7 +1863,7 @@ function services_dhcrelay6_configure() {
 
 	/* fire up dhcrelay */
 	if (empty($dhcrelayifs) || empty($srvifaces)) {
-		log_error(gettext("No suitable interface found for running dhcrelay -6!"));
+		log_error(gettext("Nessuna interfaccia utile per far partire dhcrelay -6!"));
 		return; /* XXX */
 	}
 
@@ -1924,7 +1924,7 @@ function services_dyndns_configure($int = "") {
 	$gwgroups = return_gateway_groups_array(true);
 	if (is_array($dyndnscfg)) {
 		if (platform_booting()) {
-			echo gettext("Starting DynDNS clients...");
+			echo gettext("Avvio DynDNS client...");
 		}
 
 		foreach ($dyndnscfg as $dyndns) {
@@ -1962,7 +1962,7 @@ function services_dyndns_configure($int = "") {
 		}
 
 		if (platform_booting()) {
-			echo gettext("done.") . "\n";
+			echo gettext("fatto.") . "\n";
 		}
 	}
 
@@ -2048,7 +2048,7 @@ function services_dnsmasq_configure($restart_dhcp = true) {
 	if (isset($config['dnsmasq']['enable'])) {
 
 		if (platform_booting()) {
-			echo gettext("Starting DNS forwarder...");
+			echo gettext("Avvio DNS forwarder...");
 		} else {
 			sleep(1);
 		}
@@ -2185,7 +2185,7 @@ function services_dnsmasq_configure($restart_dhcp = true) {
 		system_dhcpleases_configure();
 
 		if (platform_booting()) {
-			echo gettext("done.") . "\n";
+			echo gettext("fatto.") . "\n";
 		}
 	}
 
@@ -2223,7 +2223,7 @@ function services_unbound_configure($restart_dhcp = true) {
 		}
 
 		if (platform_booting()) {
-			echo gettext("Starting DNS Resolver...");
+			echo gettext("Avvio DNS Ricorsivo...");
 		} else {
 			sleep(1);
 		}
@@ -2243,7 +2243,7 @@ function services_unbound_configure($restart_dhcp = true) {
 						sleep(1);
 					} else {
 						unlink_if_exists("/tmp/{$wanif}_dhcp6_complete");
-						log_error(gettext("dhcp6 init complete. Continuing"));
+						log_error(gettext("dhcp6 init completato. Continua"));
 						break;
 					}
 				}
@@ -2252,8 +2252,8 @@ function services_unbound_configure($restart_dhcp = true) {
 
 		sync_unbound_service();
 		if (platform_booting()) {
-			log_error(gettext("sync unbound done."));
-			echo gettext("done.") . "\n";
+			log_error(gettext("sync unbound fatto."));
+			echo gettext("fatto.") . "\n";
 		}
 
 		system_dhcpleases_configure();
@@ -2290,7 +2290,7 @@ function services_snmpd_configure() {
 	if (isset($config['snmpd']['enable'])) {
 
 		if (platform_booting()) {
-			echo gettext("Starting SNMP daemon... ");
+			echo gettext("Avvio demone SNMP... ");
 		}
 
 		/* Make sure a printcap file exists or else bsnmpd will log errors. See https://redmine.pfsense.org/issues/6838 */
@@ -2301,7 +2301,7 @@ function services_snmpd_configure() {
 		/* generate snmpd.conf */
 		$fd = fopen("{$g['varetc_path']}/snmpd.conf", "w");
 		if (!$fd) {
-			printf(gettext("Error: cannot open snmpd.conf in services_snmpd_configure().%s"), "\n");
+			printf(gettext("Errore: impossibile aprire snmpd.conf in services_snmpd_configure().%s"), "\n");
 			return 1;
 		}
 
@@ -2485,7 +2485,7 @@ EOD;
 			" -p {$g['varrun_path']}/snmpd.pid");
 
 		if (platform_booting()) {
-			echo gettext("done.") . "\n";
+			echo gettext("fatto.") . "\n";
 		}
 	}
 
@@ -2659,7 +2659,7 @@ EOD;
 				$need_update = true;
 			} else {
 				log_error(sprintf(gettext(
-				    "phpDynDNS: Not updating %s A record because the IP address has not changed."),
+				    "phpDynDNS: Nessun aggiornamento %s perchè l'indirizzo IP non è cambiato."),
 				    $dnsupdate['host']));
 			}
 		} else {
@@ -2678,7 +2678,7 @@ EOD;
 				$need_update = true;
 			} else {
 				log_error(sprintf(gettext(
-				    "phpDynDNS: Not updating %s AAAA record because the IPv6 address has not changed."),
+				    "phpDynDNS: Record %s AAAA non aggiornato perchè l'indirizzo IPv6 non è cambiato."),
 				    $dnsupdate['host']));
 			}
 		} else {
@@ -2708,10 +2708,10 @@ EOD;
 				@file_put_contents($cacheFile,
 				    "{$wanip}|{$currentTime}");
 				log_error(sprintf(gettext(
-				    'phpDynDNS: updating cache file %1$s: %2$s'),
+				    'phpDynDNS: aggiornamento cache dei file %1$s: %2$s'),
 				    $cacheFile, $wanip));
 				$notify_text .= sprintf(gettext(
-				    'DynDNS updated IP Address (A) for %1$s on %2$s (%3$s) to %4$s'),
+				    'DynDNS aggiornamento Indirizzo IP (A) per %1$s su %2$s (%3$s) a %4$s'),
 				    $dnsupdate['host'],
 				    convert_real_interface_to_friendly_descr($if),
 				    $if, $wanip) . "\n";
@@ -2720,10 +2720,10 @@ EOD;
 				@file_put_contents($cacheFilev6,
 				    "{$wanipv6}|{$currentTime}");
 				log_error(sprintf(gettext(
-				    'phpDynDNS: updating cache file %1$s: %2$s'),
+				    'phpDynDNS: aggiornamento cache dei file %1$s: %2$s'),
 				    $cacheFilev6, $wanipv6));
 				$notify_text .= sprintf(gettext(
-				    'DynDNS updated IPv6 Address (AAAA) for %1$s on %2$s (%3$s) to %4$s'),
+				    'DynDNS Indirizzo IPv6 aggiornato (AAAA) per %1$s su %2$s (%3$s) a %4$s'),
 				    $dnsupdate['host'],
 				    convert_real_interface_to_friendly_descr($if),
 				    $if, $wanipv6) . "\n";
@@ -2731,12 +2731,12 @@ EOD;
 		} else {
 			if (!empty($cacheFile)) {
 				log_error(sprintf(gettext(
-				    'phpDynDNS: ERROR while updating IP Address (A) for %1$s (%2$s)'),
+				    'phpDynDNS: ERRORE aggiornamento Indirizzo IP (A) per %1$s (%2$s)'),
 				    $dnsupdate['host'], $wanip));
 			}
 			if (!empty($cacheFilev6)) {
 				log_error(sprintf(gettext(
-				    'phpDynDNS: ERROR while updating IP Address (AAAA) for %1$s (%2$s)'),
+				    'phpDynDNS: ERRORE aggiornamento Indirizzo IPv6 (AAAA) per %1$s (%2$s)'),
 				    $dnsupdate['host'], $wanipv6));
 			}
 		}
@@ -2769,8 +2769,8 @@ function configure_cron() {
 
 	if (is_array($config['cron']['item'])) {
 		$crontab_contents .= "#\n";
-		$crontab_contents .= "# pfSense specific crontab entries\n";
-		$crontab_contents .= "# " .gettext("Created:") . " " . date("F j, Y, g:i a") . "\n";
+		$crontab_contents .= "# Firew4ll specific crontab entries\n";
+		$crontab_contents .= "# " .gettext("Creato:") . " " . date("F j, Y, g:i a") . "\n";
 		$crontab_contents .= "#\n";
 
 		if (isset($config['system']['proxyurl']) && !empty($config['system']['proxyurl'])) {
@@ -2796,8 +2796,8 @@ function configure_cron() {
 		}
 
 		$crontab_contents .= "\n#\n";
-		$crontab_contents .= "# " . gettext("If possible do not add items to this file manually.") . "\n";
-		$crontab_contents .= "# " . gettext("If done so, this file must be terminated with a blank line (e.g. new line)") . "\n";
+		$crontab_contents .= "# " . gettext("Se possibile non aggiungere manualmente elementi a questo file.") . "\n";
+		$crontab_contents .= "# " . gettext("In tal caso, questo file deve essere terminato con una riga vuota (es. nuova linea)") . "\n";
 		$crontab_contents .= "#\n\n";
 	}
 
@@ -2847,7 +2847,7 @@ function upnp_start() {
 	}
 
 	if ($config['installedpackages']['miniupnpd']['config'][0]['enable']) {
-		echo gettext("Starting UPnP service... ");
+		echo gettext("Avvio servizio UPnP... ");
 		require_once('/usr/local/pkg/miniupnpd.inc');
 		sync_package_miniupnpd();
 		echo "done.\n";

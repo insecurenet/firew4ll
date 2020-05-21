@@ -29,33 +29,33 @@ require_once("filter.inc");
 $fp = fopen('php://stdin', 'r');
 
 if (isset($config['system']['ssh']['enable'])) {
-	echo "SSHD is currently enabled.  Would you like to disable? [y/n]? ";
+	echo "SSHD risulta attivo.  Vuoi disattivarlo? [s/n]? ";
 	$yn = chop(fgets($fp));
-	if ($yn[0] == "y") {
+	if ($yn[0] == "s") {
 		unset($config['system']['ssh']['enable']);
-		echo "\nWriting configuration...";
-		write_config(gettext("Disabled SSHD from console menu."));
+		echo "\nScrivendo configurazione...";
+		write_config(gettext("Disabilita SSHD dal menu console."));
 		echo " done.\n";
-		echo "\nDisabling SSHD...";
+		echo "\nDisattivaando SSHD...";
 		send_event("service reload sshd");
-		echo "\nReloading firewall rules.";
+		echo "\nRicarico regole firewall.";
 		filter_configure();
-		echo " done.\n";
+		echo " fatto.\n";
 		exec("ps awux | grep '/usr/sbin/sshd' | grep -v grep | awk '{print $2}' | xargs kill");
 	}
 
 } else {
-	echo "SSHD is currently disabled.  Would you like to enable? [y/n]? ";
+	echo "SSHD è disattivato. Vuoi attivarlo? [s/n]? ";
 	$yn = chop(fgets($fp));
-	if ($yn[0] == "y") {
+	if ($yn[0] == "s") {
 		init_config_arr(array('system', 'ssh'));
 		$config['system']['ssh']['enable'] = "enabled";
-		echo "\nWriting configuration...";
-		write_config(gettext("Enabled SSHD from console menu."));
+		echo "\nScrivendo configurazione...";
+		write_config(gettext("Attiva SSHD dal menu console.."));
 		echo " done.\n";
-		echo "\nEnabling SSHD...";
+		echo "\nAttivando SSHD...";
 		send_event("service reload sshd");
-		echo "\nReloading firewall rules.";
+		echo "\nRicarico regole firewall.";
 		filter_configure();
 		echo " done.\n\n";
 	}

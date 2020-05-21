@@ -31,13 +31,13 @@ trap : 4
 if [ -f /etc/rc.local ]; then
 	RCLOCALPWD=`ps awux | grep rc.local | grep -v grep | awk '{ print $2 }'`
 	if [ "$RCLOCALPWD" = "" ]; then
-		echo ">>> Launching rc.local in background..."
+		echo ">>> Esecuzione rc.local in background..."
 		sh /etc/rc.local &
 		sleep 1
 		sh /etc/rc.local.running &
 	else
 		if [ -f /etc/rc.local.running ]; then
-			echo ">>> Launching rc.local.running in background..."
+			echo ">>> Esecuzione rc.local.running in background..."
 			sh /etc/rc.local.running &
 		fi
 	fi
@@ -73,25 +73,25 @@ product=$(/usr/local/sbin/read_global_var product_name pfSense)
 
 # Check to see if SSH is running.
 if pgrep -q -a -F /var/run/sshd.pid sshd >/dev/null 2>&1; then
-	sshd_option="14) Disable Secure Shell (sshd)";
+	sshd_option="14) Disabilita SSH (Secure Shell)";
 else
-	sshd_option="14) Enable Secure Shell (sshd)";
+	sshd_option="14) Abilita SSH (Secure Shell)";
 fi
 
 # display a cheap menu
 echo ""
-echo " 0) Logout (SSH only)                  9) pfTop"
-echo " 1) Assign Interfaces                 10) Filter Logs"
-echo " 2) Set interface(s) IP address       11) Restart webConfigurator"
-echo " 3) Reset webConfigurator password    12) PHP shell + ${product} tools"
-echo " 4) Reset to factory defaults         13) Update from console"
-echo " 5) Reboot system                     ${sshd_option}"
-echo " 6) Halt system                       15) Restore recent configuration"
-echo " 7) Ping host                         16) Restart PHP-FPM"
+echo " 0) Logout (solo SSH)                  9) pfTop"
+echo " 1) Assegna Interfacce                10) Filtri Log"
+echo " 2) Configura indirizzi IP            11) Riavvia webConfigurator"
+echo " 3) Reset password webConfigurator    12) PHP shell + strumenti ${product}"
+echo " 4) Reset impostazioni di fabbrica    13) Aggiorna da console"
+echo " 5) Riavvia il sistema                ${sshd_option}"
+echo " 6) Arresta il sistema                15) Ripristina configurazione recente"
+echo " 7) Ping host                         16) Riavvia PHP-FPM"
 echo " 8) Shell"
 
 echo
-read -p "Enter an option: " opmode
+read -p "Scegli un opzione: " opmode
 echo
 
 # see what the user has chosen

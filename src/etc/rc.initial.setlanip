@@ -27,15 +27,15 @@
 $options = getopt("hn", array("dry-run", "help"));
 
 if (isset($options["h"]) || isset($options["help"])) {
-	echo "usage: /etc/rc.initial.setlanip [option ...]\n";
-	echo "  -h, --help       show this message\n";
-	echo "  -n, --dry-run    do not make any configuration changes\n";
+	echo "usa: /etc/rc.initial.setlanip [opzioni ...]\n";
+	echo "  -h, --help       mostra questo messaggio\n";
+	echo "  -n, --dry-run    non apporta modifiche alla configurazione\n";
 	return 0;
 }
 
 $dry_run = isset($options["n"]) || isset($options["dry-run"]);
 if ($dry_run) {
-	echo "DRY RUN MODE IS ON\n";
+	echo "DRY RUN MODE ATTIVO\n";
 }
 
 /* parse the configuration and include all functions used below */
@@ -51,9 +51,9 @@ function console_prompt_for_yn ($prompt_text) {
 	$good_answer = false;
 
 	do {
-		echo "\n" . $prompt_text . " (y/n) ";
+		echo "\n" . $prompt_text . " (s/n) ";
 		$yn = strtolower(chop(fgets($fp)));
-		if (($yn == "y") || ($yn == "yes")) {
+		if (($yn == "s") || ($yn == "si")) {
 			$boolean_answer = true;
 			$good_answer = true;
 		}
@@ -101,7 +101,7 @@ function prompt_for_enable_dhcp_server($version = 4) {
 
 	$label_DHCP = ($version === 6) ? "DHCP6" : "DHCP";
 	$upperifname = strtoupper($interface);
-	return console_prompt_for_yn (sprintf(gettext('Do you want to enable the %1$s server on %2$s?'), $label_DHCP, $upperifname));
+	return console_prompt_for_yn (sprintf(gettext('Vuoi abilitare il %1$s server su %2$s?'), $label_DHCP, $upperifname));
 }
 
 function get_interface_config_description($iface) {
@@ -139,14 +139,14 @@ $count = count($ifdescrs);
 
 /* grab interface that we will operate on, unless there is only one interface */
 if ($count > 1) {
-	echo "Available interfaces:\n\n";
+	echo "Interfacce disponibili:\n\n";
 	$x=1;
 	foreach ($ifdescrs as $iface => $ifdescr) {
 		$config_descr = get_interface_config_description($iface);
 		echo "{$x} - {$ifdescr} ({$config_descr})\n";
 		$x++;
 	}
-	echo "\nEnter the number of the interface you wish to configure: ";
+	echo "\nInserisci il numero di interfacce che intendi configurare: ";
 	$intnum = chop(fgets($fp));
 } else {
 	$intnum = $count;
@@ -169,7 +169,7 @@ foreach ($ifdescrs as $ifname => $ifdesc) {
 	}
 }
 if (!$interface) {
-	echo "Invalid interface!\n";
+	echo "Interfaccia non valida!\n";
 	return;
 }
 
@@ -252,7 +252,7 @@ function console_configure_ip_address($version) {
 	$upperifname = strtoupper($interface);
 
 	if ($interface == "wan") {
-		if (console_prompt_for_yn (sprintf(gettext('Configure %1$s address %2$s interface via %3$s?'), $label_IPvX, $upperifname, $label_DHCP))) {
+		if (console_prompt_for_yn (sprintf(gettext('Configura %1$s indirizzi %2$s interfaccia via %3$s?'), $label_IPvX, $upperifname, $label_DHCP))) {
 			$ifppp = console_get_interface_from_ppp(get_real_interface("wan"));
 			if (!empty($ifppp)) {
 				$ifaceassigned = $ifppp;
@@ -267,7 +267,7 @@ function console_configure_ip_address($version) {
 	if ($isintdhcp == false or $interface <> "wan") {
 		while (true) {
 			do {
-				echo "\n" . sprintf(gettext('Enter the new %1$s %2$s address.  Press <ENTER> for none:'),
+				echo "\n" . sprintf(gettext('Inserisci il nuovo %1$s %2$s indirizzo.  Premi <INVIO> per nessuno:'),
 							$upperifname, $label_IPvX) . "\n> ";
 				$intip = chop(fgets($fp));
 				$intbits_ok = false;
@@ -278,14 +278,14 @@ function console_configure_ip_address($version) {
 				$is_ipaddr = ($version === 6) ? is_ipaddrv6($intip) : is_ipaddrv4($intip);
 				if ($is_ipaddr && is_ipaddr_configured($intip, $interface, true)) {
 					$ip_conflict = true;
-					echo gettext("This IP address conflicts with another interface or a VIP") . "\n";
+					echo gettext("Questo indirizzo IP è in conflitto con un'altra interfaccia o con un VIP") . "\n";
 				} else {
 					$ip_conflict = false;
 				}
 			} while (($ip_conflict === true) || !($is_ipaddr || $intip == ''));
 			if ($is_ipaddr && $intip != '') {
 				if ($intbits_ok == false) {
-					echo "\n" . sprintf(gettext("Subnet masks are entered as bit counts (as in CIDR notation) in %s."),
+					echo "\n" . sprintf(gettext(" Le subnet mask vanno inserite in conteggi di bit (come nella notazione CIDR) in %s."),
 							$g['product_name']) . "\n";
 					if ($version === 6) {
 						echo "es.  ffff:ffff:ffff:ffff:ffff:ffff:ffff:ff00 = 120\n";
@@ -301,7 +301,7 @@ function console_configure_ip_address($version) {
 				}
 				while ($intbits_ok == false) {
 					$upperifname = strtoupper($interface);
-					echo "\n" . sprintf(gettext('Enter the new %1$s %2$s subnet bit count (1 to %3$s):'),
+					echo "\n" . sprintf(gettext('Inserisci la nuova %1$s %2$s subnet bit count (1 to %3$s):'),
 								$upperifname, $label_IPvX, $maxbits) . "\n> ";
 					$intbits = chop(fgets($fp));
 					$intbits_ok = is_numeric($intbits) && (($intbits >= 1) && ($intbits <= $maxbits));
@@ -309,11 +309,11 @@ function console_configure_ip_address($version) {
 
 					if ($version === 4 && $intbits < $maxbits) {
 						if ($intip == gen_subnet($intip, $intbits)) {
-							echo gettext("You cannot set network address to an interface");
+							echo gettext("Non è possibile impostare l'indirizzo network all'interfaccia");
 							continue 2;
 							$intbits_ok = false;
 						} else if ($intip == gen_subnet_max($intip, $intbits)) {
-							echo gettext("You cannot set broadcast address to an interface");
+							echo gettext("Non è possibile impostare l'indirizzo broadcast all'interfaccia");
 							continue 2;
 							$intbits_ok = false;
 						}
@@ -326,16 +326,16 @@ function console_configure_ip_address($version) {
 					$subnet = gen_subnet($intip, $intbits);
 				}
 				do {
-					echo "\n" . sprintf(gettext('For a WAN, enter the new %1$s %2$s upstream gateway address.'), $upperifname, $label_IPvX) . "\n" .
-								gettext("For a LAN, press <ENTER> for none:") . "\n> ";
+					echo "\n" . sprintf(gettext('Per la WAN, inserisci il nuovo indirizzo %1$s %2$s gateway.'), $upperifname, $label_IPvX) . "\n" .
+								gettext("Per la LAN, premi <INVIO> per nessuno:") . "\n> ";
 					$gwip = chop(fgets($fp));
 					$is_ipaddr = ($version === 6) ? is_ipaddrv6($gwip) : is_ipaddrv4($gwip);
 					$is_in_subnet = $is_ipaddr && ip_in_subnet($gwip, $subnet . "/" . $intbits);
 					if ($gwip != '') {
 						if (!$is_ipaddr) {
-							echo sprintf(gettext("not an %s IP address!"), $label_IPvX) . "\n";
+							echo sprintf(gettext("non è un %s indirizzo IP!"), $label_IPvX) . "\n";
 						} else if (!$is_in_subnet) {
-							echo gettext("not in subnet!") . "\n";
+							echo gettext("non nella subnet!") . "\n";
 						}
 					}
 				} while (!($gwip == '' || ($is_ipaddr && $is_in_subnet)));
@@ -381,7 +381,7 @@ function console_configure_dhcpd($version = 4) {
 		$subnet_end = ($version === 6) ? gen_subnetv6_max($intip6, $intbits6) : gen_subnet_max($intip, $intbits);
 		do {
 			do {
-				echo sprintf(gettext("Enter the start address of the %s client address range:"), $label_IPvX) . " ";
+				echo sprintf(gettext("Inserisci l'indirizzo iniziale del %s client address range:"), $label_IPvX) . " ";
 				$dhcpstartip = chop(fgets($fp));
 				if ($dhcpstartip === "") {
 					fclose($fp);
@@ -390,12 +390,12 @@ function console_configure_dhcpd($version = 4) {
 				$is_ipaddr = ($version === 6) ? is_ipaddrv6($dhcpstartip) : is_ipaddrv4($dhcpstartip);
 				$is_inrange = is_inrange($dhcpstartip, $subnet_start, $subnet_end);
 				if (!$is_inrange) {
-					echo gettext("This IP address must be in the interface's subnet") . "\n";
+					echo gettext("L'indirizzo IP deve trovarsi nella subnet dell'interfaccia") . "\n";
 				}
 			} while (!$is_ipaddr || !$is_inrange);
 
 			do {
-				echo sprintf(gettext("Enter the end address of the %s client address range:"), $label_IPvX) . " ";
+				echo sprintf(gettext("Inserisci l'indirizzo finale %s client address range:"), $label_IPvX) . " ";
 				$dhcpendip = chop(fgets($fp));
 				if ($dhcpendip === "") {
 					fclose($fp);
@@ -404,11 +404,11 @@ function console_configure_dhcpd($version = 4) {
 				$is_ipaddr = ($version === 6) ? is_ipaddrv6($dhcpendip) : is_ipaddrv4($dhcpendip);
 				$is_inrange = is_inrange($dhcpendip, $subnet_start, $subnet_end);
 				if (!$is_inrange) {
-					echo gettext("This IP address must be in the interface's subnet") . "\n";
+					echo gettext("L'indirizzo IP deve trovarsi nella subnet dell'interfaccia") . "\n";
 				}
 				$not_inorder = ($version === 6) ? (inet_pton($dhcpendip) < inet_pton($dhcpstartip)) : ip_less_than($dhcpendip, $dhcpstartip);
 				if ($not_inorder) {
-					echo gettext("The end address of the DHCP range must be >= the start address") . "\n";
+					echo gettext("L'indirizzo IP finale del range DHCP deve essere >= all'indirizzo iniziale") . "\n";
 				}
 			} while (!$is_ipaddr || !$is_inrange);
 		} while ($not_inorder);
@@ -420,7 +420,7 @@ function console_configure_dhcpd($version = 4) {
 	} else {
 		if (isset($config[$dhcpd][$interface]['enable'])) {
 			unset($config[$dhcpd][$interface]['enable']);
-			printf(gettext("Disabling %s DHCPD..."), $label_IPvX);
+			printf(gettext("Disattivo %s DHCPD..."), $label_IPvX);
 			$restart_dhcpd = true;
 		}
 	}
@@ -438,14 +438,14 @@ if (console_configure_dhcpd(6) == 0) {
 
 if ($config['system']['webgui']['protocol'] == "https") {
 
-	if (console_prompt_for_yn (gettext("Do you want to revert to HTTP as the webConfigurator protocol?"))) {
+	if (console_prompt_for_yn (gettext("Volete tornare a HTTP come protocollo di webConfigurator?"))) {
 		$config['system']['webgui']['protocol'] = "http";
 		$restart_webgui = true;
 	}
 }
 
 if (isset($config['system']['webgui']['noantilockout'])) {
-	echo "\n" . sprintf(gettext("Note: the anti-lockout rule on %s has been re-enabled."), $interface) . "\n";
+	echo "\n" . sprintf(gettext("Nota: la regola anti-lockout su %s è stata riattivata."), $interface) . "\n";
 	unset($config['system']['webgui']['noantilockout']);
 }
 
@@ -481,19 +481,19 @@ if (!$config['interfaces']['lan']) {
 
 $upperifname = strtoupper($interface);
 if (!$dry_run) {
-	echo "\nPlease wait while the changes are saved to {$upperifname}...";
-	write_config(sprintf(gettext("%s IP configuration from console menu"), $interface));
+	echo "\n Si prega di attendere mentre le modifiche vengono salvate in {$upperifname}...";
+	write_config(sprintf(gettext("%s configurazion IP dal menu console"), $interface));
 	interface_reconfigure(strtolower($upperifname));
-	echo "\n Reloading filter...";
+	echo "\n Ricaria filtri...";
 	filter_configure_sync();
-	echo "\n Reloading routing configuration...";
+	echo "\n Ricarica configurazione routing...";
 	system_routing_configure();
 	if ($restart_dhcpd) {
 		echo "\n DHCPD...";
 		services_dhcpd_configure();
 	}
 	if ($restart_webgui) {
-		echo "\n Restarting webConfigurator... ";
+		echo "\n Riavvio webConfigurator... ";
 		mwexec("/etc/rc.restart_webgui");
 	}
 }
@@ -504,7 +504,7 @@ if ($intip != '') {
 	} else {
 		$intipstr = $intip;
 	}
-	echo "\n\n" . sprintf(gettext('The IPv4 %1$s address has been set to %2$s'), $upperifname, $intipstr) . "\n";
+	echo "\n\n" . sprintf(gettext('L''indirizzo IPv4 %1$s è stato impostato a %2$s'), $upperifname, $intipstr) . "\n";
 }
 if ($intip6 != '') {
 	if (is_ipaddr($intip6)) {
@@ -512,16 +512,16 @@ if ($intip6 != '') {
 	} else {
 		$intip6str = $intip6;
 	}
-	echo "\n\n" . sprintf(gettext('The IPv6 %1$s address has been set to %2$s'), $upperifname, $intip6str) . "\n";
+	echo "\n\n" . sprintf(gettext('L''indirizzo IPv6 %1$s è stato impostato a %2$s'), $upperifname, $intip6str) . "\n";
 }
 
 if ($intip != '' || $intip6 != '') {
 	if (count($ifdescrs) == "1" or $interface == "lan") {
 		if ($debug) {
-			echo "ifdescrs count is " . count($ifdescrs) . "\n";
-			echo "interface is {$interface} \n";
+			echo "ifdescrs count è " . count($ifdescrs) . "\n";
+			echo "interfaccia è {$interface} \n";
 		}
-		echo gettext('You can now access the webConfigurator by opening the following URL in your web browser:') . "\n";
+		echo gettext('Ora puoi accedere al webConfigurator aprendo il seguente URL nel tuo browser:') . "\n";
 		if (!empty($config['system']['webgui']['port'])) {
 			$webuiport = $config['system']['webgui']['port'];
 			if ($intip != '') {
@@ -549,7 +549,7 @@ if ($intip != '' || $intip6 != '') {
 	}
 }
 
-echo "\n" . gettext('Press <ENTER> to continue.');
+echo "\n" . gettext('Premi <INVIO> per continuare.');
 
 fgets($fp);
 fclose($fp);

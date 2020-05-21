@@ -230,9 +230,9 @@ function captiveportal_configure_zone($cpcfg) {
 	if (isset($cpcfg['enable'])) {
 
 		if (platform_booting()) {
-			echo "Starting captive portal({$cpcfg['zone']})... ";
+			echo "Avvio captive portal({$cpcfg['zone']})... ";
 		} else {
-			captiveportal_syslog("Reconfiguring captive portal({$cpcfg['zone']}).");
+			captiveportal_syslog("Riconfigurazione captive portal({$cpcfg['zone']}).");
 		}
 
 		/* (re)init ipfw rules. Cause all users to disconnect */

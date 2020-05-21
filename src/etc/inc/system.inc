@@ -120,7 +120,7 @@ function system_resolvconf_generate($dynupdate = false) {
 
 	if (isset($config['system']['developerspew'])) {
 		$mt = microtime();
-		echo "system_resolvconf_generate() being called $mt\n";
+		echo "system_resolvconf_generate() sta chiamando $mt\n";
 	}
 
 	$syscfg = $config['system'];
@@ -155,7 +155,7 @@ function system_resolvconf_generate($dynupdate = false) {
 
 	$fd = fopen("{$g['etc_path']}/resolv.conf", "w");
 	if (!$fd) {
-		printf("Error: cannot open resolv.conf in system_resolvconf_generate().\n");
+		printf("Errore: impossibile aprire resolv.conf in system_resolvconf_generate().\n");
 		unlock($dnslock);
 		return 1;
 	}
@@ -166,7 +166,7 @@ function system_resolvconf_generate($dynupdate = false) {
 	// Prevent resolvconf(8) from rewriting our resolv.conf
 	$fd = fopen("{$g['etc_path']}/resolvconf.conf", "w");
 	if (!$fd) {
-		printf("Error: cannot open resolvconf.conf in system_resolvconf_generate().\n");
+		printf("Errore: impossibile aprire resolv.conf in system_resolvconf_generate().\n");
 		return 1;
 	}
 	fwrite($fd, "resolv_conf=\"/dev/null\"\n");
@@ -512,7 +512,7 @@ function system_hosts_generate() {
 	global $config, $g;
 	if (isset($config['system']['developerspew'])) {
 		$mt = microtime();
-		echo "system_hosts_generate() being called $mt\n";
+		echo "system_hosts_generate() sta chiamando $mt\n";
 	}
 
 	// prefer dnsmasq for hosts generation where it's enabled. It relies
@@ -625,7 +625,7 @@ function system_hostname_configure() {
 	global $config, $g;
 	if (isset($config['system']['developerspew'])) {
 		$mt = microtime();
-		echo "system_hostname_configure() being called $mt\n";
+		echo "system_hostname_configure() sta chiamando $mt\n";
 	}
 
 	$syscfg = $config['system'];
@@ -645,7 +645,7 @@ function system_routing_configure($interface = "") {
 
 	if (isset($config['system']['developerspew'])) {
 		$mt = microtime();
-		echo "system_routing_configure() being called $mt\n";
+		echo "system_routing_configure() sta chiamando $mt\n";
 	}
 
 	$gateways_arr = return_gateways_array(false, true);
@@ -802,7 +802,7 @@ function system_routing_enable() {
 	global $config, $g;
 	if (isset($config['system']['developerspew'])) {
 		$mt = microtime();
-		echo "system_routing_enable() being called $mt\n";
+		echo "system_routing_enable() sta chiamando $mt\n";
 	}
 
 	set_sysctl(array(
@@ -900,7 +900,7 @@ function system_syslogd_start($sighup = false) {
 	global $config, $g;
 	if (isset($config['system']['developerspew'])) {
 		$mt = microtime();
-		echo "system_syslogd_start() being called $mt\n";
+		echo "system_syslogd_start() sta chiamando $mt\n";
 	}
 
 	mwexec("/etc/rc.d/hostid start");
@@ -908,7 +908,7 @@ function system_syslogd_start($sighup = false) {
 	$syslogcfg = $config['syslog'];
 
 	if (platform_booting()) {
-		echo gettext("Starting syslog...");
+		echo gettext("Avvio syslog...");
 	}
 
 	// Which logging type are we using this week??
@@ -1181,7 +1181,7 @@ EOD;
 	}
 
 	if (platform_booting()) {
-		echo gettext("done.") . "\n";
+		echo gettext("fatto.") . "\n";
 	}
 
 	return $retval;
@@ -1225,7 +1225,7 @@ function system_webgui_start() {
 	global $config, $g;
 
 	if (platform_booting()) {
-		echo gettext("Starting webConfigurator...");
+		echo gettext("Esecuzione webConfigurator...");
 	}
 
 	chdir($g['www_path']);
@@ -1274,9 +1274,9 @@ function system_webgui_start() {
 
 	if (platform_booting()) {
 		if ($res == 0) {
-			echo gettext("done.") . "\n";
+			echo gettext("fatto.") . "\n";
 		} else {
-			echo gettext("failed!") . "\n";
+			echo gettext("fallito!") . "\n";
 		}
 	}
 
@@ -1290,7 +1290,7 @@ function get_dns_nameservers($add_v6_brackets = false) {
 
 	if (isset($config['system']['developerspew'])) {
 		$mt = microtime();
-		echo "get_dns_nameservers() being called $mt\n";
+		echo "get_dns_nameservers() sta chiamando $mt\n";
 	}
 
 	$syscfg = $config['system'];
@@ -1350,7 +1350,7 @@ function system_generate_nginx_config($filename,
 
 	if (isset($config['system']['developerspew'])) {
 		$mt = microtime();
-		echo "system_generate_nginx_config() being called $mt\n";
+		echo "system_generate_nginx_config() sta chiamando $mt\n";
 	}
 
 	if ($captive_portal !== false) {
@@ -1637,7 +1637,7 @@ function system_timezone_configure() {
 	global $config, $g;
 	if (isset($config['system']['developerspew'])) {
 		$mt = microtime();
-		echo "system_timezone_configure() being called $mt\n";
+		echo "system_timezone_configure() sta chiamando $mt\n";
 	}
 
 	$syscfg = $config['system'];
@@ -1653,7 +1653,7 @@ function system_timezone_configure() {
 	mwexec("/usr/sbin/tzsetup -r");
 
 	if (platform_booting()) {
-		echo gettext("done.") . "\n";
+		echo gettext("fatto.") . "\n";
 	}
 }
 
@@ -2136,7 +2136,7 @@ function system_do_shell_commands($early = 0) {
 	global $config, $g;
 	if (isset($config['system']['developerspew'])) {
 		$mt = microtime();
-		echo "system_do_shell_commands() being called $mt\n";
+		echo "system_do_shell_commands() sta chiamando $mt\n";
 	}
 
 	if ($early) {
@@ -2164,7 +2164,7 @@ function system_dmesg_save() {
 	global $g;
 	if (isset($config['system']['developerspew'])) {
 		$mt = microtime();
-		echo "system_dmesg_save() being called $mt\n";
+		echo "system_dmesg_save() sta chiamando $mt\n";
 	}
 
 	$dmesg = "";
@@ -2203,7 +2203,7 @@ function system_set_harddisk_standby() {
 
 	if (isset($config['system']['developerspew'])) {
 		$mt = microtime();
-		echo "system_set_harddisk_standby() being called $mt\n";
+		echo "system_set_harddisk_standby() sta chiamando $mt\n";
 	}
 
 	if (isset($config['system']['harddiskstandby'])) {
@@ -2226,13 +2226,13 @@ function system_set_harddisk_standby() {
 					mwexec("/sbin/camcontrol standby {$harddisk} -t {$standby}");
 				}
 				if (platform_booting()) {
-					echo gettext("done.") . "\n";
+					echo gettext("fatto.") . "\n";
 				}
 			} else if (platform_booting()) {
-				echo gettext("failed!") . "\n";
+				echo gettext("fallito!") . "\n";
 			}
 		} else if (platform_booting()) {
-			echo gettext("failed!") . "\n";
+			echo gettext("fallito!") . "\n";
 		}
 	}
 }
@@ -2241,7 +2241,7 @@ function system_setup_sysctl() {
 	global $config;
 	if (isset($config['system']['developerspew'])) {
 		$mt = microtime();
-		echo "system_setup_sysctl() being called $mt\n";
+		echo "system_setup_sysctl() sta chiamando $mt\n";
 	}
 
 	activate_sysctls();
@@ -2255,7 +2255,7 @@ function system_disable_arp_wrong_if() {
 	global $config;
 	if (isset($config['system']['developerspew'])) {
 		$mt = microtime();
-		echo "system_disable_arp_wrong_if() being called $mt\n";
+		echo "system_disable_arp_wrong_if() sta chiamando $mt\n";
 	}
 	set_sysctl(array(
 		"net.link.ether.inet.log_arp_wrong_iface" => "0",
@@ -2267,7 +2267,7 @@ function system_enable_arp_wrong_if() {
 	global $config;
 	if (isset($config['system']['developerspew'])) {
 		$mt = microtime();
-		echo "system_enable_arp_wrong_if() being called $mt\n";
+		echo "system_enable_arp_wrong_if() sta chiamando $mt\n";
 	}
 	set_sysctl(array(
 		"net.link.ether.inet.log_arp_wrong_iface" => "1",

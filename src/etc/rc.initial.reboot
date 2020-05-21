@@ -32,38 +32,38 @@ require_once("captiveportal.inc");
 
 $fp = fopen('php://stdin', 'r');
 
-echo "\n" . sprintf(gettext("%s will reboot. This may take a few minutes, depending on your hardware."), $g['product_name']) . "\n";
-echo gettext("Do you want to proceed?") . "\n\n";
-echo "    " . gettext("Y/y: Reboot normally") . "\n";
+echo "\n" . sprintf(gettext("%s si sta per riavviare. Questo può richiedere alcuni minuti, a seconda del vostro hardware."), $g['product_name']) . "\n";
+echo gettext("Vuoi procedere?") . "\n\n";
+echo "    " . gettext("Y/y: Riavvia normalmente") . "\n";
 if (!is_module_loaded("zfs.ko")) {
-	echo "    " . gettext("R/r: Reroot (Stop processes, remount disks, re-run startup sequence)") . "\n";
+	echo "    " . gettext("R/r: Reroot (Stop processi, remount dischi, riavvia sequenza startup)") . "\n";
 }
-echo "    " . gettext("S: Reboot into Single User Mode (requires console access!)") . "\n";
-echo "    " . gettext("F: Reboot and run a filesystem check") . "\n\n";
+echo "    " . gettext("S: Riavvia in Single User Mode (richiede accesso alla console!)") . "\n";
+echo "    " . gettext("F: Riavvia e controlla filesystem") . "\n\n";
 
-echo gettext("Enter an option:") . " ";
+echo gettext("Inserisci un opzione:") . " ";
 
 switch (chop(fgets($fp))) {
 	case "S":
 		mwexec('/sbin/nextboot -o "-s" -k kernel');
-		echo "\n" . sprintf(gettext("%s is rebooting into single user mode now."), $g['product_name']) . "\n";
+		echo "\n" . sprintf(gettext("%s si sta riavviando in single user mode."), $g['product_name']) . "\n";
 		system_reboot_sync();
 		break;
 	case "F":
 		mwexec('/sbin/nextboot -e "pfsense.fsck.force=5"');
-		echo "\n" . sprintf(gettext("%s is rebooting for a filesystem check now."), $g['product_name']) . "\n";
+		echo "\n" . sprintf(gettext("%s si sta riavviando per un controllo del filesystem."), $g['product_name']) . "\n";
 		system_reboot_sync();
 		break;
 	case "R":
 	case "r":
 		if (!is_module_loaded("zfs.ko")) {
-			echo "\n" . sprintf(gettext("%s is rerooting now."), $g['product_name']) . "\n";
+			echo "\n" . sprintf(gettext("%s si sta rerottando."), $g['product_name']) . "\n";
 			system_reboot_sync(true);
 		}
 		break;
 	case "Y":
 	case "y":
-		echo "\n" . sprintf(gettext("%s is rebooting now."), $g['product_name']) . "\n";
+		echo "\n" . sprintf(gettext("%s si sta riavviando."), $g['product_name']) . "\n";
 		system_reboot_sync();
 		break;
 	default:

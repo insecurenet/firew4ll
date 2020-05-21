@@ -2124,7 +2124,7 @@ function interface_ppps_configure($interface) {
 	 * comment it for now to be removed later on.
 	if (platform_booting()) {
 		$descr = isset($ifcfg['descr']) ? $ifcfg['descr'] : strtoupper($interface);
-		echo "starting {$pppif} link...";
+		echo "avvio {$pppif} link...";
 		if (isvalidpid("{$g['varrun_path']}/{$ppp['type']}_{$interface}.pid"))
 			return 0;
 	}
@@ -3679,7 +3679,7 @@ function run_dhcp6client_process($interface, $interface_name, $wancfg) {
 		    "-p {$g['varrun_path']}/dhcp6c_{$interface}.pid " .
 		    $interface);
 		log_error(sprintf(gettext(
-		    "Starting dhcp6 client for interface wan %s in DHCP6 without RA mode"),
+		    "Avvio client dhcp6 per interfaccia wan %s in DHCP6 senza RA mode"),
 		    $interface));
 	}
 }
@@ -3870,7 +3870,7 @@ function interface_configure($interface = "wan", $reloadall = false, $linkupeven
 
 	/* Disable Accepting router advertisements unless specifically requested */
 	if ($g['debug']) {
-		log_error(sprintf(gettext("Deny router advertisements for interface %s"), $interface));
+		log_error(sprintf(gettext("Vieta router advertisements per interfaccia %s"), $interface));
 	}
 	if (isset($wancfg['dhcp6usev4iface']) || $wancfg['ipaddr']==='ppp')
 	{
@@ -3893,16 +3893,16 @@ function interface_configure($interface = "wan", $reloadall = false, $linkupeven
 		 * this is not a valid mac address.  generate a
 		 * temporary mac address so the machine can get online.
 		 */
-		echo gettext("Generating new MAC address.");
+		echo gettext("Generando nuovo MAC address.");
 		$random_mac = generate_random_mac_address();
 		interface_set_macaddr($realhwif, $random_mac);
 		$config['interfaces'][$mac_if]['spoofmac'] = $random_mac;
-		write_config(sprintf(gettext('The invalid MAC address ' .
-		    '(ff:ff:ff:ff:ff:ff) on interface %1$s has been ' .
-		    'automatically replaced with %2$s'), $mac_if, $random_mac));
-		file_notice("MAC Address altered", sprintf(gettext('The ' .
-		    'invalid MAC address (ff:ff:ff:ff:ff:ff) on interface ' .
-		    '%1$s has been automatically replaced with %2$s'), $mac_if,
+		write_config(sprintf(gettext('Il MAC address invalido' .
+		    '(ff:ff:ff:ff:ff:ff) su interfaccia %1$s è stata ' .
+		    'automaticamente sostituito con %2$s'), $mac_if, $random_mac));
+		file_notice("MAC Address altered", sprintf(gettext('Il ' .
+		    'MAC address non valido (ff:ff:ff:ff:ff:ff) su interfaccia ' .
+		    '%1$s è stato sostituito automanticamente con %2$s'), $mac_if,
 		    $random_mac), "Interfaces");
 	}
 
@@ -3968,7 +3968,7 @@ function interface_configure($interface = "wan", $reloadall = false, $linkupeven
 		if (!empty($assignedparent) && !empty($config['interfaces'][$assignedparent]['mtu'])) {
 			$parentmtu = $config['interfaces'][$assignedparent]['mtu'];
 			if ($wancfg['mtu'] > $parentmtu) {
-				log_error(sprintf(gettext('There is a conflict on MTU between parent %1$s and VLAN(%2$s)'), $mtuhwif, $mtuif));
+				log_error(sprintf(gettext('C'è un conflitto su MTU tra parent %1$s e VLAN(%2$s)'), $mtuhwif, $mtuif));
 			}
 		}
 
@@ -4169,13 +4169,13 @@ function interface_track6_configure($interface = "lan", $wancfg, $linkupevent = 
 	switch ($trackcfg['ipaddrv6']) {
 		case "6to4":
 			if ($g['debug']) {
-				log_error(sprintf(gettext('Interface %1$s configured via %2$s type %3$s'), $interface, $wancfg['track6-interface'], $type));
+				log_error(sprintf(gettext('Interfaccia %1$s configurata via %2$s type %3$s'), $interface, $wancfg['track6-interface'], $type));
 			}
 			interface_track6_6to4_configure($interface, $wancfg);
 			break;
 		case "6rd":
 			if ($g['debug']) {
-				log_error(sprintf(gettext('Interface %1$s configured via %2$s type %3$s'), $interface, $wancfg['track6-interface'], $type));
+				log_error(sprintf(gettext('Interfaccia %1$s configurata via %2$s type %3$s'), $interface, $wancfg['track6-interface'], $type));
 			}
 			interface_track6_6rd_configure($interface, $wancfg);
 			break;

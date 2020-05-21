@@ -31,11 +31,11 @@ require_once("functions.inc");
 
 $fp = fopen('php://stdin', 'r');
 
-echo "\n" . sprintf(gettext("%s will shutdown and halt system. This may take a few minutes, depending on your hardware."), $g['product_name']) . "\n";
-echo gettext("Do you want to proceed [y|n]?") . " ";
+echo "\n" . sprintf(gettext("%s si sta per spegnere. Questo può richiedere alcuni minuti, a seconda del vostro hardware."), $g['product_name']) . "\n";
+echo gettext("Vuoi procedere [s|n]?") . " ";
 
-if (strcasecmp(chop(fgets($fp)), "y") == 0) {
-	echo "\n" . sprintf(gettext("%s will shutdown and halt system now."), $g['product_name']) . "\n";
+if (strcasecmp(chop(fgets($fp)), "s") == 0) {
+	echo "\n" . sprintf(gettext("%s si sta per spegnere"), $g['product_name']) . "\n";
 	system_halt();
 }
 
