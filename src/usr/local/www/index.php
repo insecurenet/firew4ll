@@ -460,28 +460,28 @@ foreach ($widgets as $widgetkey => $widgetconfig) {
 
 </div>
 
-<?php
-/*
- * Import the modal form used to display the copyright/usage information
- * when trigger file exists. Trigger file is created during upgrade process
- * when /etc/version changes
- */
-require_once("copyget.inc");
+// <?php
+// /*
+ // * Import the modal form used to display the copyright/usage information
+ // * when trigger file exists. Trigger file is created during upgrade process
+ // * when /etc/version changes
+ // */
+// require_once("copyget.inc");
 
-if (file_exists("{$g['cf_conf_path']}/copynotice_display")) {
-	require_once("copynotice.inc");
-	@unlink("{$g['cf_conf_path']}/copynotice_display");
-}
+// /* if (file_exists("{$g['cf_conf_path']}/copynotice_display")) {
+	// require_once("copynotice.inc");
+	// @unlink("{$g['cf_conf_path']}/copynotice_display");
+// } */
 
-/*
- * Import the modal form used to display any HTML text a package may want to display
- * on installation or removal
- */
-$ui_notice = "/tmp/package_ui_notice";
-if (file_exists($ui_notice)) {
-	require_once("{$g['www_path']}/upgrnotice.inc");
-}
-?>
+// /*
+ // * Import the modal form used to display any HTML text a package may want to display
+ // * on installation or removal
+ // */
+// $ui_notice = "/tmp/package_ui_notice";
+// if (file_exists($ui_notice)) {
+	// require_once("{$g['www_path']}/upgrnotice.inc");
+// }
+// ?>
 
 <script type="text/javascript">
 //<![CDATA[
