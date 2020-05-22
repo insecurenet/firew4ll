@@ -40,13 +40,13 @@ done
 # Display a menu with all of the disk choices located above
 if [ -n "${target_list}" ]; then
 	exec 3>&1
-	recover_disk_choice=`echo ${target_list} | xargs dialog --backtitle "pfSense Installer" \
-		--title "Recover config.xml" \
-		--menu "Select the partition containing config.xml" \
+	recover_disk_choice=`echo ${target_list} | xargs dialog --backtitle "Installazione Firew4ll" \
+		--title "Ripristino config.xml" \
+		--menu "Seleziona la partizione che contiene config.xml" \
 		0 0 0 2>&1 1>&3` || exit 1
 	exec 3>&-
 else
-	echo "No suitable disk partitions found."
+	echo "Nessuna partizione del disco trovata."
 fi
 
 recover_disk=${recover_disk_choice}
@@ -58,7 +58,7 @@ if [ -n "${recover_disk}" ] ; then
 	# Remove "freebsd-", leaving us with either "ufs" or "zfs".
 	fs_type=${fs_type#freebsd-}
 
-	echo "Attempting to recover config.xml from ${recover_disk}."
+	echo "Tentativo di recuperare config.xml da ${recover_disk}."
 	if [ "${fs_type}" == "ufs" ]; then
 		# UFS Recovery, attempt to mount but also attempt cleanup if it fails.
 
@@ -69,14 +69,14 @@ if [ -n "${recover_disk}" ] ; then
 
 		# Try to run fsck up to 10 times and remount, in case the parition is dirty and needs cleanup
 		while [ ${mount_rc} -ne 0 -a ${attempts} -lt 10 ]; do
-			echo "Unable to mount ${recover_disk}, running a disk check and retrying."
+			echo "Impossibile montare ${recover_disk}, eseguire un controllo del disco e riprovare."
 			/sbin/fsck -y -t ${fs_type} ${recover_disk}
 			${mount_command} 2>/dev/null
 			mount_rc=$?
 			attempts=$((attempts+1))
 		done
 		if [ ${mount_rc} -ne 0 ]; then
-			echo "Unable to mount ${recover_disk} for config.xml recovery."
+			echo "Impossibile montare ${recover_disk} per ripristino config.xml."
 			exit 1
 		fi
 	else
@@ -94,9 +94,9 @@ if [ -n "${recover_disk}" ] ; then
 	# In either FS type case, the previous root is now mounted under ${recovery_mount}, so check for a config
 	if [ -r ${recovery_mount}/cf/conf/config.xml -a -s ${recovery_mount}/cf/conf/config.xml ]; then
 		/bin/cp ${recovery_mount}/cf/conf/config.xml ${recovery_dir}/config.xml
-		echo "Recovered config.xml from ${recover_disk}, stored in ${recovery_dir}."
+		echo "Recuperato config.xml da ${recover_disk}, contenuto in ${recovery_dir}."
 	else
-		echo "${recover_disk} does not contain a readable config.xml for recovery."
+		echo "${recover_disk} non contiene un file config.xml leggibile per il ripristino."
 		exit 1
 	fi
 
