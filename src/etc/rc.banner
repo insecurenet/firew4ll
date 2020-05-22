@@ -33,10 +33,10 @@ $machine = trim(`uname -m`);
 $platform = system_identify_specific_platform();
 $serial = system_get_serial();
 if (isset($platform['descr'])) {
-	printf("%s - ", $platform['descr']);
+	printf("%s ", $platform['descr']);
 }
 if (!empty($serial)) {
-	printf("%s: %s", gettext("Serial"), $serial);
+	printf("%s: %s - ", gettext("Serial"), $serial);
 }
 // printf("%s: %s\n\n", gettext("Netgate Device ID"), system_get_uniqueid());
 

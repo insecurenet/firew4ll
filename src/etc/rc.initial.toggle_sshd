@@ -35,7 +35,7 @@ if (isset($config['system']['ssh']['enable'])) {
 		unset($config['system']['ssh']['enable']);
 		echo "\nScrivendo configurazione...";
 		write_config(gettext("Disabilita SSHD dal menu console."));
-		echo " done.\n";
+		echo " fatto.\n";
 		echo "\nDisattivaando SSHD...";
 		send_event("service reload sshd");
 		echo "\nRicarico regole firewall.";
@@ -52,7 +52,7 @@ if (isset($config['system']['ssh']['enable'])) {
 		$config['system']['ssh']['enable'] = "enabled";
 		echo "\nScrivendo configurazione...";
 		write_config(gettext("Attiva SSHD dal menu console.."));
-		echo " done.\n";
+		echo " fatto.\n";
 		echo "\nAttivando SSHD...";
 		send_event("service reload sshd");
 		echo "\nRicarico regole firewall.";

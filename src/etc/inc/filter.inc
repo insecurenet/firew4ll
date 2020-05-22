@@ -286,7 +286,7 @@ function filter_configure_sync($delete_states_if_needed = true) {
 	} else {
 		mwexec("/sbin/pfctl -d", true);
 		unlink_if_exists("{$g['tmp_path']}/filter_loading");
-		update_filter_reload_status(gettext("Filter is disabled.  Not loading rules."));
+		update_filter_reload_status(gettext("Filtro disabilitato.  Regole non caricate."));
 		if (platform_booting() == true) {
 			echo gettext("fatto.") . "\n";
 		}
@@ -424,7 +424,7 @@ function filter_configure_sync($delete_states_if_needed = true) {
 		$_grbg = exec("/sbin/pfctl -o basic -f {$g['tmp_path']}/rules.debug 2>&1", $rules_error, $rules_loading);
 		if (isset($config['system']['developerspew'])) {
 			$mt = microtime();
-			echo "pfctl done at $mt\n";
+			echo "pfctl fatto in $mt\n";
 		}
 		if ($rules_loading == 0) {
 			// continue when successful
@@ -557,9 +557,9 @@ function filter_configure_sync($delete_states_if_needed = true) {
 		update_filter_reload_status(gettext("Plugins completed."));
 	}
 
-	update_filter_reload_status(gettext("Done"));
+	update_filter_reload_status(gettext("Fatto"));
 	if (platform_booting() == true) {
-		echo gettext("done.") . "\n";
+		echo gettext("fatto.") . "\n";
 	}
 
 	unlock($filterlck);

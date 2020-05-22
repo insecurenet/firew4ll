@@ -609,7 +609,7 @@ function resync_all_package_configs($show_message = false) {
 	}
 
 	if ($show_message == true) {
-		echo " done.\n";
+		echo " fatto.\n";
 	}
 }
 
