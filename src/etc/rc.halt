@@ -3,7 +3,7 @@
 # /etc/rc.halt
 
 if ! /usr/bin/lockf -s -t 30 /tmp/config.lock /usr/bin/true; then
-	echo "Cannot halt at this moment, a config write operation is in progress and 30 seconds have passed."
+	echo "Impossibile spegnere in questo momento, è in corso un'operazione di scrittura della configurazione fai passare almeno 30 secondi."
 	exit -1
 fi
 

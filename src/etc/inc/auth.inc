@@ -1981,7 +1981,7 @@ function session_auth() {
 			$_SESSION['protocol'] = $config['system']['webgui']['protocol'];
 			phpsession_end(true);
 			if (!isset($config['system']['webgui']['quietlogin'])) {
-				log_auth(sprintf(gettext("Successful login for user '%1\$s' from: %2\$s"), $_POST['usernamefld'], get_user_remote_address() . get_user_remote_authsource()));
+				log_auth(sprintf(gettext("Accesso eseguito per l'utente: '%1\$s' da: %2\$s"), $_POST['usernamefld'], get_user_remote_address() . get_user_remote_authsource()));
 			}
 			if (isset($_POST['postafterlogin'])) {
 				return true;
@@ -1994,8 +1994,8 @@ function session_auth() {
 			exit;
 		} else {
 			/* give the user an error message */
-			$_SESSION['Login_Error'] = gettext("Username or Password incorrect");
-			log_auth(sprintf(gettext("webConfigurator authentication error for user '%1\$s' from: %2\$s"), $_POST['usernamefld'], get_user_remote_address() . get_user_remote_authsource()));
+			$_SESSION['Login_Error'] = gettext("Username o Password sbagliata");
+			log_auth(sprintf(gettext("webConfigurator, accesso non eseguit per l'utente '%1\$s' da: %2\$s"), $_POST['usernamefld'], get_user_remote_address() . get_user_remote_authsource()));
 			if (isAjax()) {
 				echo "showajaxmessage('{$_SESSION['Login_Error']}');";
 				return;

@@ -36,7 +36,7 @@ if (isset($platform['descr'])) {
 	printf("%s - ", $platform['descr']);
 }
 if (!empty($serial)) {
-	printf("%s: %s - ", gettext("Serial"), $serial);
+	printf("%s: %s", gettext("Serial"), $serial);
 }
 // printf("%s: %s\n\n", gettext("Netgate Device ID"), system_get_uniqueid());
 

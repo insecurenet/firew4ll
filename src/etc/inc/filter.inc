@@ -245,7 +245,7 @@ function filter_configure_sync($delete_states_if_needed = true) {
 	/* Get interface list to work with. */
 	filter_generate_optcfg_array();
 	if (platform_booting() == true) {
-		echo gettext("Configuring firewall");
+		echo gettext("Configurazione firewall");
 	}
 
 	/* generate aliases */
@@ -288,7 +288,7 @@ function filter_configure_sync($delete_states_if_needed = true) {
 		unlink_if_exists("{$g['tmp_path']}/filter_loading");
 		update_filter_reload_status(gettext("Filter is disabled.  Not loading rules."));
 		if (platform_booting() == true) {
-			echo gettext("done.") . "\n";
+			echo gettext("fatto.") . "\n";
 		}
 		unlock($filterlck);
 		return;
