@@ -49,10 +49,9 @@ function set_networking_interfaces_ports() {
 
 	if ($physmem < $g['minimum_ram_warning']) {
 		echo "\n\n\n";
-		echo gettext("DANGER!  WARNING!  ACHTUNG!") . "\n\n";
-		printf(gettext('%1$s requires *AT LEAST* %2$s RAM to function correctly.%3$s'), $g['product_name'], $g['minimum_ram_warning_text'], "\n");
-		printf(gettext('Only (%1$s) MB RAM has been detected, with (%2$s) available to %3$s.%4$s'), $realmem, $physmem, $g['product_name'], "\n");
-		echo "\n" . gettext("Press ENTER to continue.") . " ";
+		echo gettext("ATTENZIONE! DANGER!  WARNING!  ACHTUNG!") . "\n\n";
+		printf(gettext('%1$s richiesti *ALMENO* %2$s di RAM per funzionare correttamente.%3$s'), $g['product_name'], $g['minimum_ram_warning_text'], "\n");	printf(gettext('Sono stati rilevati solo (%1$s) MB di RAM, con (%2$s) disponibili su %3$s.%4$s'), $realmem, $physmem, $g['product_name'], "\n");
+		echo "\n" . gettext("Premi INVIO per continuare.") . " ";
 		fgets($fp);
 		echo "\n";
 	}
@@ -70,7 +69,7 @@ Interfacce valide sono:
 EOD;
 
 	if (!is_array($iflist)) {
-		echo gettext("No interfaces found!") . "\n";
+		echo gettext("Nessuna interfaccia trovata!") . "\n";
 		return (-1);
 	} else {
 		// ifsmallist is kept with spaces at the beginning and end to assist with str_replace() operations
@@ -88,24 +87,24 @@ EOD;
 		}
 	}
 
-	echo "\n" . gettext("Do VLANs need to be set up first?");
+	echo "\n" . gettext("Vuoi configurare prima le VLAN?");
 	echo "\n" .
 		gettext(
-			"If VLANs will not be used, or only for optional interfaces, it is typical to\n" .
-			"say no here and use the webConfigurator to configure VLANs later, if required.") .
+			"Se le VLAN non verranno utilizzate, o solo per le interfacce opzionali, è tipico\n" .
+			"dire no qui e utilizzare il webConfigurator per configurare le VLAN in un secondo momento, se necessario.") .
 		"\n";
-	echo "\n" . gettext("Should VLANs be set up now [y|n]?") . " ";
+	echo "\n" . gettext("Le VLAN devono essere configurate ora [s|n]?") . " ";
 
 	$key = chop(fgets($fp));
 
 	//Manually assign interfaces
-	if (in_array($key, array('y', 'Y'))) {
+	if (in_array($key, array('s', 'S'))) {
 		vlan_setup();
 	}
 
 	if (is_array($config['vlans']['vlan']) && count($config['vlans']['vlan'])) {
 
-		echo "\n\n" . gettext("VLAN interfaces:") . "\n\n";
+		echo "\n\n" . gettext("Interfacce VLAN:") . "\n\n";
 		foreach ($config['vlans']['vlan'] as $vlan) {
 
 			echo sprintf("% -16s%s\n", vlan_interface($vlan),
@@ -125,7 +124,7 @@ interfaces before pressing 'a' to begin the process.
 EOD;
 
 	do {
-		echo "\n" . gettext("Enter the WAN interface name or 'a' for auto-detection") . " ";
+		echo "\n" . gettext("Inserisci il nome dell'interfaccia WAN o premi 'a' per l'auto-rilevamento") . " ";
 		printf(gettext('%1$s(%2$s or a): '), "\n", trim($ifsmallist));
 		$wanif = chop(fgets($fp));
 		if ($wanif === "") {
@@ -134,7 +133,7 @@ EOD;
 		if ($wanif === "a") {
 			$wanif = autodetect_interface("WAN", $fp);
 		} else if (!array_key_exists($wanif, $iflist)) {
-			printf(gettext('%1$sInvalid interface name \'%2$s\'%3$s'), "\n", $wanif, "\n");
+			printf(gettext('%1$sNome interfaccia non valido \'%2$s\'%3$s'), "\n", $wanif, "\n");
 			unset($wanif);
 			continue;
 		}
@@ -142,9 +141,9 @@ EOD;
 	} while (!$wanif);
 
 	do {
-		printf(gettext('%1$sEnter the LAN interface name or \'a\' for auto-detection %2$s' .
-			'NOTE: this enables full Firewalling/NAT mode.%3$s' .
-			'(%4$s a or nothing if finished):%5$s'), "\n", "\n", "\n", trim($ifsmallist), " ");
+		printf(gettext('%1$sInserisci il nome dell\'interfaccia LAN o premi \'a\' per l\'auto-rilevamento %2$s' .
+			'NOTA: questo abilita la modalità Firewalling/NAT.%3$s' .
+			'(%4$s a o niente se finito):%5$s'), "\n", "\n", "\n", trim($ifsmallist), " ");
 
 		$lanif = chop(fgets($fp));
 
@@ -160,7 +159,7 @@ EOD;
 		if ($lanif === "a") {
 			$lanif = autodetect_interface("LAN", $fp);
 		} else if (!array_key_exists($lanif, $iflist)) {
-			printf(gettext('%1$sInvalid interface name \'%2$s\'%3$s'), "\n", $lanif, "\n");
+			printf(gettext('%1$sNome interfaccia non valido \'%2$s\'%3$s'), "\n", $lanif, "\n");
 			unset($lanif);
 			continue;
 		}
@@ -179,24 +178,24 @@ EOD;
 			$io = $i + 1;
 
 			if ($config['interfaces']['opt' . $io]['descr']) {
-				printf(gettext('%1$sOptional interface %2$s description found: %3$s'), "\n", $io, $config['interfaces']['opt' . $io]['descr']);
+				printf(gettext('%1$sDescrizione interfaccia OPT %2$s trovata: %3$s'), "\n", $io, $config['interfaces']['opt' . $io]['descr']);
 			}
 
-			printf(gettext('%1$sEnter the Optional %2$s interface name or \'a\' for auto-detection%3$s' .
-				'(%4$s a or nothing if finished):%5$s'), "\n", $io, "\n", trim($ifsmallist), " ");
+			printf(gettext('%1$sInserisci il nome dell\'interfaccia OPT %2$s o premi \'a\' per l\'autorilevamento %3$s' .
+				'(%4$s a o niente se hai finito):%5$s'), "\n", $io, "\n", trim($ifsmallist), " ");
 
 			$optif[$i] = chop(fgets($fp));
 
 			if ($optif[$i]) {
 				if ($optif[$i] === "a") {
-					$ad = autodetect_interface(gettext("Optional") . " " . $io, $fp);
+					$ad = autodetect_interface(gettext("OPT") . " " . $io, $fp);
 					if ($ad) {
 						$optif[$i] = $ad;
 					} else {
 						unset($optif[$i]);
 					}
 				} else if (!array_key_exists($optif[$i], $iflist)) {
-					printf(gettext('%1$sInvalid interface name \'%2$s\'%3$s'), "\n", $optif[$i], "\n");
+					printf(gettext('%1$sNome interfaccia non valido \'%2$s\'%3$s'), "\n", $optif[$i], "\n");
 					unset($optif[$i]);
 					continue;
 				}
@@ -216,7 +215,7 @@ EOD;
 			if ($ifarr[$i] == $ifarr[$j]) {
 				echo <<<EOD
 
-Error: The same interface name cannot be assigned twice!
+Errore: Lo stesso nome dell'interfaccia non può essere assegnato due volte!
 
 EOD;
 				fclose($fp);
@@ -225,7 +224,7 @@ EOD;
 		}
 	}
 
-	echo "\n" . gettext("The interfaces will be assigned as follows:") . "\n\n";
+	echo "\n" . gettext("Le interfacce saranno assegnate come segue:") . "\n\n";
 
 	echo "WAN  -> " . $wanif . "\n";
 	if ($lanif != "") {
@@ -235,10 +234,10 @@ EOD;
 		echo "OPT" . ($i+1) . " -> " . $optif[$i] . "\n";
 	}
 
-	echo "\n" . gettext("Do you want to proceed [y|n]?") . " ";
+	echo "\n" . gettext("Vuoi procedere [s|n]?") . " ";
 	$key = chop(fgets($fp));
 
-	if (in_array($key, array('y', 'Y'))) {
+	if (in_array($key, array('s', 'S'))) {
 		if ($lanif) {
 			if (is_array($config['interfaces']['lan'])) {
 				$upints = pfSense_interface_listget(IFF_UP);
@@ -252,10 +251,10 @@ EOD;
 			$config['interfaces']['lan']['enable'] = true;
 		} elseif (!platform_booting()) {
 
-			echo "\n" . gettext("You have chosen to remove the LAN interface.") . "\n";
-			echo "\n" . gettext("Would you like to remove the LAN IP address and \nunload the interface now [y|n]?") . " ";
+			echo "\n" . gettext("Hai scelto di rimuovere l'interfaccia LAN.") . "\n";
+			echo "\n" . gettext("Volete rimuovere l'indirizzo IP della LAN e\nrimuovere l'interfaccia ora [s|n]?") . " ";
 
-			if (strcasecmp(chop(fgets($fp)), "y") == 0) {
+			if (strcasecmp(chop(fgets($fp)), "s") == 0) {
 				if (isset($config['interfaces']['lan']) && $config['interfaces']['lan']['if']) {
 					mwexec("/sbin/ifconfig " . $config['interfaces']['lan']['if'] . " delete");
 				}
@@ -377,13 +376,13 @@ EOD;
 			unset($config['interfaces']['opt' . ($i+1)]);
 		}
 
-		printf(gettext("%sWriting configuration..."), "\n");
-		write_config(gettext("Console assignment of interfaces"));
-		printf(gettext("done.%s"), "\n");
+		printf(gettext("%sScrivendo configurazione..."), "\n");
+		write_config(gettext("Assegnazione delle interfacce da console"));
+		printf(gettext("fatto.%s"), "\n");
 
 		fclose($fp);
 
-		echo gettext("One moment while the settings are reloading...");
+		echo gettext("Un momento mentre le impostazioni vengono ricaricate...");
 		touch("{$g['tmp_path']}/assign_complete");
 
 		if (file_exists("{$g['conf_path']}/trigger_initial_wizard")) {
@@ -391,7 +390,7 @@ EOD;
 			touch("{$g['conf_path']}/assign_complete");
 		}
 
-		echo gettext(" done!") . "\n";
+		echo gettext(" fatto!") . "\n";
 
 		return (0);
 	}
@@ -401,8 +400,8 @@ function autodetect_interface($ifname, $fp) {
 	$iflist_prev = get_interface_list("media");
 	echo <<<EOD
 
-Connect the {$ifname} interface now and make sure that the link is up.
-Then press ENTER to continue.
+Collega interfaccia {$ifname} ora e assicurati che il collegamento sia attivo.
+Premi INVIO per continuare.
 
 EOD;
 	fgets($fp);
@@ -410,12 +409,12 @@ EOD;
 
 	foreach ($iflist_prev as $ifn => $ifa) {
 		if (!$ifa['up'] && $iflist[$ifn]['up']) {
-			printf(gettext('Detected link-up on interface %1$s.%2$s'), $ifn, "\n");
+			printf(gettext('Collegamento rilevato sull\'interfaccia %1$s.%2$s'), $ifn, "\n");
 			return $ifn;
 		}
 	}
 
-	printf(gettext("No link-up detected.%s"), "\n");
+	printf(gettext("Nessun collegamento rilevato.%s"), "\n");
 
 	return null;
 }
@@ -432,10 +431,10 @@ function vlan_setup() {
 	$iflist = get_interface_list();
 
 	if (is_array($config['vlans']['vlan']) && count($config['vlans']['vlan'])) {
-		echo "\n" . gettext("WARNING: all existing VLANs will be cleared if you proceed!") . "\n";
-		echo "\n" . gettext("Do you want to proceed [y|n]?") . " ";
+		echo "\n" . gettext("ATTENZIONE: se si procede tutte le VLAN esistenti saranno rimosse!") . "\n";
+		echo "\n" . gettext("Vuoi continuare [s|n]?") . " ";
 
-		if (strcasecmp(chop(fgets($fp)), "y") != 0) {
+		if (strcasecmp(chop(fgets($fp)), "s") != 0) {
 			return;
 		}
 	}
@@ -448,9 +447,9 @@ function vlan_setup() {
 	while (1) {
 		$vlan = array();
 
-		echo "\n\n" . gettext("VLAN Capable interfaces:") . "\n\n";
+		echo "\n\n" . gettext("Interfacce VLAN idonee: ") . "\n\n";
 		if (!is_array($iflist)) {
-			echo gettext("No interfaces found!") . "\n";
+			echo gettext("Nessuna interfaccia trovata!") . "\n";
 		} else {
 			$vlan_capable = 0;
 			foreach ($iflist as $iface => $ifa) {
@@ -463,35 +462,35 @@ function vlan_setup() {
 		}
 
 		if ($vlan_capable == 0) {
-			echo gettext("No VLAN capable interfaces detected.") . "\n";
+			echo gettext("Nessuna interfaccia VLAN idonea trovata.") . "\n";
 			return;
 		}
 
-		echo "\n" . gettext("Enter the parent interface name for the new VLAN (or nothing if finished):") . " ";
+		echo "\n" . gettext("Inserire il nome dell'interfaccia principale per la nuova VLAN (o niente se hai finito):") . " ";
 		$vlan['if'] = chop(fgets($fp));
 
 		if ($vlan['if']) {
 			if (!array_key_exists($vlan['if'], $iflist) ||
 			    !is_jumbo_capable($vlan['if'])) {
-				printf(gettext('%1$sInvalid interface name \'%2$s\'%3$s'), "\n", $vlan['if'], "\n");
+				printf(gettext('%1$sNome dell\'interfaccia non valido \'%2$s\'%3$s'), "\n", $vlan['if'], "\n");
 				continue;
 			}
 		} else {
 			break;
 		}
 
-		echo gettext("Enter the VLAN tag (1-4094):") . " ";
+		echo gettext("Inserisci il VLAN tag (1-4094):") . " ";
 		$vlan['tag'] = chop(fgets($fp));
 		$vlan['vlanif'] = vlan_interface($vlan);
 		if (!is_numericint($vlan['tag']) || ($vlan['tag'] < 1) || ($vlan['tag'] > 4094)) {
-			printf(gettext('%1$sInvalid VLAN tag \'%2$s\'%3$s'), "\n", $vlan['tag'], "\n");
+			printf(gettext('%1$sTAG VLAN non valido \'%2$s\'%3$s'), "\n", $vlan['tag'], "\n");
 			continue;
 		}
 
 		if (is_array($config['vlans']['vlan'])) {
 			foreach ($config['vlans']['vlan'] as $existingvlan) {
 				if ($vlan['if'] == $existingvlan['if'] && $vlan['tag'] == $existingvlan['tag']) {
-					printf("\n\n" . gettext("This parent interface and VLAN already created."));
+					printf("\n\n" . gettext("Questa interfaccia principale e VLAN sono già create."));
 					continue 2;
 				}
 			}
