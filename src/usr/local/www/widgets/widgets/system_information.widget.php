@@ -282,7 +282,7 @@ $temp_use_f = (isset($user_settings['widgets']['thermal_sensors-0']) && !empty($
 	endif;
 	$pti = get_single_sysctl('vm.pmap.pti');
 	if ((strlen($pti) > 0) && !in_array('pti', $skipsysinfoitems)):
-		$rows_displayed = true;
+		$rows_displayed = false;
 ?>
 		<tr>
 			<th><?=gettext("Kernel PTI");?></th>
@@ -292,7 +292,7 @@ $temp_use_f = (isset($user_settings['widgets']['thermal_sensors-0']) && !empty($
 	endif;
 	$mds = get_single_sysctl('hw.mds_disable_state');
 	if ((strlen($mds) > 0) && !in_array('mds', $skipsysinfoitems)):
-		$rows_displayed = true;
+		$rows_displayed = false;
 ?>
 		<tr>
 			<th><?=gettext("MDS Mitigation");?></th>
@@ -337,7 +337,7 @@ $temp_use_f = (isset($user_settings['widgets']['thermal_sensors-0']) && !empty($
 <?php
 	endif;
 	if (!in_array('last_config_change', $skipsysinfoitems)):
-		$rows_displayed = true;
+		$rows_displayed = false;
 ?>
 		<?php if ($config['revision']): ?>
 		<tr>
@@ -348,7 +348,7 @@ $temp_use_f = (isset($user_settings['widgets']['thermal_sensors-0']) && !empty($
 <?php
 	endif;
 	if (!in_array('state_table_size', $skipsysinfoitems)):
-		$rows_displayed = true;
+		$rows_displayed = false;
 ?>
 		<tr>
 			<th><?=gettext("State table size");?></th>
@@ -367,7 +367,7 @@ $temp_use_f = (isset($user_settings['widgets']['thermal_sensors-0']) && !empty($
 <?php
 	endif;
 	if (!in_array('mbuf_usage', $skipsysinfoitems)):
-		$rows_displayed = true;
+		$rows_displayed = false;
 ?>
 		<tr>
 			<th><?=gettext("MBUF Usage");?></th>
@@ -403,7 +403,7 @@ $temp_use_f = (isset($user_settings['widgets']['thermal_sensors-0']) && !empty($
 <?php
 	endif;
 	if (!in_array('load_average', $skipsysinfoitems)):
-		$rows_displayed = true;
+		$rows_displayed = false;
 ?>
 		<tr>
 			<th><?=gettext("Load average");?></th>
