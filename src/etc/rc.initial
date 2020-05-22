@@ -91,7 +91,7 @@ echo " 7) Ping host                         16) Riavvia PHP-FPM"
 echo " 8) Shell"
 
 echo
-read -p "Scegli un opzione: " opmode
+read -p "Scegli un'opzione: " opmode
 echo
 
 # see what the user has chosen

@@ -1596,7 +1596,7 @@ EOD;
 	}
 
 	if (platform_booting()) {
-		echo "done\n";
+		echo "fatto\n";
 	}
 
 	unlock($ipsecstartlock);
@@ -1859,7 +1859,7 @@ EOD;
 	}
 
 	if (platform_booting()) {
-		echo gettext("done") . "\n";
+		echo gettext("fatto") . "\n";
 	}
 
 	return 0;
@@ -2042,7 +2042,7 @@ EOD;
 	}
 
 	if (platform_booting()) {
-		echo "done\n";
+		echo "fatto\n";
 	}
 
 	return 0;

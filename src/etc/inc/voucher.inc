@@ -459,9 +459,9 @@ function voucher_configure($sync = false) {
 			$error = voucher_configure_zone($sync);
 			if (platform_booting()) {
 				if ($error) {
-					echo "error\n";
+					echo "errore\n";
 				} else {
-					echo "done\n";
+					echo "fatto\n";
 				}
 			}
 		}

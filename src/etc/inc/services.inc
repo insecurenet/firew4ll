@@ -1219,7 +1219,7 @@ EOD;
 	}
 
 	if (platform_booting()) {
-		print "done.\n";
+		print "fatto.\n";
 	}
 
 	return 0;

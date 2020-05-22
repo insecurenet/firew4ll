@@ -36164,7 +36164,7 @@ msgstr "Nessuna interfaccia trovata."
 
 #: src/etc/inc/config.console.inc:91
 msgid "Do VLANs need to be set up first?"
-msgstr "Le VLAN devono essere configurate prima?"
+msgstr "Vuoi configurare prima le VLAN?"
 
 #: src/etc/inc/config.console.inc:94
 msgid ""

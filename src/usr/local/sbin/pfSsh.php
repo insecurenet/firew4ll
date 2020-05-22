@@ -22,7 +22,7 @@
 
 require_once("globals.inc");
 if ($argc < 2) {
-	echo "Starting the {$g['product_name']} developer shell";
+	echo "Avvio la shell per sviluppatori di {$g['product_name']}";
 }
 require_once("functions.inc");
 if ($argc < 2) {
@@ -83,7 +83,7 @@ function more($text, $count=24) {
 	$lines = explode("\n", $text);
 	foreach ($lines as $line) {
 		if ($counter > $count) {
-			echo "Press RETURN to continue ...";
+			echo "Premi INVIO per continuare ...";
 			$fp = fopen('php://stdin', 'r');
 			$pressreturn = chop(fgets($fp));
 			if ($pressreturn == "q" || $pressreturn == "quit") {
@@ -202,9 +202,9 @@ function get_playback_files() {
 }
 
 if ($argc < 2) {
-	echo "Welcome to the {$g['product_name']} developer shell\n";
-	echo "\nType \"help\" to show common usage scenarios.\n";
-	echo "\nAvailable playback commands:\n     ";
+	echo "Benvenuti nella shell per sviluppatori di {$g['product_name']}\n";
+	echo "\nScrivi \"help\" per mostrare i comandi più comuni.\n";
+	echo "\nComandi disponibili:\n     ";
 	$tccommands[] = "playback";
 	$playback_files = get_playback_files();
 	foreach ($playback_files as $pbf) {
@@ -223,7 +223,7 @@ $playbackbuffer = "";
 
 if ($argv[1]=="playback" or $argv[1]=="run") {
 	if (empty($argv[2]) || !file_exists("/etc/phpshellsessions/" . basename($argv[2]))) {
-		echo "Error: Invalid playback file specified.\n\n";
+		echo "Errore: file specificato non valido.\n\n";
 		show_recordings();
 		exit(-1);
 	}
@@ -252,10 +252,10 @@ while ($shell_active == true) {
 		$playback_file = $command_split[1];
 		if (!$playback_file || !file_exists("/etc/phpshellsessions/{$playback_file}")) {
 			$command = "";
-			echo "Could not locate playback file.\n";
+			echo "Impossibile individuare il file.\n";
 		} else {
 			$command = "";
-			echo "\nPlayback of file {$command_split[1]} started.\n\n";
+			echo "\nFile {$command_split[1]} avviato.\n\n";
 			playback_file("{$playback_file}");
 			continue;
 		}
@@ -278,10 +278,10 @@ while ($shell_active == true) {
 			fwrite($recording_fd, $playbackbuffer);
 			fclose($recording_fd);
 			$command = "";
-			echo "Recording stopped.\n";
+			echo "Registrazione fermata.\n";
 			$recording = false;
 		} else {
-			echo "No recording session in progress.\n";
+			echo "Nessuna registrazione in corso.\n";
 			$command = "";
 		}
 	}
@@ -296,8 +296,8 @@ while ($shell_active == true) {
 	}
 	if ($first_command == "record") {
 		if (!$command_split[1]) {
-			echo "usage: record playbackname\n";
-			echo "\tplaybackname will be created in /etc/phpshellsessions.\n";
+			echo "utilizzo: record playbackname\n";
+			echo "\tplaybackname verrà creato in /etc/phpshellsessions.\n";
 			$command = "";
 		} else {
 			/* time to record */
@@ -305,11 +305,11 @@ while ($shell_active == true) {
 			$recording_fn = basename($command_split[1]);
 			$recording_fd = fopen("/etc/phpshellsessions/{$recording_fn}","w");
 			if (!$recording_fd) {
-				echo "Could not start recording session.\n";
+				echo "Impossibile avviare la registrazione.\n";
 				$command = "";
 			} else {
 				$recording = true;
-				echo "Recording of {$recording_fn} started.\n";
+				echo "Registrazione di {$recording_fn} avviata.\n";
 				$command = "";
 			}
 		}
@@ -318,13 +318,13 @@ while ($shell_active == true) {
 }
 
 function show_recordings() {
-	echo "==> Sessions available for playback are:\n";
+	echo "==> Sessioni disponibili per playback sono:\n";
 	$playback_files = get_playback_files();
 	foreach (get_playback_files() as $pbf) {
 		echo "{$pbf} ";
 	}
 	echo "\n\n";
-	echo "==> end of list.\n";
+	echo "==> fine della lista.\n";
 }
 
 function returnlastchar($command) {

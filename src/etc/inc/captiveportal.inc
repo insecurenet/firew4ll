@@ -379,7 +379,7 @@ EOD;
 		if (platform_booting()) {
 			/* send Accounting-On to server */
 			captiveportal_send_server_accounting('on');
-			echo "done\n";
+			echo "fatto\n";
 		}
 
 	} else {

@@ -688,11 +688,11 @@ if (('' != ($link = get_shortcut_log_link($shortcut_section, false))) && (isAllo
 $warning_text = "";
 if (file_exists('/conf/needs_package_sync') && platform_booting()) {
 	$warning_text = sprintf(gettext(
-	    '%1$s%3$s is booting, then packages will be reinstalled in the ' .
-	    'background.%2$s%1$sDo not make changes in the GUI until this is ' .
-	    'complete.%2$s'), '<p>', '</p>', $g['product_name']);
+	    '%1$s%3$s si sta avviando, i pacchetti saranno reinstallati in' .
+	    'background.%2$s%1$sNon modificare l\'nterfaccia grafica fino a quando non è ' .
+	    'completato.%2$s'), '<p>', '</p>', $g['product_name']);
 } elseif (is_subsystem_dirty('packagelock')) {
-	$pgtitle = array(gettext("System"), gettext("Package Manager"));
+	$pgtitle = array(gettext("Sistema"), gettext("Package Manager"));
 	$warning_text = sprintf(gettext('%1$sPackages are currently being ' .
 	    'reinstalled in the background.%2$s%1$sDo not make changes in ' .
 	    'the GUI until this is complete.%2$s'), '<p>', '</p>');
@@ -701,7 +701,7 @@ if (file_exists('/conf/needs_package_sync') && platform_booting()) {
 	    'Lock\' button on the %3$s page and reinstall packages manually.' .
 	    '%2$s'), '<p>', '</p>', sprintf('<a href="diag_backup.php" ' .
 	    'title="%1$s &gt; %2$s">%1$s &gt; %2$s</a>', gettext('Diagnostics'),
-	    htmlspecialchars(gettext('Backup & Restore'))));
+	    htmlspecialchars(gettext('Backup & Ripristino'))));
 }
 
 if (!empty($warning_text)) {

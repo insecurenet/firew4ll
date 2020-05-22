@@ -146,7 +146,7 @@ if ($count > 1) {
 		echo "{$x} - {$ifdescr} ({$config_descr})\n";
 		$x++;
 	}
-	echo "\nInserisci il numero di interfacce che intendi configurare: ";
+	echo "\nInserisci il numero dell'interfaccia che intendi configurare: ";
 	$intnum = chop(fgets($fp));
 } else {
 	$intnum = $count;
@@ -252,7 +252,7 @@ function console_configure_ip_address($version) {
 	$upperifname = strtoupper($interface);
 
 	if ($interface == "wan") {
-		if (console_prompt_for_yn (sprintf(gettext('Configura %1$s indirizzi %2$s interfaccia via %3$s?'), $label_IPvX, $upperifname, $label_DHCP))) {
+		if (console_prompt_for_yn (sprintf(gettext('Vuoi configurare l\'indirizzo %1$s dell\'interfaccia %2$s via %3$s?'), $label_IPvX, $upperifname, $label_DHCP))) {
 			$ifppp = console_get_interface_from_ppp(get_real_interface("wan"));
 			if (!empty($ifppp)) {
 				$ifaceassigned = $ifppp;
@@ -267,7 +267,7 @@ function console_configure_ip_address($version) {
 	if ($isintdhcp == false or $interface <> "wan") {
 		while (true) {
 			do {
-				echo "\n" . sprintf(gettext('Inserisci il nuovo %1$s %2$s indirizzo.  Premi <INVIO> per nessuno:'),
+				echo "\n" . sprintf(gettext('Inserisci il nuovo indirizzo %2$s per l\'interfaccia %1$s.  Premi <INVIO> per nessuno:'),
 							$upperifname, $label_IPvX) . "\n> ";
 				$intip = chop(fgets($fp));
 				$intbits_ok = false;
@@ -285,7 +285,7 @@ function console_configure_ip_address($version) {
 			} while (($ip_conflict === true) || !($is_ipaddr || $intip == ''));
 			if ($is_ipaddr && $intip != '') {
 				if ($intbits_ok == false) {
-					echo "\n" . sprintf(gettext(" Le subnet mask vanno inserite in conteggi di bit (come nella notazione CIDR) in %s."),
+					echo "\n" . sprintf(gettext(" In %s le subnet mask vanno inserite in numero di bit (come nella notazione CIDR) ."),
 							$g['product_name']) . "\n";
 					if ($version === 6) {
 						echo "es.  ffff:ffff:ffff:ffff:ffff:ffff:ffff:ff00 = 120\n";
@@ -301,7 +301,7 @@ function console_configure_ip_address($version) {
 				}
 				while ($intbits_ok == false) {
 					$upperifname = strtoupper($interface);
-					echo "\n" . sprintf(gettext('Inserisci la nuova %1$s %2$s subnet bit count (1 to %3$s):'),
+					echo "\n" . sprintf(gettext('Inserisci la nuova subnet mask %2$s per la %1$s (da 1 a %3$s):'),
 								$upperifname, $label_IPvX, $maxbits) . "\n> ";
 					$intbits = chop(fgets($fp));
 					$intbits_ok = is_numeric($intbits) && (($intbits >= 1) && ($intbits <= $maxbits));
@@ -326,7 +326,7 @@ function console_configure_ip_address($version) {
 					$subnet = gen_subnet($intip, $intbits);
 				}
 				do {
-					echo "\n" . sprintf(gettext('Per la WAN, inserisci il nuovo indirizzo %1$s %2$s gateway.'), $upperifname, $label_IPvX) . "\n" .
+					echo "\n" . sprintf(gettext('Inserisci il nuovo gateway %2$s per l\'interfaccia%1$s.'), $upperifname, $label_IPvX) . "\n" .
 								gettext("Per la LAN, premi <INVIO> per nessuno:") . "\n> ";
 					$gwip = chop(fgets($fp));
 					$is_ipaddr = ($version === 6) ? is_ipaddrv6($gwip) : is_ipaddrv4($gwip);
@@ -381,7 +381,7 @@ function console_configure_dhcpd($version = 4) {
 		$subnet_end = ($version === 6) ? gen_subnetv6_max($intip6, $intbits6) : gen_subnet_max($intip, $intbits);
 		do {
 			do {
-				echo sprintf(gettext("Inserisci l'indirizzo iniziale del %s client address range:"), $label_IPvX) . " ";
+				echo sprintf(gettext("Inserisci l'indirizzo %s iniziale del range DHCP scelto:"), $label_IPvX) . " ";
 				$dhcpstartip = chop(fgets($fp));
 				if ($dhcpstartip === "") {
 					fclose($fp);
@@ -395,7 +395,7 @@ function console_configure_dhcpd($version = 4) {
 			} while (!$is_ipaddr || !$is_inrange);
 
 			do {
-				echo sprintf(gettext("Inserisci l'indirizzo finale %s client address range:"), $label_IPvX) . " ";
+				echo sprintf(gettext("Inserisci l'indirizzo %s finale del range DHCP scelto:"), $label_IPvX) . " ";
 				$dhcpendip = chop(fgets($fp));
 				if ($dhcpendip === "") {
 					fclose($fp);
@@ -481,7 +481,7 @@ if (!$config['interfaces']['lan']) {
 
 $upperifname = strtoupper($interface);
 if (!$dry_run) {
-	echo "\n Si prega di attendere mentre le modifiche vengono salvate in {$upperifname}...";
+	echo "\n Si prega di attendere mentre le modifiche vengono salvate sull'interfaccia {$upperifname}...";
 	write_config(sprintf(gettext("%s configurazion IP dal menu console"), $interface));
 	interface_reconfigure(strtolower($upperifname));
 	echo "\n Ricaria filtri...";
@@ -504,7 +504,7 @@ if ($intip != '') {
 	} else {
 		$intipstr = $intip;
 	}
-	echo "\n\n" . sprintf(gettext('Indirizzo IPv4 %1$s viene impostato a %2$s'), $upperifname, $intipstr) . "\n";
+	echo "\n\n" . sprintf(gettext('Il nuovo indirizzo IPv4 dell\'interfaccia %1$s è: %2$s'), $upperifname, $intipstr) . "\n\n";
 }
 if ($intip6 != '') {
 	if (is_ipaddr($intip6)) {
@@ -512,7 +512,7 @@ if ($intip6 != '') {
 	} else {
 		$intip6str = $intip6;
 	}
-	echo "\n\n" . sprintf(gettext('Indirizzo IPv6 %1$s viene impostato a %2$s'), $upperifname, $intip6str) . "\n";
+	echo "\n\n" . sprintf(gettext('Il nuovo indirizzo IPv6 dell\'interfaccia %1$s è: %2$s'), $upperifname, $intip6str) . "\n\n";
 }
 
 if ($intip != '' || $intip6 != '') {

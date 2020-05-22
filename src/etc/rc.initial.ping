@@ -30,7 +30,7 @@ require_once("functions.inc");
 
 $fp = fopen('php://stdin', 'r');
 
-echo "\nEnter a host name or IP address: ";
+echo "\nInserisci un hostname on un indirizzo IP: ";
 
 $pinghost = chop(fgets($fp));
 if (is_ipaddrv4($pinghost) || is_hostname($pinghost)) {
@@ -41,7 +41,7 @@ if (is_ipaddrv4($pinghost) || is_hostname($pinghost)) {
 if ($command) {
 	echo "\n";
 	passthru("/sbin/{$command} -c 3 -n " . escapeshellarg($pinghost));
-	echo "\nPress ENTER to continue.\n";
+	echo "\nPremi INVIO per continuare.\n";
 	fgets($fp);
 }
 

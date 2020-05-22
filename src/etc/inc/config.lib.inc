@@ -229,20 +229,20 @@ function parse_config_bootup() {
 			$last_backup = discover_last_backup();
 			if ($last_backup) {
 				log_error("No config.xml found, attempting last known config restore.");
-				file_notice("config.xml", gettext("No config.xml found, attempting last known config restore."), "pfSenseConfigurator", "");
+				file_notice("config.xml", gettext("Nessun config.xml trovato, tentativo di ripristino dell'ultima configurazione conosciuta."), "pfSenseConfigurator", "");
 				restore_backup("/cf/conf/backup/{$last_backup}");
 			}
 			if (!file_exists("{$g['conf_path']}/config.xml")) {
-				echo sprintf(gettext("XML configuration file not found.  %s cannot continue booting."), $g['product_name']) . "\n";
+				echo sprintf(gettext("File configurazione XML non trovato.  %s non può continuare l'avvio."), $g['product_name']) . "\n";
 				unlock($lockkey);
 				mwexec("/sbin/halt");
 				exit;
 			}
 			log_error("Last known config found and restored.  Please double check the configuration file for accuracy.");
-			file_notice("config.xml", gettext("Last known config found and restored.  Please double check the configuration file for accuracy."), "pfSenseConfigurator", "");
+			file_notice("config.xml", gettext("Ultima configurazione conosciuta trovata e ripristinata.  Si prega di verificare la correttezza del file di configurazione."), "pfSenseConfigurator", "");
 		} else {
 			unlock($lockkey);
-			log_error(gettext("Could not find a usable configuration file! Exiting...."));
+			log_error(gettext("Impossibile trovare un file di configurazione utilizzabile! Esci..."));
 			exit(0);
 		}
 	}
@@ -251,11 +251,11 @@ function parse_config_bootup() {
 		$last_backup = discover_last_backup();
 		if ($last_backup) {
 			log_error(gettext("No config.xml found, attempting last known config restore."));
-			file_notice("config.xml", gettext("No config.xml found, attempting last known config restore."), "pfSenseConfigurator", "");
+			file_notice("config.xml", gettext("Nessun config.xml trovato, tentativo di ripristino dell'ultima configurazione conosciuta."), "pfSenseConfigurator", "");
 			restore_backup("{$g['conf_path']}/backup/{$last_backup}");
 		} else {
 			unlock($lockkey);
-			die(gettext("Config.xml is corrupted and is 0 bytes.  Could not restore a previous backup."));
+			die(gettext("Il file Config.xml è corrotto o è 0 byte. Non è stato possibile ripristinare un backup precedente."));
 		}
 	}
 	unlock($lockkey);
@@ -543,12 +543,12 @@ function write_config($desc="Unknown", $backup = true, $write_config_only = fals
 			restore_backup("/cf/conf/backup/{$last_backup}");
 			$config = parse_xml_config("{$g['conf_path']}/config.xml", $g['xml_rootobj']);
 			if (platform_booting()) {
-				echo "\n\n ************** WARNING **************";
-				echo "\n\n Configuration could not be validated. A previous configuration was restored. \n";
-				echo "\n The failed configuration file has been saved as {$g['conf_path']}/config.xml.bad \n\n";
+				echo "\n\n ************** ATTENZIONE **************";
+				echo "\n\n la Configurazione non può essere validata. E' stata ripristinata una configurazione precedente. \n";
+				echo "\n Il file di configurazione fallito è stato salvato come {$g['conf_path']}/config.xml.bad \n\n";
 			}
 		} else {
-			log_error(gettext("Could not restore config.xml."));
+			log_error(gettext("Impossibile ripristinare config.xml."));
 		}
 	} else {
 		generate_config_cache($config);
@@ -687,9 +687,9 @@ function config_install($conffile) {
 	}
 
 	if (platform_booting()) {
-		echo gettext("Installing configuration...") . "\n";
+		echo gettext("Installazione configurazione...") . "\n";
 	} else {
-		log_error(gettext("Installing configuration ...."));
+		log_error(gettext("Installazione configurazione ...."));
 	}
 
 	$lockkey = lock('config', LOCK_EX);

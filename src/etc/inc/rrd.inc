@@ -147,7 +147,7 @@ function enable_rrd_graphing() {
 	global $config, $g, $altq_list_queues;
 
 	if (platform_booting()) {
-		echo gettext("Generating RRD graphs...");
+		echo gettext("Generazione grafici RRD...");
 	}
 
 	$rrddbpath = "{$g['vardb_path']}/rrd/";
@@ -967,7 +967,7 @@ EOD;
 	}
 
 	if (platform_booting()) {
-		echo gettext("done.") . "\n";
+		echo gettext("fatto.") . "\n";
 	}
 
 }
