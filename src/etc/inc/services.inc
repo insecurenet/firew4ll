@@ -1326,7 +1326,7 @@ function services_dhcpdv6_configure($blacklist = array()) {
 
 
 	if (platform_booting()) {
-		echo Avvio servizio DHCPv6...";
+		echo "Avvio servizio DHCPv6...";
 	} else {
 		sleep(1);
 	}
