@@ -3968,7 +3968,7 @@ function interface_configure($interface = "wan", $reloadall = false, $linkupeven
 		if (!empty($assignedparent) && !empty($config['interfaces'][$assignedparent]['mtu'])) {
 			$parentmtu = $config['interfaces'][$assignedparent]['mtu'];
 			if ($wancfg['mtu'] > $parentmtu) {
-				log_error(sprintf(gettext('C''è un conflitto su MTU tra parent %1$s e VLAN(%2$s)'), $mtuhwif, $mtuif));
+				log_error(sprintf(gettext('Conflitto su MTU tra parent %1$s e VLAN(%2$s)'), $mtuhwif, $mtuif));
 			}
 		}
 

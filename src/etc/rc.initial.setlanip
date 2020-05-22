@@ -504,7 +504,7 @@ if ($intip != '') {
 	} else {
 		$intipstr = $intip;
 	}
-	echo "\n\n" . sprintf(gettext('L''indirizzo IPv4 %1$s è stato impostato a %2$s'), $upperifname, $intipstr) . "\n";
+	echo "\n\n" . sprintf(gettext('Indirizzo IPv4 %1$s viene impostato a %2$s'), $upperifname, $intipstr) . "\n";
 }
 if ($intip6 != '') {
 	if (is_ipaddr($intip6)) {
@@ -512,7 +512,7 @@ if ($intip6 != '') {
 	} else {
 		$intip6str = $intip6;
 	}
-	echo "\n\n" . sprintf(gettext('L''indirizzo IPv6 %1$s è stato impostato a %2$s'), $upperifname, $intip6str) . "\n";
+	echo "\n\n" . sprintf(gettext('Indirizzo IPv6 %1$s viene impostato a %2$s'), $upperifname, $intip6str) . "\n";
 }
 
 if ($intip != '' || $intip6 != '') {
