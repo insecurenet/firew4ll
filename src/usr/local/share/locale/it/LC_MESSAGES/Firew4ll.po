@@ -21,7 +21,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-05-21 12:15+0200\n"
+"PO-Revision-Date: 2020-05-23 21:30+0200\n"
 "Last-Translator: Eligio Greco <eligio.greco@gmail.com>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -6542,6 +6542,13 @@ msgstr "Procedura guidata"
 #: src/usr/local/www/vpn_openvpn_server.php:674
 msgid "General Information"
 msgstr "Informazioni generali"
+
+#: src/usr/local/www/wizards/setup_wizard.xml:
+msgid "Primary DNS Server"
+msgstr "Server DNS Primario"
+
+msgid "Secondary DNS Server"
+msgstr "Server DNS Secondario"
 
 #: src/usr/local/www/vpn_openvpn_client.php:510
 msgid "Set this option to disable this client without removing it from the list."
@@ -31818,7 +31825,7 @@ msgstr "Disconnessione per l'utente  '%1$s' da: %2$s"
 
 #: src/etc/inc/auth.inc:2080
 msgid " is developed and maintained by "
-msgstr " è sviluppato e mantenuto da "
+msgstr " è sviluppato e gestito da "
 
 #: src/etc/inc/auth.inc:2083
 msgid " View license."

@@ -2092,10 +2092,10 @@ function print_credit() {
 	global $g;
 
 	return  '<a target="_blank" href="https://www.firew4ll.com">' . $g["product_name"] . '</a>' .
-			gettext(' is developed and maintained by ') .
-			'<a target="_blank" href="https://www.insecurenet.com">INSECURENET. </a>' . ' &copy; ISN ' . $g["product_copyright_years"] .
-			'<a target="_blank" href="https://www.firew4ll.org/license">' .
-			gettext(' View license.') . '</a>';
+			gettext(' è sviluppato e gestito da ') .
+			'<a target="_blank" href="https://www.insecurenet.com">INSECURENET. </a>' . ' &copy; ISN ' . $g["product_copyright_years"]; //.
+			//'<a target="_blank" href="https://www.firew4ll.org/license">' .
+			//gettext(' View license.') . '</a>';
 }
 function get_user_remote_address() {
 	$remote_address = $_SERVER['REMOTE_ADDR'];
