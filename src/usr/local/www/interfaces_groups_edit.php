@@ -56,7 +56,7 @@ if ($_POST['save']) {
 
 	/* input validation */
 	$reqdfields = explode(" ", "ifname");
-	$reqdfieldsn = array(gettext("Group Name"));
+	$reqdfieldsn = array(gettext("Nome Gruppo"));
 	do_input_validation($_POST, $reqdfields, $reqdfieldsn, $input_errors);
 
 	if (!$input_errors) {
