@@ -73,7 +73,7 @@ if (is_array($config['openvpn']) && is_array($config['openvpn']['openvpn-client'
 		}
 		foreach ($vips as $vip) {
 			if ($openvpn_vip == "_vip{$vip['uniqid']}") {
-				log_error("Stopping OpenVPN client instance on {$friendly_descr} because of transition to CARP backup.");
+				log_error("Fermando istanza OpenVPN client su {$friendly_descr} a causa del passaggio al backup CARP.");
 				openvpn_restart('client', $settings);
 			}
 		}
@@ -95,7 +95,7 @@ if (is_array($config['openvpn']) && is_array($config['openvpn']['openvpn-server'
 		}
 		foreach ($vips as $vip) {
 			if ($openvpn_vip == "_vip{$vip['uniqid']}") {
-				log_error("Stopping OpenVPN server instance on {$friendly_descr} because of transition to CARP backup.");
+				log_error("Fermando istanza OpenVPN client su {$friendly_descr} a causa del passaggio al backup CARP.");
 				openvpn_restart('server', $settings);
 			}
 		}
@@ -108,7 +108,7 @@ if (isset($config['dhcpdv6']) && is_array($config['dhcpdv6'])) {
 	foreach ($config['dhcpdv6'] as $dhcpv6if => $dhcpv6ifconf) {
 		foreach ($vips as $vip) {
 			if ($dhcpv6ifconf['rainterface'] == "_vip{$vip['uniqid']}") {
-				log_error("Stopping radvd instance on {$friendly_descr} because of transition to CARP master.");
+				log_error("Fermando istanza radvd su {$friendly_descr} a causa del passaggio a CARP master.");
 				$rafound = true;
 			}
 		}

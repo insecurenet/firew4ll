@@ -1643,7 +1643,7 @@ function system_timezone_configure() {
 	$syscfg = $config['system'];
 
 	if (platform_booting()) {
-		echo gettext("Setting timezone...");
+		echo gettext("Configurazione timezone...");
 	}
 
 	/* extract appropriate timezone file */
