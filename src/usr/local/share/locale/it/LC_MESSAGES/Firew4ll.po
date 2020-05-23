@@ -3894,7 +3894,7 @@ msgstr "coda"
 
 #: src/usr/local/www/diag_pftop.php:112
 msgid "rules"
-msgstr "regola"
+msgstr "regole"
 
 #: src/usr/local/www/diag_pftop.php:113
 msgid "size"
@@ -3983,7 +3983,7 @@ msgstr "Indirizzo di origine"
 
 #: src/usr/local/www/diag_pftop.php:144 src/usr/local/www/status_graph.php:161
 msgid "Sort by"
-msgstr "Disponi per"
+msgstr "Ordina per"
 
 #: src/usr/local/www/diag_pftop.php:162
 msgid "Maximum # of States"
