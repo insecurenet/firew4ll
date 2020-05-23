@@ -22,14 +22,14 @@ global $config;
 
 $config = parse_config(true);
 $default_theme = "pfSense.css";
-$default_columns = 2;
+$default_columns = 3;
 $default_widgets = "system_information:col1:show,interfaces:col2:show";
 
-echo "Resetting webGUI:\n";
-echo "  Theme to " . $default_theme . "\n";
-echo "  Dashboard columns to " . $default_columns . "\n";
-echo "  Top navigation to scroll\n";
-echo "  Widgets to System Information and Interfaces\n";
+echo "Resettando webGUI:\n";
+echo "  Theme a " . $default_theme . "\n";
+echo "  Dashboard colonne a " . $default_columns . "\n";
+echo "  Top navigation a scorrere\n";
+echo "  Widget impostati Informazioni Sistema, Interfacce e Grafici\n";
 echo "...";
 
 $config['system']['webgui']['webguicss'] = $default_theme;
@@ -43,4 +43,4 @@ $config['widgets']['sequence'] = $default_widgets;
 
 write_config("pfSsh.php reset webGUI");
 
-echo "done.\n";
+echo "fatto.\n";

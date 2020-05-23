@@ -34,12 +34,12 @@ $pkg_name = $args[1];
 
 pkg_remove_prefix($pkg_name);
 
-echo "Installing package \"{$pkg_name}\"... ";
+echo "Installazione \"{$pkg_name}\"... ";
 
 if (mwexec("/usr/local/sbin/{$g['product_name']}-upgrade -y -i {$g['pkg_prefix']}{$pkg_name}") == 0) {
-	echo "Done.\n";
+	echo "Fatto.\n";
 	return true;
 } else {
-	echo "Failed.\n";
+	echo "Fallito.\n";
 	return false;
 }

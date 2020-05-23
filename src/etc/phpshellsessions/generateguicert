@@ -20,9 +20,9 @@
 
 require_once("system.inc");
 
-echo gettext("Generating a new self-signed SSL certificate for the GUI...");
+echo gettext("Generazione di un nuovo certificato SSL autofirmato per la GUI...");
 $cert = system_webgui_create_certificate();
-echo gettext("Done.\n");
-echo gettext("Restarting webConfigurator...");
+echo gettext("Fatto.\n");
+echo gettext("Riavvio di webConfigurator...");
 send_event("service restart webgui");
-echo gettext("Done.\n");
+echo gettext("Fatto.\n");

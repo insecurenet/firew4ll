@@ -1052,7 +1052,7 @@ function delete_package_xml($package_name, $when = "post-deinstall") {
 	if (is_array($pkg_info['logging']) && $pkg_info['logging']['logfilename'] <> "") {
 		update_status(gettext("Voci Syslog... "));
 		@unlink_if_exists("{$g['varlog_path']}/{$pkg_info['logging']['logfilename']}");
-		update_status("done.\n");
+		update_status("fatto.\n");
 		$need_syslog_restart = true;
 	}
 

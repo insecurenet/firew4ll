@@ -399,7 +399,7 @@ ln -sf /etc/ssl/openssl.cnf \
 if [ -f /etc/rc.custom_boot_early ]; then
 	/bin/echo -n "Avviando /etc/rc.custom_boot_early...";
 	/etc/rc.custom_boot_early
-	echo "Done"
+	echo "Fatto"
 fi
 
 export fcgipath=/var/run/php-fpm.socket
@@ -432,7 +432,7 @@ fi
 
 echo -n "Avviando CRON... "
 cd /tmp && /usr/sbin/cron -s 2>/dev/null
-echo "done."
+echo "fatto."
 
 /bin/rm -rf /usr/local/pkg/pf/CVS
 

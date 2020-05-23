@@ -938,7 +938,7 @@ EOD;
 		/* End gateway quality */
 
 		$rrdupdatesh .= "sleep 60\n";
-		$rrdupdatesh .= "done\n";
+		$rrdupdatesh .= "fatto\n";
 		log_error(gettext("Creating rrd update script"));
 		/* write the rrd update script */
 		$updaterrdscript = "{$g['vardb_path']}/rrd/updaterrd.sh";

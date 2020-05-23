@@ -24,10 +24,10 @@ $config = parse_config(true);
 
 unset($config['dhcpd']);
 
-echo "Disabling DHCP Server on all interfaces...";
+echo "Disattivando il Server DHCP su tutte le interfacce...";
 
 write_config("pfSsh.php disabled dhcp on all interfaces");
 
 services_dhcpd_configure();
 
-echo "done.\n";
+echo "fatto.\n";

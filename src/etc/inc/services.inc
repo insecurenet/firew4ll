@@ -2850,7 +2850,7 @@ function upnp_start() {
 		echo gettext("Avvio servizio UPnP... ");
 		require_once('/usr/local/pkg/miniupnpd.inc');
 		sync_package_miniupnpd();
-		echo "done.\n";
+		echo "fatto.\n";
 	}
 }
 

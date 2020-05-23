@@ -33,12 +33,12 @@ if (is_array($command_split)) {
 $pkg_name = $args[1];
 pkg_remove_prefix($pkg_name);
 
-echo "Removing package \"{$pkg_name}\"... ";
+echo "Rimozione \"{$pkg_name}\"... ";
 
 if (mwexec("/usr/local/sbin/{$g['product_name']}-upgrade -y -r {$g['pkg_prefix']}{$pkg_name}") == 0) {
-	echo "Done.\n";
+	echo "Fatto.\n";
 	return true;
 } else {
-	echo "Failed.\n";
+	echo "Fallito.\n";
 	return false;
 }

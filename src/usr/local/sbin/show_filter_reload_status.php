@@ -22,7 +22,7 @@
 
 $last_text = "";
 
-while (!stristr($status, "Done")) {
+while (!stristr($status, "Fatto")) {
 	$status = get_status();
 	if ($status <> "") {
 		echo $status . "\n";

@@ -38,7 +38,7 @@ wildcard_file_exists() {
 # See if there are any backup files (*.tgz) in the RAM disk store.  If so, restore them.
 if wildcard_file_exists "${RAM_Disk_Store}/"*".tgz"; then
 
-	mesg="Restoring contents of RAM disk store..."
+	mesg="Ripristino contenuto dalla memoria RAM..."
 	echo -n "$mesg"
 
 	USE_MFS_TMPVAR=$(/usr/local/sbin/read_xml_tag.sh boolean system/use_mfs_tmpvar)
@@ -49,7 +49,7 @@ if wildcard_file_exists "${RAM_Disk_Store}/"*".tgz"; then
 			/usr/bin/tar -xzf "${backup_file}" -C / 2>&1
 			exit_code=$?
 			if [ $exit_code -ne 0 ]; then
-				mesg="$mesg\nRAM disk restore failed: exit code $exit_code: $backup_file"
+				mesg="$mesg\nRipristino dalla RAM fallito: codice di uscita $exit_code: $backup_file"
 				error=1;
 				continue
 			fi
@@ -64,11 +64,11 @@ if wildcard_file_exists "${RAM_Disk_Store}/"*".tgz"; then
 	done
 
 	if [ $error ]; then
-		mesg="$mesg\nRAM disk restore failed."
-		echo " error.";
+		mesg="$mesg\nRipristino dalla RAM fallito."
+		echo " errore.";
 	else
-		mesg="$mesg\nRAM disk restore succeeded."
-		echo " done.";
+		mesg="$mesg\nRipristino dalla RAM riuscito."
+		echo " fatto.";
 	fi
 
 	/bin/mkdir -p /var/log/
