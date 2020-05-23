@@ -23,7 +23,7 @@ global $config;
 $config = parse_config(true);
 $default_theme = "pfSense.css";
 $default_columns = 3;
-$default_widgets = "system_information:col1:show,interfaces:col2:show";
+$default_widgets = "system_information:col1:show,traffic_graphs:col2:show,interfaces:col3:show";
 
 echo "Resettando webGUI:\n";
 echo "  Theme a " . $default_theme . "\n";
