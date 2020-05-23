@@ -1538,7 +1538,7 @@ function interfaces_configure() {
 			$track6_list[$if] = $ifname;
 		} else {
 			if (platform_booting()) {
-				printf(gettext("Configurazione %s interface..."), $ifname);
+				printf(gettext("Configurazione interfaccia %s..."), $ifname);
 			}
 
 			if ($g['debug']) {
