@@ -815,7 +815,7 @@ function install_package_xml($package_name) {
 	if (file_exists("/usr/local/pkg/" . $pkg_info['configurationfile'])) {
 		update_status(gettext("Caricamento configurazione del pacchetto... "));
 		$pkg_config = parse_xml_config_pkg("/usr/local/pkg/" . $pkg_info['configurationfile'], "packagegui");
-		update_status(gettext("fatto\n");
+		update_status(gettext("fatto.") . "\n");
 		update_status(gettext("Configurazione componenti del pacchetto...") . "\n");
 		if (!empty($pkg_config['filter_rules_needed'])) {
 			$config['installedpackages']['package'][$pkgid]['filter_rule_function'] = $pkg_config['filter_rules_needed'];
