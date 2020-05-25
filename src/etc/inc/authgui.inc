@@ -346,10 +346,10 @@ function display_login_form() {
 	        	<div class="col-sm-4 offset-md-4 logoCol">
 					<div class="loginCont center-block">
 		                <form method="post" <?=$loginautocomplete?> class="login">
-			                <p class="form-title">Sign In</p>
+			                <p class="form-title">Accedi</p>
 			                <input name="usernamefld" id="usernamefld" type="text" placeholder="Username" autocorrect="off" autocapitalize="none"/>
 			                <input name="passwordfld" id="passwordfld" type="password" placeholder="Password" />
-			                <input type="submit" name="login" value="Sign In" class="btn btn-success btn-sm" />
+			                <input type="submit" name="login" value="Accedi" class="btn btn-success btn-sm" />
 		                </form>
 					</div>
 	            </div>
