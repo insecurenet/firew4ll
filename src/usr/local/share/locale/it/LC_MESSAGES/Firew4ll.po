@@ -6543,12 +6543,51 @@ msgstr "Procedura guidata"
 msgid "General Information"
 msgstr "Informazioni generali"
 
-#: src/usr/local/www/wizards/setup_wizard.xml:
+#: src/usr/local/www/wizards/setup_wizard.xml:102
 msgid "Primary DNS Server"
 msgstr "Server DNS Primario"
 
+#: src/usr/local/www/wizards/setup_wizard.xml:112
 msgid "Secondary DNS Server"
 msgstr "Server DNS Secondario"
+
+#: src/usr/local/www/wizards/setup_wizard.xml:251
+msgid "SelectedType"
+msgstr "Seleziona Tipologia"
+
+#: src/usr/local/www/wizards/setup_wizard.xml:327
+msgid "Upstream Gateway"
+msgstr "Gateway"
+
+#: src/usr/local/www/wizards/setup_wizard.xml:358
+msgid "Show PPPoE password"
+msgstr "Mostra password PPPoE"
+
+#: src/usr/local/www/wizards/setup_wizard.xml:402
+msgid "PPTP Local IP Address"
+msgstr "Indirizzo IP PPTP Locale"
+
+#: src/usr/local/www/wizards/setup_wizard.xml:418
+msgid "PPTP Remote IP Address"
+msgstr "Indirizzo IP PPTP Remoto"
+
+#: src/usr/local/www/wizards/setup_wizard.xml:396
+msgid "Show PPTP password"
+msgstr "Mostra password PPTP"
+
+#: src/usr/local/www/wizards/setup_wizard.xml:443
+msgid "Block RFC1918 Private Networks"
+msgstr "Blocca Private Network RFC1918"
+
+#: src/usr/local/www/wizards/setup_wizard.xml:596
+msgid "LAN IP Address"
+msgstr "Indirizzo IP LAN"
+
+#: src/usr/local/www/wizards/setup_wizard.xml:710
+msgid "Admin Password AGAIN"
+msgstr "Admin Password RIPETI"
+
+
 
 #: src/usr/local/www/vpn_openvpn_client.php:510
 msgid "Set this option to disable this client without removing it from the list."
