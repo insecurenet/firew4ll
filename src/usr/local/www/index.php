@@ -31,8 +31,8 @@
 ##|-PRIV
 
 // Message to display if the session times out and an AJAX call is made
-$timeoutmessage = gettext("The dashboard web session has timed out.\\n" .
-	"It will not update until you refresh the page and log-in again.");
+$timeoutmessage = gettext("La sessione web è scaduta.\\n"
+                          "Aggiorna la pagina ed effettua di nuovo il log-in.");
 
 // Turn on buffering to speed up rendering
 ini_set('output_buffering', 'true');
