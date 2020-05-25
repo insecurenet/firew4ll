@@ -457,7 +457,7 @@ if [ "${GMIRROR_STATUS}" != "" ]; then
 fi
 
 [ -z "$skip_packages" ] \
-	&& /usr/local/sbin/${product}-upgrade -y -U -b 3
+#	&& /usr/local/sbin/${product}-upgrade -y -U -b 3
 
 # Start packages
 [ -z "$skip_packages" ] \
