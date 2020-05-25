@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<pfsensewizard>
+<firew4llwizard>
 <copyright>
 /*
  * setup_wizard.xml
@@ -276,7 +276,7 @@
 			</options>
 		</field>
 		<field>
-			<name>General configuration</name>
+			<name>Configurazione Generale</name>
 			<type>listtopic</type>
 		</field>
 		<field>
@@ -303,7 +303,7 @@
 			<description> Il clamping MSS per le connessioni TCP sara' attivato se viene inserito un valore in questo campo inferiore a 40 (dimensione dell'intestazione TCP/IP). Se questo campo viene lasciato vuoto, verrà assunto un MSS di 1492 byte per PPPoE e 1500 byte per tutti gli altri tipi di connessione. Questo dovrebbe corrispondere al valore MTU sopra indicato nella maggior parte dei casi.</description>
 		</field>
 		<field>
-			<name>Static IP Configuration</name>
+			<name>Configurazione IP Statico</name>
 			<type>listtopic</type>
 		</field>
 		<field>
@@ -331,7 +331,7 @@
 			<message>Gateway IP non valido</message>
 		</field>
 		<field>
-			<name>DHCP client configuration</name>
+			<name>Configurazione DHCP client</name>
 			<type>listtopic</type>
 		</field>
 		<field>
@@ -341,7 +341,7 @@
 			<description> Il valore in questo campo viene inviato come identificativo del client DHCP e come hostname quando si richiede un lease DHCP. Puo' essere richiesto da alcuni ISP(per l'identificazione del client).</description>
 		</field>
 		<field>
-			<name>PPPoE configuration</name>
+			<name>Configurazione PPPoE</name>
 			<type>listtopic</type>
 		</field>
 		<field>
@@ -379,7 +379,7 @@
 			<bindstofield>wizardtemp->wan->idletimeout</bindstofield>
 		</field>
 		<field>
-			<name>PPTP configuration</name>
+			<name>Configurazione PPTP</name>
 			<type>listtopic</type>
 		</field>
 		<field>
@@ -395,7 +395,7 @@
 		<field>
 			<name>Show PPTP password</name>
 			<type>checkbox</type>
-			<typehint>Reveal password characters</typehint>
+			<typehint>Mostra la password</typehint>
 		</field>
 		<field>
 			<combinefieldsbegin>true</combinefieldsbegin>
@@ -823,4 +823,4 @@
 	]]>
 	</description>
 </step>
-</pfsensewizard>
+</firew4llwizard>

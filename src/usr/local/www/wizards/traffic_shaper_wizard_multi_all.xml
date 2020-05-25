@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<pfsensewizard>
+<firew4llwizard>
 	<copyright><![CDATA[
 /*
  * traffic_shaper_wizard_multi_all.xml
@@ -1625,4 +1625,4 @@
 		<stepsubmitphpaction>step8_stepsubmitphpaction();</stepsubmitphpaction>
 		<includefile>/usr/local/www/wizards/traffic_shaper_wizard_multi_all.inc</includefile>
 	</step>
-</pfsensewizard>
+</firew4llwizard>
