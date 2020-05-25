@@ -56,7 +56,7 @@ core_pkg_create_repo() {
 	#
 	echo -n ">>> Creating core packages repository... "
 	if pkg repo -q "${CORE_PKG_REAL_PATH}/"; then
-		echo "Done!"
+		echo "Fatto!"
 	else
 		echo "Failed!"
 		print_error_pfS
@@ -222,7 +222,7 @@ install_default_kernel() {
 			done
 		fi
 	fi
-	echo "Done." | tee -a ${LOGFILE}
+	echo "Fatto." | tee -a ${LOGFILE}
 
 	unset KERNEL_NAME
 }
@@ -393,7 +393,7 @@ create_ova_image() {
 	fi
 	trap "sync; sleep 3; umount ${_mntdir} || umount -f ${_mntdir}; mdconfig -d -u ${_md}; return" 1 2 15 EXIT
 
-	echo "Done!" | tee -a ${LOGFILE}
+	echo "Fatto!" | tee -a ${LOGFILE}
 
 	clone_directory_contents ${FINAL_CHROOT_DIR} ${_mntdir}
 
@@ -425,7 +425,7 @@ create_ova_image() {
 		echo ">>> ERROR: Error creating temporary vmdk image. STOPPING!" | tee -a ${LOGFILE}
 		print_error_pfS
 	fi
-	echo "Done!" | tee -a ${LOGFILE}
+	echo "Fatto!" | tee -a ${LOGFILE}
 
 	# We don't need it anymore
 	rm -f ${OVA_TMP}/${OVFUFS} >/dev/null 2>&1
@@ -445,7 +445,7 @@ create_ova_image() {
 		echo ">>> ERROR: Error creating vmdk image. STOPPING!" | tee -a ${LOGFILE}
 		print_error_pfS
 	fi
-	echo "Done!" | tee -a ${LOGFILE}
+	echo "Fatto!" | tee -a ${LOGFILE}
 
 	rm -f ${OVA_TMP}/${OVFRAW}
 
@@ -454,7 +454,7 @@ create_ova_image() {
 	echo -n ">>> Writing final ova image... " | tee -a ${LOGFILE}
 	# Create OVA file for vmware
 	gtar -C ${OVA_TMP} -cpf ${OVAPATH} ${PRODUCT_NAME}.ovf ${OVFVMDK}
-	echo "Done!" | tee -a ${LOGFILE}
+	echo "Fatto!" | tee -a ${LOGFILE}
 	rm -f ${OVA_TMP}/${OVFVMDK} >/dev/null 2>&1
 
 	echo ">>> OVA created: $(LC_ALL=C date)" | tee -a ${LOGFILE}
@@ -512,14 +512,14 @@ clean_builder() {
 		echo -n ">>> Cleaning ${STAGE_CHROOT_DIR}... "
 		chflags -R noschg ${STAGE_CHROOT_DIR} 2>&1 >/dev/null
 		rm -rf ${STAGE_CHROOT_DIR}/* 2>/dev/null
-		echo "Done."
+		echo Fatto."
 	fi
 
 	if [ -d "${INSTALLER_CHROOT_DIR}" ]; then
 		echo -n ">>> Cleaning ${INSTALLER_CHROOT_DIR}... "
 		chflags -R noschg ${INSTALLER_CHROOT_DIR} 2>&1 >/dev/null
 		rm -rf ${INSTALLER_CHROOT_DIR}/* 2>/dev/null
-		echo "Done."
+		echo Fatto."
 	fi
 
 	if [ -z "${NO_CLEAN_FREEBSD_OBJ}" -a -d "${FREEBSD_SRC_DIR}" ]; then
@@ -530,19 +530,19 @@ clean_builder() {
 			chflags -R noschg ${OBJTREE} 2>&1 >/dev/null
 			echo -n "."
 			rm -rf ${OBJTREE}/*
-			echo "Done!"
+			echo "Fatto!"
 		fi
 		if [ -d "${KERNEL_BUILD_PATH}" ]; then
 			echo -n ">>> Cleaning previously built kernel stage area..."
 			rm -rf $KERNEL_BUILD_PATH/*
-			echo "Done!"
+			echo "Fatto!"
 		fi
 	fi
 	mkdir -p $KERNEL_BUILD_PATH
 
 	echo -n ">>> Cleaning previously built images..."
 	rm -rf $IMAGES_FINAL_DIR/*
-	echo "Done!"
+	echo "Fatto!"
 
 	echo -n ">>> Cleaning previous builder logs..."
 	if [ -d "$BUILDER_LOGS" ]; then
@@ -550,7 +550,7 @@ clean_builder() {
 	fi
 	mkdir -p ${BUILDER_LOGS}
 
-	echo "Done!"
+	echo "Fatto!"
 
 	echo ">>> Cleaning of builder environment has finished."
 }
@@ -569,7 +569,7 @@ clone_directory_contents() {
 	fi
 	echo -n ">>> Using TAR to clone $1 to $2 ..."
 	tar -C ${1} -c -f - . | tar -C ${2} -x -p -f -
-	echo "Done!"
+	echo "Fatto!"
 }
 
 clone_to_staging_area() {
@@ -674,7 +674,7 @@ clone_to_staging_area() {
 		staging \
 		${STAGE_CHROOT_DIR}/tmp/pkg/pkg.conf
 
-	echo "Done!"
+	echo "Fatto!"
 }
 
 create_final_staging_area() {
@@ -687,7 +687,7 @@ create_final_staging_area() {
 		echo -n ">>> Previous ${FINAL_CHROOT_DIR} detected cleaning up..." | tee -a ${LOGFILE}
 		chflags -R noschg ${FINAL_CHROOT_DIR} 2>&1 1>/dev/null
 		rm -rf ${FINAL_CHROOT_DIR}/* 2>&1 1>/dev/null
-		echo "Done." | tee -a ${LOGFILE}
+		echo "Fatto." | tee -a ${LOGFILE}
 	fi
 
 	echo ">>> Preparing Final image staging area: $(LC_ALL=C date)" 2>&1 | tee -a ${LOGFILE}
@@ -774,13 +774,13 @@ create_distribution_tarball() {
 	echo -n ">>> Creating distribution tarball... " | tee -a ${LOGFILE}
 	tar -C ${FINAL_CHROOT_DIR} --exclude ./pkgs \
 		-cJf ${INSTALLER_CHROOT_DIR}/usr/freebsd-dist/base.txz .
-	echo "Done!" | tee -a ${LOGFILE}
+	echo "Fatto!" | tee -a ${LOGFILE}
 
 	echo -n ">>> Creating manifest... " | tee -a ${LOGFILE}
 	(cd ${INSTALLER_CHROOT_DIR}/usr/freebsd-dist && \
 		sh ${FREEBSD_SRC_DIR}/release/scripts/make-manifest.sh base.txz) \
 		> ${INSTALLER_CHROOT_DIR}/usr/freebsd-dist/MANIFEST
-	echo "Done!" | tee -a ${LOGFILE}
+	echo "Fatto!" | tee -a ${LOGFILE}
 }
 
 create_iso_image() {
@@ -1128,7 +1128,7 @@ update_freebsd_sources() {
 		echo -n ">>> Checking out desired commit (${GIT_FREEBSD_COSHA1})... "
 		( git -C  ${FREEBSD_SRC_DIR} checkout ${GIT_FREEBSD_COSHA1} ) 2>&1 | \
 			grep -C3 -i -E 'error|fatal'
-		echo "Done!"
+		echo "Fatto!"
 	fi
 
 	if [ "${PRODUCT_NAME}" = "pfSense" -a -n "${GNID_REPO_BASE}" ]; then
@@ -1247,7 +1247,7 @@ install_pkg_install_ports() {
 	pkg_chroot ${STAGE_CHROOT_DIR} set -y -v 1 pkg ${MAIN_PKG}
 	# Remove unnecessary packages
 	pkg_chroot ${STAGE_CHROOT_DIR} autoremove
-	echo "Done!"
+	echo "Fatto!"
 }
 
 staginareas_clean_each_run() {
@@ -1258,7 +1258,7 @@ staginareas_clean_each_run() {
 		chflags -R noschg ${FINAL_CHROOT_DIR} 2>&1 >/dev/null
 		rm -rf ${FINAL_CHROOT_DIR}/* 2>/dev/null
 	fi
-	echo "Done!"
+	echo "Fatto!"
 }
 
 # Imported from FreeSBIE
@@ -1369,7 +1369,7 @@ pkg_repo_rsync() {
 		#
 		if script -aq ${_logfile} pkg repo ${_real_repo_path}/ \
 		    signing_command: ${PKG_REPO_SIGNING_COMMAND} >/dev/null 2>&1; then
-			echo "Done!" | tee -a ${_logfile}
+			echo "Fatto!" | tee -a ${_logfile}
 		else
 			echo "Failed!" | tee -a ${_logfile}
 			echo ">>> ERROR: An error occurred trying to sign repo"
@@ -1382,7 +1382,7 @@ pkg_repo_rsync() {
 
 			if sha256 -q ${_pkgfile} | ${PKG_REPO_SIGNING_COMMAND} \
 			    > ${_pkgfile}.sig 2>/dev/null; then
-				echo "Done!" | tee -a ${_logfile}
+				echo "Fatto!" | tee -a ${_logfile}
 			else
 				echo "Failed!" | tee -a ${_logfile}
 				echo ">>> ERROR: An error occurred trying to sign Latest/pkg.txz"
@@ -1406,7 +1406,7 @@ pkg_repo_rsync() {
 			--timeout=60 --delete-delay ${_repo_path} \
 			${PKG_RSYNC_USERNAME}@${_pkg_rsync_hostname}:${PKG_RSYNC_DESTDIR} >/dev/null 2>&1
 		then
-			echo "Done!" | tee -a ${_logfile}
+			echo "Fatto!" | tee -a ${_logfile}
 		else
 			echo "Failed!" | tee -a ${_logfile}
 			echo ">>> ERROR: An error occurred sending repo to remote hostname"
@@ -1429,7 +1429,7 @@ pkg_repo_rsync() {
 				echo -n ">>> Sending updated packages to ${_pkg_final_rsync_hostname}... " | tee -a ${_logfile}
 				if script -aq ${_logfile} ssh -p ${PKG_RSYNC_SSH_PORT} \
 					${PKG_RSYNC_USERNAME}@${_pkg_rsync_hostname} ${_cmd} >/dev/null 2>&1; then
-					echo "Done!" | tee -a ${_logfile}
+					echo "Fatto!" | tee -a ${_logfile}
 				else
 					echo "Failed!" | tee -a ${_logfile}
 					echo ">>> ERROR: An error occurred sending repo to final hostname"
@@ -1443,7 +1443,7 @@ pkg_repo_rsync() {
 				echo -n ">>> Sending updated repositories metadata to ${_pkg_final_rsync_hostname}... " | tee -a ${_logfile}
 				if script -aq ${_logfile} ssh -p ${PKG_RSYNC_SSH_PORT} \
 					${PKG_RSYNC_USERNAME}@${_pkg_rsync_hostname} ${_cmd} >/dev/null 2>&1; then
-					echo "Done!" | tee -a ${_logfile}
+					echo "Fatto!" | tee -a ${_logfile}
 				else
 					echo "Failed!" | tee -a ${_logfile}
 					echo ">>> ERROR: An error occurred sending repo to final hostname"
@@ -1462,7 +1462,7 @@ pkg_repo_rsync() {
 					if script -aq ${_logfile} ssh -p ${PKG_FINAL_RSYNC_SSH_PORT} \
 					    ${PKG_FINAL_RSYNC_USERNAME}@${_pkg_final_rsync_hostname} \
 					    "${_aws_sync_cmd} ${_repo} ${PKG_FINAL_S3_PATH}/$(basename ${_repo})"; then
-						echo "Done!" | tee -a ${_logfile}
+						echo "Fatto!" | tee -a ${_logfile}
 					else
 						echo "Failed!" | tee -a ${_logfile}
 						echo ">>> ERROR: An error occurred sending files to AWS S3"
@@ -1472,7 +1472,7 @@ pkg_repo_rsync() {
 					if script -aq ${_logfile} ssh -p ${PKG_FINAL_RSYNC_SSH_PORT} \
 					    ${PKG_FINAL_RSYNC_USERNAME}@${_pkg_final_rsync_hostname} \
 					    "${_aws_sync_cmd} --delete ${_repo} ${PKG_FINAL_S3_PATH}/$(basename ${_repo})"; then
-						echo "Done!" | tee -a ${_logfile}
+						echo "Fatto!" | tee -a ${_logfile}
 					else
 						echo "Failed!" | tee -a ${_logfile}
 						echo ">>> ERROR: An error occurred sending files to AWS S3"
@@ -1591,7 +1591,7 @@ poudriere_rename_ports() {
 			done
 		fi
 	done
-	echo "Done!" | tee -a ${LOGFILE}
+	echo "Fatto!" | tee -a ${LOGFILE}
 }
 
 poudriere_create_ports_tree() {
@@ -1612,7 +1612,7 @@ poudriere_create_ports_tree() {
 			echo ">>> ERROR: Error creating poudriere ports tree, aborting..." | tee -a ${LOGFILE}
 			print_error_pfS
 		fi
-		echo "Done!" | tee -a ${LOGFILE}
+		echo "Fatto!" | tee -a ${LOGFILE}
 		poudriere_rename_ports
 	fi
 }
@@ -1654,7 +1654,7 @@ poudriere_init() {
 		echo -n ">>> Creating ZFS filesystem ${ZFS_TANK}${ZFS_ROOT}... "
 		if zfs create -o atime=off -o mountpoint=/usr/local${ZFS_ROOT} \
 		    ${ZFS_TANK}${ZFS_ROOT} >/dev/null 2>&1; then
-			echo "Done!"
+			echo "Fatto!"
 		else
 			echo "Failed!"
 			print_error_pfS
@@ -1749,7 +1749,7 @@ EOF
 			echo ">>> ERROR: Error creating jail ${jail_name}, aborting..." | tee -a ${LOGFILE}
 			print_error_pfS
 		fi
-		echo "Done!" | tee -a ${LOGFILE}
+		echo "Fatto!" | tee -a ${LOGFILE}
 	done
 
 	poudriere_create_ports_tree
@@ -1786,7 +1786,7 @@ poudriere_update_jails() {
 			echo ">>> ERROR: Error ${_create_or_update_text} jail ${jail_name}, aborting..." | tee -a ${LOGFILE}
 			print_error_pfS
 		fi
-		echo "Done!" | tee -a ${LOGFILE}
+		echo "Fatto!" | tee -a ${LOGFILE}
 	done
 }
 
@@ -1800,10 +1800,10 @@ poudriere_update_ports() {
 		echo -n ">>> Resetting local changes on ports tree ${POUDRIERE_PORTS_NAME}... " | tee -a ${LOGFILE}
 		script -aq ${LOGFILE} git -C "/usr/local/poudriere/ports/${POUDRIERE_PORTS_NAME}" reset --hard >/dev/null 2>&1
 		script -aq ${LOGFILE} git -C "/usr/local/poudriere/ports/${POUDRIERE_PORTS_NAME}" clean -fd >/dev/null 2>&1
-		echo "Done!" | tee -a ${LOGFILE}
+		echo "Fatto!" | tee -a ${LOGFILE}
 		echo -n ">>> Updating ports tree ${POUDRIERE_PORTS_NAME}... " | tee -a ${LOGFILE}
 		script -aq ${LOGFILE} poudriere ports -u -p "${POUDRIERE_PORTS_NAME}" >/dev/null 2>&1
-		echo "Done!" | tee -a ${LOGFILE}
+		echo "Fatto!" | tee -a ${LOGFILE}
 		poudriere_rename_ports
 	fi
 }
