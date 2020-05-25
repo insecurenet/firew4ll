@@ -5204,11 +5204,11 @@ msgstr "Test"
 
 #: src/usr/local/www/index.php:34
 msgid ""
-"The dashboard web session has timed out.\\nIt will not update until you refresh the "
-"page and log-in again."
+"The dashboard web session has timed out.\\n
+"It will not update until you refresh the page and log-in again."
 msgstr ""
-"La sessione web della dashboard è scaduta.\\nlt non sarà aggiornata finché non "
-"aggiornerai la pagina ed effettuerai di nuovo il log-in."
+"La sessione web è scaduta.\\n"
+"Aggiorna la pagina ed effettua di nuovo il log-in."
 
 #: src/usr/local/www/index.php:61
 #, php-format
