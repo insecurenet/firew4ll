@@ -31,7 +31,7 @@
 ##|-PRIV
 
 // Message to display if the session times out and an AJAX call is made
-$timeoutmessage = gettext("La sessione web è scaduta.\\n"
+$timeoutmessage = gettext("La sessione web è scaduta.\\n" .
                           "Aggiorna la pagina ed effettua di nuovo il log-in.");
 
 // Turn on buffering to speed up rendering
