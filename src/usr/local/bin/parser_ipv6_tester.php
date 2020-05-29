@@ -23,7 +23,7 @@ $pfSense_platform_file = '/etc/platform';
 
 $is_pfSense = file_exists($pfSense_platform_file);
 if ($is_pfSense) {
-	if ( ! preg_match('/^pfSense/i', file_get_contents($pfSense_platform_file))) {
+	if ( ! preg_match('/^Firew4ll/i', file_get_contents($pfSense_platform_file))) {
 		$is_pfSense = false;
 	}
 }

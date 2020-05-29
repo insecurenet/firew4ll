@@ -22,7 +22,7 @@ $priv_list['page-all']['match'][] = "*";
 
 $priv_list['page-diagnostics-crash-reporter'] = array();
 $priv_list['page-diagnostics-crash-reporter']['name'] = gettext("WebCfg - Crash reporter");
-$priv_list['page-diagnostics-crash-reporter']['descr'] = gettext("Uploads crash reports to pfSense and or deletes crash reports.");
+$priv_list['page-diagnostics-crash-reporter']['descr'] = gettext("Uploads crash reports to Firew4ll and or deletes crash reports.");
 $priv_list['page-diagnostics-crash-reporter']['match'] = array();
 $priv_list['page-diagnostics-crash-reporter']['match'][] = "crash_reporter.php*";
 
@@ -1310,8 +1310,8 @@ $priv_list['page-openvpn-server']['match'] = array();
 $priv_list['page-openvpn-server']['match'][] = "vpn_openvpn_server.php*";
 
 $priv_list['page-pfsensewizardsubsystem'] = array();
-$priv_list['page-pfsensewizardsubsystem']['name'] = gettext("WebCfg - pfSense wizard subsystem");
-$priv_list['page-pfsensewizardsubsystem']['descr'] = gettext("Allow access to the 'pfSense wizard subsystem' page.");
+$priv_list['page-pfsensewizardsubsystem']['name'] = gettext("WebCfg - Firew4ll wizard subsystem");
+$priv_list['page-pfsensewizardsubsystem']['descr'] = gettext("Allow access to the 'Firew4ll wizard subsystem' page.");
 $priv_list['page-pfsensewizardsubsystem']['match'] = array();
 $priv_list['page-pfsensewizardsubsystem']['match'][] = "wizard.php*";
 

@@ -2347,7 +2347,7 @@ EOD;
 		}
 
 		$snmpdconf .= <<<EOD
-system := 1     # pfSense
+system := 1     # Firew4ll
 %snmpd
 sysDescr			= "{$sysDescr}"
 begemotSnmpdDebugDumpPdus       = 2
@@ -2759,7 +2759,7 @@ function configure_cron() {
 
 	for ($i = 0; $i < count($crontab_contents); $i++) {
 		$cron_item = &$crontab_contents[$i];
-		if (strpos($cron_item, "# pfSense specific crontab entries") !== false) {
+		if (strpos($cron_item, "# Firew4ll specific crontab entries") !== false) {
 			array_splice($crontab_contents, $i - 1);
 			break;
 		}

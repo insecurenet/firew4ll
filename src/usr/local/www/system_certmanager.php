@@ -707,7 +707,7 @@ if ($act == "new" || (($_POST['save'] == gettext("Save")) && $input_errors)) {
 		'keypaste',
 		'Key data',
 		$pconfig['keypaste']
-	))->setHelp('Optionally paste a private key here. The key will be associated with the newly signed certificate in pfSense');
+	))->setHelp('Optionally paste a private key here. The key will be associated with the newly signed certificate in Firew4ll');
 
 	$section->addInput(new Form_Input(
 		'csrsign_lifetime',

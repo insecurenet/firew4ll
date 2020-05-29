@@ -21,8 +21,8 @@
 
 ##|+PRIV
 ##|*IDENT=page-pfsensewizardsubsystem
-##|*NAME=pfSense wizard subsystem
-##|*DESCR=Allow access to the 'pfSense wizard subsystem' page.
+##|*NAME=Firew4ll wizard subsystem
+##|*DESCR=Allow access to the 'Firew4ll wizard subsystem' page.
 ##|*MATCH=wizard.php*
 ##|-PRIV
 

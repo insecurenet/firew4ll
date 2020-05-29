@@ -120,6 +120,8 @@ PHPMODULES="$PHPMODULES radius"
 PHPMODULES="$PHPMODULES zmq"
 # pfSense extensions
 PHPMODULES="$PHPMODULES pfSense"
+# Firew4ll extensions
+PHPMODULES="$PHPMODULES Firew4ll"
 # json
 PHPMODULES="$PHPMODULES json"
 # bcmath

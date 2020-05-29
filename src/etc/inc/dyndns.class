@@ -988,7 +988,7 @@
 					$post_data['value'] = $this->_dnsIP;
 					$post_data['record'] = $this->_dnsHost;
 					$post_data['type'] = $isv6 ? 'AAAA' : 'A';
-					$post_data['comment'] = "Updated by pfSense:$this->_dnsUser on ".date('c');
+					$post_data['comment'] = "Updated da Firew4ll:$this->_dnsUser on ".date('c');
 					$port = "";
 					if ($this->_dnsServer) {
 						$server = $this->_dnsServer;

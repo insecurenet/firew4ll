@@ -255,7 +255,7 @@ events.push(function() {
 			if (in_array($pname, $a_user['priv'])) {
 				continue;
 			}
-			$desc = preg_replace("/pfSense/i", $g['product_name'], $pdata['descr']);
+			$desc = preg_replace("/Firew4ll/i", $g['product_name'], $pdata['descr']);
 			if (isset($pdata['warn']) && ($pdata['warn'] == 'standard-warning-root')) {
 				$desc .= ' ' . gettext('(This privilege effectively gives administrator-level access to the user)');
 			}

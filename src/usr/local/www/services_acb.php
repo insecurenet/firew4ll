@@ -69,9 +69,9 @@ if ($_REQUEST['savemsg']) {
 }
 
 if ($_REQUEST['download']) {
-	$pgtitle = array("Services", "Auto Configuration Backup", "Revision Information");
+	$pgtitle = array("Servizi", "Auto Configurazione Backup", "Info Revisioni");
 } else {
-	$pgtitle = array("Services", "Auto Configuration Backup", "Restore");
+	$pgtitle = array("Servizi", "Auto Configurazione Backup", "Ripristina");
 }
 
 /* Set up time zones for conversion. See #5250 */
@@ -138,12 +138,12 @@ if ($_REQUEST['rmver'] != "") {
 		fwrite($fd, $data);
 		fwrite($fd, curl_error($curl_session));
 		fclose($fd);
-		$savemsg = "An error occurred while trying to remove the item from portal.pfsense.org.";
+		$savemsg = "Si è verificato un errore mentre si cercava di rimuovere l'elemento da ";
 	} else {
 		curl_close($curl_session);
 		$budate = new DateTime($_REQUEST['rmver'], $acbtz);
 		$budate->setTimezone($mytz);
-		$savemsg = "Backup revision " . htmlspecialchars($budate->format(DATE_RFC2822)) . " has been removed.";
+		$savemsg = "Backup revision " . htmlspecialchars($budate->format(DATE_RFC2822)) . " rimosso.";
 	}
 }
 
@@ -168,7 +168,7 @@ if ($_REQUEST['newver'] != "") {
 	$data = $data_split[1];
 
 	if (!tagfile_deformat($data, $data, "config.xml")) {
-		$input_errors[] = "The downloaded file does not appear to contain an encrypted pfSense configuration.";
+		$input_errors[] = "Il file scaricato non sembra contenere una configurazione Firew4ll criptata.";
 	}
 
 	$out = decrypt_data($data, $decrypt_password);
@@ -182,7 +182,7 @@ if ($_REQUEST['newver'] != "") {
 	fclose($fd);
 
 	if (strlen($data) < 50) {
-		$input_errors[] = "The decrypted config.xml is under 50 characters, something went wrong. Aborting.";
+		$input_errors[] = "Config.xml decifrato inferiore a 50 caratteri, qualcosa andato storto. Interrompere.";
 	}
 
 	$ondisksha256 = trim(shell_exec("/sbin/sha256 /tmp/config_restore.xml | /usr/bin/awk '{ print $4 }'"));
@@ -206,7 +206,7 @@ if ($_REQUEST['newver'] != "") {
 	if (!$input_errors && $data) {
 		conf_mount_rw();
 		if (config_restore("/tmp/config_restore.xml") == 0) {
-			$savemsg = "Successfully reverted the pfSense configuration to revision " . urldecode($_REQUEST['newver']) . ".";
+			$savemsg = "Configurazione di Firew4ll riportata con successo alla versione scelta" . urldecode($_REQUEST['newver']) . ".";
 			$savemsg .= <<<EOF
 			<br />
 		<form action="diag_reboot.php" method="post">
@@ -241,7 +241,7 @@ if ($_REQUEST['download']) {
 	$data = curl_exec($curl_session);
 
 	if (!tagfile_deformat($data, $data1, "config.xml")) {
-		$input_errors[] = "The downloaded file does not appear to contain an encrypted pfSense configuration.";
+		$input_errors[] = "Il file scaricato non sembra contenere una configurazione di Firew4ll criptata.";
 	} else {
 		$ds = explode('++++', $data);
 		$revision = $_REQUEST['download'];
@@ -252,12 +252,12 @@ if ($_REQUEST['download']) {
 		$data = $ds[1];
 		$configtype = "Encrypted";
 		if (!tagfile_deformat($data, $data, "config.xml")) {
-			$input_errors[] = "The downloaded file does not appear to contain an encrypted pfSense configuration.";
+			$input_errors[] = "Il file scaricato non sembra contenere una configurazione di Firew4ll criptata.";
 		}
 		$data = decrypt_data($data, $decrypt_password);
 		if (!strstr($data, "pfsense")) {
-			$data = "Could not decrypt. Different encryption key?";
-			$input_errors[] = "Could not decrypt config.xml";
+			$data = "Non riesco a decifrare. Chiave di cifratura diversa?";
+			$input_errors[] = "Non riesco a decifrare config.xml";
 		}
 	}
 }
@@ -392,7 +392,7 @@ $form->add($section);
 print($form);
 
 ?>
-<a class="btn btn-primary" title="<?=gettext('Restore this revision')?>" href="services_acb.php?newver=<?= urlencode($_REQUEST['download']) ?>" onclick="return confirm('<?=gettext("Are you sure you want to restore {$cv['localtime']}?")?>')"><i class="fa fa-undo"></i> Install this revision</a>
+<a class="btn btn-primary" title="<?=gettext('Restore this revision')?>" href="services_acb.php?newver=<?= urlencode($_REQUEST['download']) ?>" onclick="return confirm('<?=gettext("Sei sicuro di voler ripristinare {$cv['localtime']}?")?>')"><i class="fa fa-undo"></i> Install this revision</a>
 
 <?php else:
 
@@ -404,9 +404,9 @@ $group->add(new Form_Input(
 	'Device key',
 	'text',
 	$userkey
-))->setWidth(7)->setHelp("ID used to identify this firewall (derived from the SSH public key.) " .
-	"See help below for more details. %sPlease make a safe copy of this ID value.%s If it is lost, your backups will" .
-	" be lost too!", "<strong>", "</strong>");
+))->setWidth(7)->setHelp("ID utilizzato per identificare questo firewall (derivato dalla chiave pubblica SSH). " .
+	"Vedi aiuto qui sotto per maggiori dettagli. %sSi prega di fare una copia sicura di questo valore di ID. %s Se viene perso, anche i vostri backup " .
+	" andranno persi!", "<strong>", "</strong>");
 
 $group->add(new Form_Button(
 	'upduserkey',
@@ -426,14 +426,14 @@ $section2->add($group);
 print($section2);
 
 print('<div class="infoblock">');
-print_info_box(gettext("The Device key listed above is derived from the SSH public key of the firewall. When a configuration is saved, it is identified by this value." .
-	" If you are restoring the configuration of another firewall, paste the Device key from that firewall into the Device ID field above and click \"Submit\"." .
-	" This will temporarily override the ID for this session."), 'info', false);
+print_info_box(gettext("La chiave del dispositivo sopra elencata deriva dalla chiave pubblica SSH del firewall. Quando una configurazione viene salvata, viene identificata da questo valore." .
+	" Se si sta ripristinando la configurazione di un altro firewall, incollare la chiave Device di quel firewall nel campo Device ID soprastante e fare clic su \"Invia\"." .
+	" Questo bypassa temporaneamente l'ID per questa sessione."), 'info', false);
 print('</div>');
 
 ?>
 <div class="panel panel-default">
-	<div class="panel-heading"><h2 class="panel-title"><?=gettext("Automatic Configuration Backups")?></h2></div>
+	<div class="panel-heading"><h2 class="panel-title"><?=gettext("Backup Automatico Configurazione")?></h2></div>
 	<div class="panel-body">
 		<div class="table-responsive">
 		</div>
@@ -441,9 +441,9 @@ print('</div>');
 			<table class="table table-striped table-hover table-condensed" id="backups">
 				<thead>
 					<tr>
-						<th width="30%"><?=gettext("Date")?></th>
-						<th width="60%"><?=gettext("Configuration Change")?></th>
-						<th width="10%"><?=gettext("Actions")?></th>
+						<th width="30%"><?=gettext("Data")?></th>
+						<th width="60%"><?=gettext("Modifica Configurazione")?></th>
+						<th width="10%"><?=gettext("Azioni")?></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -456,12 +456,12 @@ print('</div>');
 						<td><?= $cv['localtime']; ?></td>
 						<td><?= $cv['reason']; ?></td>
 						<td>
-							<a class="fa fa-undo"		title="<?=gettext('Restore this revision')?>"	href="services_acb.php?hostname=<?=urlencode($hostname)?>&userkey=<?=urlencode($userkey)?>&newver=<?=urlencode($cv['time'])?>"	onclick="return confirm('<?=gettext("Are you sure you want to restore {$cv['localtime']}?")?>')"></a>
-							<a class="fa fa-download"	title="<?=gettext('Show info')?>"	href="services_acb.php?download=<?=urlencode($cv['time'])?>&hostname=<?=urlencode($hostname)?>&userkey=<?=urlencode($userkey)?>&reason=<?=urlencode($cv['reason'])?>"></a>
+							<a class="fa fa-undo"		title="<?=gettext('Ripristina questa revisione')?>"	href="services_acb.php?hostname=<?=urlencode($hostname)?>&userkey=<?=urlencode($userkey)?>&newver=<?=urlencode($cv['time'])?>"	onclick="return confirm('<?=gettext("Sei sicuro di voler ripristinare {$cv['localtime']}?")?>')"></a>
+							<a class="fa fa-download"	title="<?=gettext('Mostra info')?>"	href="services_acb.php?download=<?=urlencode($cv['time'])?>&hostname=<?=urlencode($hostname)?>&userkey=<?=urlencode($userkey)?>&reason=<?=urlencode($cv['reason'])?>"></a>
 <?php
 		if ($userkey == $origkey) {
 ?>
-							<a class="fa fa-trash"		title="<?=gettext('Delete config')?>"	href="services_acb.php?hostname=<?=urlencode($hostname)?>&rmver=<?=urlencode($cv['time'])?>"></a>
+							<a class="fa fa-trash"		title="<?=gettext('Cancella config')?>"	href="services_acb.php?hostname=<?=urlencode($hostname)?>&rmver=<?=urlencode($cv['time'])?>"></a>
 <?php 	} ?>
 						</td>
 					</tr>
@@ -470,14 +470,14 @@ print('</div>');
 				if ($counter == 0): ?>
 					<tr>
 						<td colspan="3" align="center" class="text-danger"><strong>
-							<?=gettext("No backups could be located for this device.")?>
+							<?=gettext("Nessun backup trovato per questo dispositivo.")?>
 							</strong>
 						</td>
 					</tr>
 				<?php else: ?>
 					<tr>
 						<td colspan="3" align="center">
-							<br /><?=gettext("Current count of hosted backups")?> : <?= $counter ?>
+							<br /><?=gettext("Conteggio attuale dei backup ospitati")?> : <?= $counter ?>
 						</td>
 					</tr>
 				<?php endif; ?>

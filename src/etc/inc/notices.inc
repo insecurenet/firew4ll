@@ -403,7 +403,7 @@ function send_smtp_message($message, $subject = "(no subject)", $force = false) 
 	if ($config['notifications']['smtp']['fromaddress']) {
 		$from = $config['notifications']['smtp']['fromaddress'];
 	} else {
-		$from = "pfsense@{$config['system']['hostname']}.{$config['system']['domain']}";
+		$from = "Firew4ll@{$config['system']['hostname']}.{$config['system']['domain']}";
 	}
 
 	$headers = array(

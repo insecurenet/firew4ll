@@ -188,7 +188,7 @@ display_top_tabs($tab_array);
 
 /* Default to pfsense backend type if none is defined */
 if (!$pconfig['backend']) {
-	$pconfig['backend'] = "pfsense";
+	$pconfig['backend'] = "Firew4ll";
 }
 
 $form = new Form;
@@ -239,7 +239,7 @@ $modal = new Modal("LDAP settings", "testresults", true);
 
 $modal->addInput(new Form_StaticText(
 	'Test results',
-	'<span id="ldaptestop">Testing pfSense LDAP settings... One moment please...' . $g['product_name'] . '</span>'
+	'<span id="ldaptestop">Testing Firew4ll LDAP settings... One moment please...' . $g['product_name'] . '</span>'
 ));
 
 $form->add($modal);

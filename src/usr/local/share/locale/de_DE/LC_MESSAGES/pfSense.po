@@ -24423,7 +24423,7 @@ msgstr ""
 msgid ""
 "When enabled, clients will be disconnected after exceeding the amount of "
 "traffic, inclusive of both downloads and uploads, retrieved from the RADIUS "
-"pfSense-Max-Total-Octets attribute."
+"Firew4ll-Max-Total-Octets attribute."
 msgstr ""
 
 #: src/usr/local/www/services_captiveportal.php:975
@@ -24433,7 +24433,7 @@ msgstr ""
 #: src/usr/local/www/services_captiveportal.php:978
 msgid ""
 "When enabled, the bandwidth assigned to a client will be limited to the "
-"values retrieved from the RADIUS pfSense-Bandwidth-Max-Up and pfSense-"
+"values retrieved from the RADIUS Firew4ll-Bandwidth-Max-Up and pfSense-"
 "Bandwidth-Max-Down attributes or from the comparable WISPr attributes."
 msgstr ""
 
@@ -38741,7 +38741,7 @@ msgid ""
 "Communications, LLC (d/b/a Netgate) (\"Netgate\").</p>\n"
 "\t\t\t\t\t<p>Any unauthorized use of the pfSense&reg; mark is prohibited by "
 "United States and international law. Please refer to the Netgate <a href="
-"\"https://www.pfsense.org/trademarks.html\" target=\"_blank\"> Trademark "
+"\"https://www.firew4ll.org/trademarks.html\" target=\"_blank\"> Trademark "
 "Usage Guidelines</a> for how to properly use the mark.</p>\n"
 "\t\t\t\t\t</div>\n"
 "\t\t\t\t\t<div class=\"modal-footer\" style=\"background-color:#1e3f75; "
@@ -40493,12 +40493,12 @@ msgid "Use RADIUS Session-Timeout attributes"
 msgstr "Benutze die RADIUS Session-Timeout Attribute"
 
 #: src/usr/local/www/services_captiveportal.php:969
-msgid "Use RADIUS pfSense-Max-Total-Octets attribute"
+msgid "Use RADIUS Firew4ll-Max-Total-Octets attribute"
 msgstr ""
 
 #: src/usr/local/www/services_captiveportal.php:976
 msgid ""
-"Use RADIUS pfSense-Bandwidth-Max-Up and pfSense-Bandwidth-Max-Down "
+"Use RADIUS Firew4ll-Bandwidth-Max-Up and Firew4ll-Bandwidth-Max-Down "
 "attributes"
 msgstr ""
 

@@ -31,7 +31,7 @@ if ($is_pfSense) {
 if ($is_pfSense) {
 	require_once('parser_dhcpv6_leases.inc');
 } else {
-	/* Handle situation where we use source files on a non-running pfSense system.
+	/* Handle situation where we use source files on a non-running Firew4ll system.
 	 * Get from this file back to 'src' so we can use 'src/etc/inc/'.
 	 */
 	define('__ROOT__', dirname(dirname(dirname(dirname(__FILE__)))));

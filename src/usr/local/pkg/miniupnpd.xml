@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <packagegui>
-	<title>Services/UPnP &amp; NAT-PMP</title>
+	<title>Servizi/UPnP &amp; NAT-PMP</title>
 	<name>miniupnpd</name>
 	<version>20100712</version>
 	<include_file>/usr/local/pkg/miniupnpd.inc</include_file>
@@ -26,21 +26,21 @@
 			<fieldname>enable</fieldname>
 			<type>checkbox</type>
 			<enablefields>enable_upnp,enable_natpmp,ext_iface,iface_array,download,upload,overridewanip,upnpqueue,logpackets,sysuptime,permdefault</enablefields>
-			<description>Enable UPnP &amp; NAT-PMP</description>
+			<description>Abilita UPnP &amp; NAT-PMP</description>
 		</field>
 		<field>
 			<fielddescr>UPnP Port Mapping</fielddescr>
 			<fieldname>enable_upnp</fieldname>
 			<type>checkbox</type>
-			<description>Allow UPnP Port Mapping</description>
-			<sethelp>This protocol is often used by Microsoft-compatible systems.</sethelp>
+			<description>Abilita UPnP Port Mapping</description>
+			<sethelp>Questo protocollo è spesso utilizzato da sistemi compatibili con Microsoft.</sethelp>
 		</field>
 		<field>
 			<fielddescr>NAT-PMP Port Mapping</fielddescr>
 			<fieldname>enable_natpmp</fieldname>
 			<type>checkbox</type>
-			<description>Allow NAT-PMP Port Mapping</description>
-			<sethelp>This protocol is often used by Apple-compatible systems.</sethelp>
+			<description>Abilita NAT-PMP Port Mapping</description>
+			<sethelp>Questo protocollo è spesso utilizzato da sistemi compatibili con Apple.</sethelp>
 		</field>
 		<field>
 			<fielddescr>External Interface</fielddescr>
@@ -48,7 +48,7 @@
 			<default_value>wan</default_value>
 			<type>interfaces_selection</type>
 			<hideinterfaceregex>loopback</hideinterfaceregex>
-			<description>Select only the primary WAN interface (interface with the default gateway). Only one interface may be chosen.</description>
+			<description>Selezionare solo l'interfaccia WAN primaria (interfaccia con il gateway predefinito). Si può scegliere solo un'interfaccia</description>
 			<required/>
 		</field>
 		<field>
@@ -56,51 +56,51 @@
 			<fieldname>iface_array</fieldname>
 			<default_value>lan</default_value>
 			<type>interfaces_selection</type>
-			<description>Select the internal interfaces, such as LAN, where UPnP/NAT-PMP clients reside. Use the CTRL or COMMAND key to select multiple interfaces.</description>
+			<description>Selezionare le interfacce interne, come LAN, dove risiedono i client UPnP/NAT-PMP. Utilizzare il tasto CTRL o COMMAND per selezionare più interfacce.</description>
 			<required/>
 			<multiple/>
 		</field>
 		<field>
 			<fielddescr>Download Speed</fielddescr>
 			<fieldname>download</fieldname>
-			<description>Set the Maximum Download Speed in Kbits/second.</description>
+			<description>Impostare la velocità massima di download in Kbits/secondo.</description>
 			<type>input</type>
 		</field>
 		<field>
 			<fielddescr>Upload Speed</fielddescr>
 			<fieldname>upload</fieldname>
-			<description>Set the Maximum Upload Speed in Kbits/second.</description>
+			<description>Impostare la velocità massima di upload in Kbits/secondo..</description>
 			<type>input</type>
 		</field>
 		<field>
 			<fielddescr>Override WAN address</fielddescr>
 			<fieldname>overridewanip</fieldname>
-			<description>Use an alternate WAN address to accept inbound connections, such as an IP Alias or CARP Virtual IP address.</description>
+			<description>Utilizzare un indirizzo WAN alternativo per accettare connessioni in entrata, come ad esempio un IP Alias o un indirizzo IP virtuale CARP.</description>
 			<type>input</type>
 		</field>
 		<field>
 			<fielddescr>Traffic Shaping</fielddescr>
 			<fieldname>upnpqueue</fieldname>
-			<description>Enter the ALTQ traffic shaping queue in which the connections should be placed.</description>
+			<description>Inserire la coda di ottimizzazione del traffico ALTQ in cui devono essere inseriti i collegamenti.</description>
 			<type>input</type>
 		</field>
 		<field>
 			<fielddescr>Log packets</fielddescr>
 			<fieldname>logpackets</fieldname>
 			<type>checkbox</type>
-			<description>Log packets handled by UPnP &amp; NAT-PMP rules.</description>
+			<description>Log dei pacchetti gestiti dalle regole UPnP &amp; NAT-PMP.</description>
 		</field>
 		<field>
 			<fielddescr>Uptime</fielddescr>
 			<fieldname>sysuptime</fieldname>
 			<type>checkbox</type>
-			<description>Use system uptime instead of UPnP &amp; NAT-PMP service uptime.</description>
+			<description>Utilizzare il tempo di attività del sistema invece del servizio di UPnP &amp; NAT-PMP.</description>
 		</field>
 		<field>
 			<fielddescr>Default Deny</fielddescr>
 			<fieldname>permdefault</fieldname>
 			<type>checkbox</type>
-			<description>Deny access to UPnP &amp; NAT-PMP by default.</description>
+			<description>Nega accesso a UPnP &amp; NAT-PMP di default.</description>
 		</field>
 		<field>
 			<name>UPnP Access Control Lists</name>
@@ -110,10 +110,10 @@
 			<name>ACL Help</name>
 			<type>info</type>
 			<description>
-			These entries control access to the UPnP service. Client systems may be granted or denied access based on several criteria.
+			Queste voci controllano l'accesso al servizio UPnP. Accesso ai sistemi dei clienti può essere concesso o negato sulla base di diversi criteri.
 			&lt;br /&gt;&lt;br /&gt;
-			Format: [allow or deny] [ext port or range] [int ipaddr or ipaddr/CIDR] [int port or range]
-			&lt;br /&gt;Example: allow 1024-65535 192.168.0.0/24 1024-65535</description>
+			Formato: [allow o deny] [porta est. o range] [ipaddr o ipaddr/CIDR] [porta int. o range]
+			&lt;br /&gt;Esempio: allow 1024-65535 192.168.0.0/24 1024-65535</description>
 		</field>
 		<field>
 			<fielddescr>ACL Entries</fielddescr>
@@ -131,13 +131,13 @@
 			<fielddescr>Custom presentation URL</fielddescr>
 			<fieldname>presentationurl</fieldname>
 			<type>input</type>
-			<description>If left blank the default value of the WebGUI of this firewall will be used.</description>
+			<description>Se lasciato vuoto verrà utilizzato il valore di default della WebGUI di questo firewall.</description>
 		</field>
 		<field>
 			<fielddescr>Custom model number</fielddescr>
 			<fieldname>modelnumber</fieldname>
 			<type>input</type>
-			<description>If left blank the default value of the firmware version of pfSense will be used.</description>
+			<description>Se lasciato vuoto verrà utilizzato il valore di default della versione del firmware di Firew4ll.</description>
 		</field>
 	</fields>
 	<custom_php_command_before_form>

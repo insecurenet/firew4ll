@@ -120,7 +120,7 @@ $ramode_help = gettext('Select the Operating Mode for the Router Advertisement (
 	'<dt>' . gettext('Assisted') . 		 '</dt><dd>' . gettext('Will advertise this router with configuration through a DHCPv6 server and/or stateless autoconfig.') . '</dd>' .
 	'<dt>' . gettext('Stateless DHCP') . '</dt><dd>' . gettext('Will advertise this router with stateless autoconfig and other configuration information available via DHCPv6.') . '</dd>' .
 	'</dl>' .
-	gettext('It is not required to activate DHCPv6 server on pfSense when set to "Managed", "Assisted" or "Stateless DHCP", it can be another host on the network.') .
+	gettext('It is not required to activate DHCPv6 server on Firew4ll when set to "Managed", "Assisted" or "Stateless DHCP", it can be another host on the network.') .
 	'</div>';
 
 if ($_POST['save']) {

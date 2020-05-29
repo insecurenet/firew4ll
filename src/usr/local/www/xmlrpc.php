@@ -760,7 +760,7 @@ XML_RPC2_Backend::setBackend('php');
 $HTTP_RAW_POST_DATA = file_get_contents('php://input');
 
 $options = array(
-	'prefix' => 'pfsense.',
+	'prefix' => 'Firew4ll.',
 	'encoding' => 'utf-8',
 	'autoDocument' => false,
 );

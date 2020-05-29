@@ -170,8 +170,8 @@ if (file_exists("/usr/local/bin/git")) {
 		isset($gitcfg['synconupgrade'])
 		))->setHelp('After updating, sync with the following repository/branch before reboot.');
 
-	if (is_dir("/root/pfsense/pfSenseGITREPO/pfSenseGITREPO")) {
-		exec("cd /root/pfsense/pfSenseGITREPO/pfSenseGITREPO && git config remote.origin.url", $output_str);
+	if (is_dir("/root/firew4ll/pfSenseGITREPO/pfSenseGITREPO")) {
+		exec("cd /root/firew4ll/pfSenseGITREPO/pfSenseGITREPO && git config remote.origin.url", $output_str);
 		if (is_array($output_str) && !empty($output_str[0])) {
 			$lastrepositoryurl = $output_str[0];
 		}
@@ -185,8 +185,8 @@ if (file_exists("/usr/local/bin/git")) {
 		($gitcfg['repositoryurl'] ? $gitcfg['repositoryurl'] : '')
 		))->setHelp('The most recently used repository was %s. This repository will be used if the field is left blank.', $lastrepositoryurl);
 
-	if (is_dir("/root/pfsense/pfSenseGITREPO/pfSenseGITREPO")) {
-		exec("cd /root/pfsense/pfSenseGITREPO/pfSenseGITREPO && git branch", $output_str);
+	if (is_dir("/root/firew4ll/pfSenseGITREPO/pfSenseGITREPO")) {
+		exec("cd /root/firew4ll/pfSenseGITREPO/pfSenseGITREPO && git branch", $output_str);
 		if (is_array($output_str)) {
 			foreach ($output_str as $output_line) {
 				if (strstr($output_line, '* ')) {
@@ -244,7 +244,7 @@ if (file_exists("/usr/local/bin/git")) {
 		isset($gitcfg['dryrun'])
 		))->setHelp('Dry-run only.%1$sNo files copied.', '<br />');
 
-	$group->setHelp('See "playback gitsync --help" in console "PHP Shell + pfSense tools" for additional information.');
+	$group->setHelp('See "playback gitsync --help" in console "PHP Shell + Firew4ll tools" for additional information.');
 	$section->add($group);
 
 	$form->add($section);

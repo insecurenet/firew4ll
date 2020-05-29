@@ -1,18 +1,18 @@
 # -*- text -*-
 ##############################################################################
 #
-#	pfSense Captive Portal
+#	Firew4ll Captive Portal
 #
 #	$Id$
 #
 ##############################################################################
 
-VENDOR		pfSense				13644
+VENDOR		Firew4ll				13644
 
-BEGIN-VENDOR	pfSense
+BEGIN-VENDOR	Firew4ll
 
-ATTRIBUTE	pfSense-Bandwidth-Max-Up		1	integer
-ATTRIBUTE	pfSense-Bandwidth-Max-Down		2	integer
-ATTRIBUTE	pfSense-Max-Total-Octets		3	integer
+ATTRIBUTE	Firew4ll-Bandwidth-Max-Up		1	integer
+ATTRIBUTE	Firew4ll-Bandwidth-Max-Down		2	integer
+ATTRIBUTE	Firew4ll-Max-Total-Octets		3	integer
 
-END-VENDOR	pfSense
+END-VENDOR	Firew4ll

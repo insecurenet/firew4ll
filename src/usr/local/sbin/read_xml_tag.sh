@@ -33,7 +33,7 @@ if [ ! -f "$config" ]; then
 	exit 1
 fi
 
-# Get xml_rootobj, if not defined defaults to pfsense
+# Get xml_rootobj, if not defined defaults to Firew4ll
 # Use php -n here because we are not ready to load extensions yet
 xml_rootobj=$(/usr/local/bin/php -n /usr/local/sbin/read_global_var xml_rootobj pfsense 2>/dev/null)
 

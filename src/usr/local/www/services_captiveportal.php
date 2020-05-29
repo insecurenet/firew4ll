@@ -975,17 +975,17 @@ $section->addInput(new Form_Checkbox(
 $section->addInput(new Form_Checkbox(
 	'radiustraffic_quota',
 	'Traffic quota',
-	'Use RADIUS pfSense-Max-Total-Octets attribute',
+	'Use RADIUS Firew4ll-Max-Total-Octets attribute',
 	$pconfig['radiustraffic_quota']
-))->setHelp('When enabled, clients will be disconnected after exceeding the amount of traffic, inclusive of both downloads and uploads, retrieved from the RADIUS pfSense-Max-Total-Octets attribute.');
+))->setHelp('When enabled, clients will be disconnected after exceeding the amount of traffic, inclusive of both downloads and uploads, retrieved from the RADIUS Firew4ll-Max-Total-Octets attribute.');
 
 $section->addInput(new Form_Checkbox(
 	'radiusperuserbw',
 	'Per-user bandwidth restrictions',
-	'Use RADIUS pfSense-Bandwidth-Max-Up and pfSense-Bandwidth-Max-Down attributes',
+	'Use RADIUS Firew4ll-Bandwidth-Max-Up and Firew4ll-Bandwidth-Max-Down attributes',
 	$pconfig['radiusperuserbw']
-))->setHelp('When enabled, the bandwidth assigned to a client will be limited to the values retrieved from the RADIUS pfSense-Bandwidth-Max-Up and ' .
-			'pfSense-Bandwidth-Max-Down attributes or from the comparable WISPr attributes.');
+))->setHelp('When enabled, the bandwidth assigned to a client will be limited to the values retrieved from the RADIUS Firew4ll-Bandwidth-Max-Up and ' .
+			'Firew4ll-Bandwidth-Max-Down attributes or from the comparable WISPr attributes.');
 
 $section->addInput(new Form_Select(
 	'radmac_format',

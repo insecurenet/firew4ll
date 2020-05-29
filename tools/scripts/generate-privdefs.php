@@ -32,7 +32,7 @@ if (count($argv) < 2) {
 	echo "\n";
 	echo "This utility generates privilege definitions and writes them to\n";
 	echo "'<prefix>/etc/inc/priv.defs.inc'. The <prefix> parameter should\n";
-	echo "be specified as your base pfSense working directory.\n";
+	echo "be specified as your base Firew4ll working directory.\n";
 	echo "\n";
 	echo "Examples:\n";
 	echo "#generate-privdefs /\n";

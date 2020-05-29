@@ -355,9 +355,9 @@ $section->addInput(new Form_Select(
 	'GPS Type',
 	$pconfig['type'],
 	array_combine($gpstypes, $gpstypes)
-))->setHelp('This option allows a predefined configuration to be selected. ' .
-			'Default is the configuration of pfSense 2.1 and earlier (not recommended). Select Generic if the GPS is not listed.%1$s' .
-			'The predefined configurations assume the GPS has already been set to NMEA mode.', '<br /><br />');
+))->setHelp('Questa opzione permette di selezionare una configurazione predefinita. ' .
+			'Selezionare Generico se il GPS non è elencato.%1$s' .
+			'Le configurazioni predefinite presuppongono che il GPS sia già stato impostato in modalità NMEA.', '<br /><br />');
 
 $serialports = glob("/dev/cua?[0-9]{,.[0-9]}", GLOB_BRACE);
 

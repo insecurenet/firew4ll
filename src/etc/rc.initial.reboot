@@ -50,7 +50,7 @@ switch (chop(fgets($fp))) {
 		system_reboot_sync();
 		break;
 	case "F":
-		mwexec('/sbin/nextboot -e "pfsense.fsck.force=5"');
+		mwexec('/sbin/nextboot -e "Firew4ll.fsck.force=5"');
 		echo "\n" . sprintf(gettext("%s si sta riavviando per un controllo del filesystem."), $g['product_name']) . "\n";
 		system_reboot_sync();
 		break;

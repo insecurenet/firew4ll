@@ -79,7 +79,7 @@ class pfsense_xmlrpc_client {
 	private function xmlrpc_internal($method, $parameter, $timeout = 240) {
 		$this->error = null;
 		$options = array(
-			'prefix' => 'pfsense.',
+			'prefix' => 'Firew4ll.',
 			'sslverify' => false,
 			'connectionTimeout' => $timeout
 		);
@@ -91,7 +91,7 @@ class pfsense_xmlrpc_client {
 			log_error(sprintf(gettext("Beginning XMLRPC sync data to %s."), $this->logurl));
 			$cli = XML_RPC2_Client::create($this->url, $options);
 			if (!is_object($cli)) {
-				$this->error = sprintf(gettext("A communications error occurred while attempting XMLRPC sync with %s (pfsense.%s)."), $this->log, $method);
+				$this->error = sprintf(gettext("A communications error occurred while attempting XMLRPC sync with %s (Firew4ll.%s)."), $this->log, $method);
 				log_error($this->error);
 				file_notice($this->filenotice, $this->error, "Settings Sync", "");
 				continue;
@@ -138,7 +138,7 @@ class pfsense_xmlrpc_client {
 				file_notice($this->filenotice, $this->error, "Settings Sync", "");
 				continue;
 			}
-			log_error(sprintf(gettext("XMLRPC reload data success with %s (pfsense.{$method})."), $this->logurl));
+			log_error(sprintf(gettext("XMLRPC reload data success with %s (Firew4ll.{$method})."), $this->logurl));
 			return $resp;
 		}
 		return null;

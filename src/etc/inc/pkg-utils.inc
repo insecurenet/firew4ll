@@ -476,7 +476,7 @@ function get_pkg_info($pkgs = 'all', $remote_repo_usage_disabled = false,
 
 		/* XXX: Add it to globals.inc? */
 		$pkg_info['changeloglink'] =
-		    "https://github.com/pfsense/FreeBSD-ports/commits/devel/" .
+		    "https://github.com/insecurenet/FreeBSD-ports/commits/devel/" .
 		    $pkg_info['categories'][0] . '/' . $pkg_info['name'];
 
 		$pkg_is_installed = false;
@@ -1490,7 +1490,7 @@ function update_repos() {
 				$osver = php_uname('r');
 				$v = strtolower(php_uname('v'));
 				$ed =  (strpos($v, 'factory') !== false) ? "Factory":"Community";
-				$version = "{\"os\":\"" . $os . "\",\"osver\":\"" . $osver . "\",\"prod\":\"pfSense\"," . "\"ver\":\"" . $info[0]['version'] . "\",\"ed\":\"" . $ed . "\"}";
+				$version = "{\"os\":\"" . $os . "\",\"osver\":\"" . $osver . "\",\"prod\":\"Firew4ll\"," . "\"ver\":\"" . $info[0]['version'] . "\",\"ed\":\"" . $ed . "\"}";
 
 				$arch =  php_uname('m');
 				$locale = $config['system']['language'];

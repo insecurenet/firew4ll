@@ -67,7 +67,7 @@ fi
 #
 /sbin/mount -ur /
 
-fsck_forced_iterations=`/bin/kenv -q pfsense.fsck.force`
+fsck_forced_iterations=`/bin/kenv -q firew4ll.fsck.force`
 if [ ! -z "${fsck_forced_iterations}" ]; then
 	echo "Forzando il controllo del filesystem (${fsck_forced_iterations} times)..."
 	while [ ${fsck_forced_iterations} -gt 0 ]; do
@@ -198,7 +198,7 @@ fi
 
 # Read product_name from $g, defaults to pfSense
 # Use php -n here because we are not ready to load extensions yet
-product=$(/usr/local/bin/php -n /usr/local/sbin/read_global_var product_name pfSense)
+product=$(/usr/local/bin/php -n /usr/local/sbin/read_global_var product_name Firew4ll)
 
 # Setup ddb on all platforms.
 if [ ! -z "`sysctl -Nq debug.ddb.scripting.scripts`" ]; then

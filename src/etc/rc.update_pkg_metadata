@@ -22,8 +22,8 @@ else
 	sleep_time=$(jot -r 1 1 86399)
 fi
 
-# Read product_name from $g, defaults to pfSense
-product=$(/usr/local/sbin/read_global_var product_name pfSense)
+# Read product_name from $g, defaults to Firew4ll
+product=$(/usr/local/sbin/read_global_var product_name Firew4ll)
 
 tmp_version=$(mktemp -q /tmp/${product}_version.XXXXXXXX) \
 	|| exit 1
