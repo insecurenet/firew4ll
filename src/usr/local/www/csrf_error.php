@@ -40,7 +40,7 @@ $logincssfile = "#770101";
 		<link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css?v=<?=filemtime('/usr/local/www/vendor/font-awesome/css/font-awesome.min.css')?>">
 		<link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css" type="text/css">
 		<link rel="stylesheet" href="/css/login.css?v=<?=filemtime('/usr/local/www/css/login.css')?>" type="text/css">
-		<title><?=gettext("CSRF Error"); ?></title>
+		<title><?=gettext("ERRORE CSRF"); ?></title>
 		<script type="text/javascript">
 			//<![CDATA{
 			var events = events || [];
@@ -59,7 +59,7 @@ $logincssfile = "#770101";
 							</div>
 						</div>
 						<div class="col-sm-4 nowarning msgbox text-center text-danger">
-							CSRF check failed
+							Controllo CSRF check fallito
 						</div>
 					</div>
 				</div>
@@ -69,16 +69,16 @@ $logincssfile = "#770101";
 				<div class="col-sm-2"></div>
 				<div class="col-sm-6 offset-md-4 logoCol">
 					<div class="loginCont center-block">
-						<p>Missing or expired CSRF token</p>
-						<p>Form session may have expired, cookies may not be enabled, or possible CSRF-based attack.</p>
-						<p>Resubmitting this request may put the firewall at risk or lead to unintended behavior.</p>
+						<p>Token CSRF mancante o scaduto</p>
+						<p>La sessione potrebbe essere scaduta, i cookie potrebbero non essere abilitati, o un possibile attacco CSRF.</p>
+						<p>Ripresentare questa richiesta potrebbe mettere a rischio il firewall o portare a comportamenti non intenzionali.</p>
 						<form method='post' action=''>
 							<?=$data?>
-							<input type="checkbox" id="bypass" /> I understand this warning and wish to resubmit the form data.
+							<input type="checkbox" id="bypass" /> Comprendo questo avvertimento e desidero ripresentare i dati del modulo.
 							<br/>
 							<button class="btn btn-danger btn-sm" type="submit" name="submit" id="submit" value="<?=gettext("Try again")?>" disabled>
 								<i class="fa fa-exclamation-triangle icon-embed-btn"></i>
-								<?=gettext("Resubmit Request with New Token")?>
+								<?=gettext("Ripresenta richiesta con nuovo token")?>
 							</button>
 						</form>
 						<?php if (!empty($tokens)): ?>
