@@ -700,7 +700,7 @@
 <step>
 	<id>6</id>
 	<title>Imposta Password Amministratore dell'interfaccia WebGUI</title>
-	<description>In questa schermata imposterai la password di amministratore, che viene utilizzato per accedere ai servizi WebGUI e anche ai servizi SSH se abilitati.</description>
+	<description>In questa schermata imposterai la password di amministratore, che viene utilizzata per accedere ai servizi WebGUI e anche ai servizi SSH se abilitati.</description>
 	<fields>
 		<field>
 			<name>Admin Password</name>
