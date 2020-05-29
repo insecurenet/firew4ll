@@ -1,16 +1,65 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
-<svg id="logo" role="img" x="0px" y="0px" viewBox="0 0 300.8 124.2">
-<title id="firew4ll-logo-svg">Firew4LL Logo</title>
- <g
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="282.79999"
+   height="84.199997"
+   viewBox="0 0 280.8 84.2"
+   version="1.1"
+   id="svg34"
+   style="shape-rendering:crispEdges"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="logo.svg">
+  <defs
+     id="defs28" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="194.63769"
+     inkscape:cy="48.280226"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     viewbox-height="84.2"
+     inkscape:window-width="1440"
+     inkscape:window-height="837"
+     inkscape:window-x="1272"
+     inkscape:window-y="124"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata31">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
      inkscape:label="Livello 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-274.72207)">    
-<image
+     transform="translate(0,-274.72207)">
+    <image
        y="281.26291"
-       x="27.04829"
-       id="Firew4ll"
+       x="37.04829"
+       id="image44"
        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAACJEAAANtCAYAAAAqo3iZAAAACXBIWXMAAC4jAAAuIwF4pT92AAAK
 T2lDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjanVNnVFPpFj333vRCS4iAlEtvUhUIIFJCi4AU
 kSYqIQkQSoghodkVUcERRUUEG8igiAOOjoCMFVEsDIoK2AfkIaKOg6OIisr74Xuja9a89+bN/rXX
@@ -928,7 +977,7 @@ n07cOF0DAAAAAAAAzxGRAFCEjxM3/4tJxCMAAAAAAADwpH8GAFPxuZd/zn7AAAAAAElFTkSuQmCC
 "
        style="image-rendering:optimizeQuality"
        preserveAspectRatio="none"
-       height="100.67588"
-       width="269.66954" />
+       height="67.67588"
+       width="179.66954" />
   </g>
 </svg>
