@@ -403,7 +403,7 @@ tr.disabled a {
 
 .breadcrumb {
     background-color: #E0E0E0;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .breadcrumb>li+li:before {
@@ -906,7 +906,7 @@ table[data-sortable].sortable-theme-bootstrap thead th {
 
     .breadcrumb {
         font-size: 14px;
-        padding: 15px;
+        padding: 14px;
         width: 50%;
     }
 
