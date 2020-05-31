@@ -3879,7 +3879,7 @@ msgstr "Firewall e NAT"
 #: src/usr/local/www/system_advanced_notifications.php:223
 #: src/etc/inc/ipsec.inc:33 src/etc/inc/ipsec.inc:63
 msgid "Networking"
-msgstr "Networking"
+msgstr "Rete"
 
 #: src/usr/local/www/system_advanced_sysctl.php:135
 #: src/usr/local/www/system_advanced_misc.php:322
@@ -18370,7 +18370,7 @@ msgstr "Opzioni IPv6"
 
 #: src/usr/local/www/system_advanced_network.php:215
 msgid "Allow IPv6"
-msgstr "Permetti IPv6"
+msgstr "Consenti IPv6"
 
 #: src/usr/local/www/system_advanced_network.php:218
 msgid "NOTE: This does not disable any IPv6 features on the firewall, it only blocks traffic."

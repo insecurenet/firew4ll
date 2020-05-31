@@ -117,9 +117,10 @@ EOD;
 
 	echo <<<EOD
 
-If the names of the interfaces are not known, auto-detection can
-be used instead. To use auto-detection, please disconnect all
-interfaces before pressing 'a' to begin the process.
+Se i nomi delle interfacce non sono noti, l'autorilevamento può
+essere utilizzato al suo posto. Per utilizzare l'autorilevamento, 
+si prega di scollegare tutti le interfacce prima di premere 'a' 
+per iniziare il processo.
 
 EOD;
 
