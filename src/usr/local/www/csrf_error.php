@@ -76,7 +76,7 @@ $logincssfile = "#770101";
 							<?=$data?>
 							<input type="checkbox" id="bypass" /> Comprendo questo avvertimento e desidero ripresentare i dati del modulo.
 							<br/>
-							<button class="btn btn-danger btn-sm" type="submit" name="submit" id="submit" value="<?=gettext("Try again")?>" disabled>
+							<button class="btn btn-danger btn-sm" type="submit" name="submit" id="submit" value="<?=gettext("Riprova")?>" disabled>
 								<i class="fa fa-exclamation-triangle icon-embed-btn"></i>
 								<?=gettext("Ripresenta richiesta con nuovo token")?>
 							</button>

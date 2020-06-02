@@ -18708,7 +18708,7 @@ msgid "The firewall has enountered an error"
 msgstr "Il firewall ha segnalato un errore"
 
 #: src/usr/local/www/crash_reporter.php:112
-msgid "Debugging output can be collected to share with pfSense developers or others providing support or assistance."
+msgid "Debugging output can be collected to share with Firew4ll developers or others providing support or assistance."
 msgstr "I risultati del debug possono essere raccolti per essere condivisi con gli sviluppatori di Firew4ll o con altri che forniscono supporto o assistenza."
 
 #: src/usr/local/www/crash_reporter.php:114
