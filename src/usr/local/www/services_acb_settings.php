@@ -144,7 +144,7 @@ if (isset($_POST['save'])) {
 
 		}
 
-		write_config("AutoConfigBackup settings updated");
+		write_config("AutoConfigBackup aggiornamento configurazione");
 		configure_cron();
 	}
 }
@@ -157,9 +157,9 @@ if ($input_errors) {
 }
 
 $tab_array = array();
-$tab_array[] = array("Settings", true, "/services_acb_settings.php");
-$tab_array[] = array("Restore", false, "/services_acb.php");
-$tab_array[] = array("Backup now", false, "/services_acb_backup.php");
+$tab_array[] = array("Impostazioni", true, "/services_acb_settings.php");
+$tab_array[] = array("Ripristina", false, "/services_acb.php");
+$tab_array[] = array("Salva adesso", false, "/services_acb_backup.php");
 display_top_tabs($tab_array);
 
 $form = new Form;
@@ -257,8 +257,8 @@ $section->addInput(new Form_Input(
 	'Manual backups to keep',
 	'number',
 	$pconfig['numman']
-))->setHelp("It may be useful to specify how many manual backups are retained on the server so that automatic backups do not overwrite them." .
-			"A maximum of 50 retained manual backups (of the 100 total backups) is permitted.");
+))->setHelp("Potrebbe essere utile specificare quanti backup manuali conservare sul server in modo che i backup automatici non li sovrascrivano." .
+			"È consentito conservare massimo 50 backup manuali (dei 100 backup totali).");
 
 $form->add($section);
 

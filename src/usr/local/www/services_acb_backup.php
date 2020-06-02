@@ -56,7 +56,7 @@ if ($_POST) {
 	$donotshowheader = true;
 }
 
-$pgtitle = array("Services", "Auto Configuration Backup", "Backup Now");
+$pgtitle = array("Servizi", "Backup automatico della configurazione", "Salva adesso");
 include("head.inc");
 
 if ($input_errors) {
@@ -66,9 +66,9 @@ if ($input_errors) {
 }
 
 $tab_array = array();
-$tab_array[] = array("Settings", false, "/services_acb_settings.php");
-$tab_array[] = array("Restore", false, "/services_acb.php");
-$tab_array[] = array("Backup now", true, "/services_acb_backup.php");
+$tab_array[] = array("Impostazioni", false, "/services_acb_settings.php");
+$tab_array[] = array("Ripristina", false, "/services_acb.php");
+$tab_array[] = array("Salva adesso", true, "/services_acb_backup.php");
 display_top_tabs($tab_array);
 
 $form = new Form("Backup");

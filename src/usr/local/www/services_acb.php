@@ -323,20 +323,20 @@ if ($savemsg) {
 }
 
 $tab_array = array();
-$tab_array[0] = array("Settings", false, "/services_acb_settings.php");
+$tab_array[0] = array("Impostazioni", false, "/services_acb_settings.php");
 if ($_REQUEST['download']) {
 	$active = false;
 } else {
 	$active = true;
 }
 
-$tab_array[1] = array("Restore", $active, "/services_acb.php");
+$tab_array[1] = array("Ripristina", $active, "/services_acb.php");
 
 if ($_REQUEST['download']) {
 	$tab_array[] = array("Revision", true, "/services_acb.php?download=" . htmlspecialchars($_REQUEST['download']));
 }
 
-$tab_array[] = array("Backup now", false, "/services_acb_backup.php");
+$tab_array[] = array("Salva adesso", false, "/services_acb_backup.php");
 
 display_top_tabs($tab_array);
 
