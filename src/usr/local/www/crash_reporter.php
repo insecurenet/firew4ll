@@ -125,7 +125,7 @@ if ($_POST['Submit'] == "No") {
 			<br/><br/>
 
 <?php	if ((count($crash_files) > 0) || system_has_php_errors()): ?>
-			Click a button below to download an individual debugging data file:
+			Fare clic sul pulsante qui sotto per scaricare un file di debug:
 			<br/><br/>
 	<?php	if (system_has_php_errors()): ?>
 				<button class="btn btn-info" name="Download" type="submit" value="PHP">

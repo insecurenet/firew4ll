@@ -36,7 +36,7 @@ echo "\n" . sprintf(gettext("%s si sta per riavviare. Questo può richiedere alc
 echo gettext("Vuoi procedere?") . "\n\n";
 echo "    " . gettext("Y/y: Riavvia normalmente") . "\n";
 if (!is_module_loaded("zfs.ko")) {
-	echo "    " . gettext("R/r: Reroot (Stop processi, remount dischi, riavvia sequenza startup)") . "\n";
+	echo "    " . gettext("R/r: Reroot (Stop processi, remount dischi, riavvia sequenza di avvio)") . "\n";
 }
 echo "    " . gettext("S: Riavvia in Single User Mode (richiede accesso alla console!)") . "\n";
 echo "    " . gettext("F: Riavvia e controlla filesystem") . "\n\n";

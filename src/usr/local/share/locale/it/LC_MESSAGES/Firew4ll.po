@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-06-01 00:05+0200\n"
+"PO-Revision-Date: 2020-06-02 19:02+0200\n"
 "Last-Translator: Francesco Pellegrino <francesco@insecurenet.com>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -10048,7 +10048,7 @@ msgstr "Scaricare la cattura"
 
 #: src/usr/local/www/diag_packet_capture.php:106 src/usr/local/www/head.inc:417
 msgid "Packet Capture"
-msgstr "Cattura dei pacceti"
+msgstr "Cattura dei pacchetti"
 
 #: src/usr/local/www/diag_packet_capture.php:153
 msgid "Invalid interface."
@@ -34296,3 +34296,31 @@ msgstr "URL personalizzata"
 #: src/usr/local/pkg/miniupnpd.xml:137
 msgid "Custom model number"
 msgstr "Numero di modello personalizzato"
+
+#: src/usr/local/www/services_acb_settings.php
+msgid "Restore"
+msgstr "Ripristina"
+
+#: src/usr/local/www/services_acb_settings.php
+msgid "Backup now"
+msgstr "Salva adesso"
+
+#: src/usr/local/www/services_acb.php
+msgid "settings updated"
+msgstr "aggiornamento configurazione"
+
+#: src/usr/local/www/services_acb.php
+msgid "Manual backups to keep"
+msgstr "Backup manuali da conservare"
+
+#: src/usr/local/www/services_acb.php
+msgid "Hint/Identifier"
+msgstr "Identificatore"
+
+#: src/usr/local/www/services_acb_settings.php
+msgid "It may be useful to specify how many manual backups are retained on the server so that automatic backups do not overwrite them."
+msgstr "Potrebbe essere utile specificare quanti backup manuali conservare sul server in modo che i backup automatici non li sovrascrivano."
+
+#: src/usr/local/www/services_acb_settings.php
+msgid "A maximum of 50 retained manual backups (of the 100 total backups) is permitted."
+msgstr "È consentito conservare massimo 50 backup manuali (dei 100 backup totali)."
