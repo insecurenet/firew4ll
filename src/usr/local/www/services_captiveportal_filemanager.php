@@ -2,7 +2,10 @@
 /*
  * services_captiveportal_filemanager.php
  *
- * part of pense (https://www.pense.org)
+ * part of Firew4LL (https://www.firew4ll.com)
+ * Copyright (c) 2020 InSecureNet, SRL (ISN)
+ * 
+ * forked from pfSense (https://www.pfsense.org)
  * Copyright (c) 2004-2019 Rubicon Communications, LLC (Netgate)
  * Copyright (c) 2005-2006 Jonathan De Graeve (jonathan.de.graeve@imelda.be)
  * Copyright (c) 2005-2006 Paul Taylor (paultaylor@winn-dixie.com)
