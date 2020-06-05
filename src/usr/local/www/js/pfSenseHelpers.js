@@ -1,5 +1,5 @@
 /*
- * pfSenseHelpers.js
+ * Firew4llHelpers.js
  *
  * part of Firew4LL (https://www.firew4ll.com)
  * Copyright (c) 2020 InSecureNet, SRL (ISN)
