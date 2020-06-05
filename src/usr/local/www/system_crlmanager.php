@@ -485,7 +485,7 @@ if ($act == "new" || $act == gettext("Save") || $input_errors) {
 							<?=$openssl_crl_status[$cert["reason"]]; ?>
 						</td>
 						<td class="listlr">
-							<?=date("D M j G:i:s T Y", $cert["revoke_time"]); ?>
+							<?=date("d m Y T G:i:s", $cert["revoke_time"]); ?>
 						</td>
 						<td class="list">
 							<a href="system_crlmanager.php?act=delcert&amp;id=<?=$crl['refid']; ?>&amp;certref=<?=$cert['refid']; ?>" usepost>

@@ -252,7 +252,7 @@ function get_firewall_info() {
 		$gitsync = file_get_contents('/etc/version.gitsync');
 		if (!empty($gitsync)) {
 			$firewall_info .= "<br/>A gitsync was performed at " .
-			    date("D M j G:i:s T Y", filemtime('/etc/version.gitsync')) .
+			    date("d m Y T G:i:s", filemtime('/etc/version.gitsync')) .
 			    " to commit " . htmlspecialchars($gitsync);
 		}
 	}

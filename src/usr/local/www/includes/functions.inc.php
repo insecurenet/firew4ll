@@ -205,7 +205,7 @@ function mem_usage() {
 }
 
 function update_date_time() {
-	$datetime = date("D M j G:i:s T Y");
+	$datetime = date("d m Y T G:i:s");
 	return $datetime;
 }
 

@@ -110,7 +110,7 @@ if ($_REQUEST['getupdatestatus']) {
 ?>
 	<div>
 		<?printf("%s %s", gettext("Version information updated at"),
-		    date("D M j G:i:s T Y", filemtime($cache_file)));?>
+		    date("d m Y T G:i:s", filemtime($cache_file)));?>
 		    &nbsp;
 		    <a id="updver" href="#" class="fa fa-refresh"></a>
 	</div>
@@ -153,7 +153,7 @@ $temp_use_f = (isset($user_settings['widgets']['thermal_sensors-0']) && !empty($
 		$rows_displayed = true;
 ?>
 		<tr>
-			<th><?=gettext("Name");?></th>
+			<th><?=gettext("Hostname");?></th>
 			<td><?php echo htmlspecialchars($config['system']['hostname'] . "." . $config['system']['domain']); ?></td>
 		</tr>
 <?php
@@ -187,12 +187,13 @@ $temp_use_f = (isset($user_settings['widgets']['thermal_sensors-0']) && !empty($
 				}
 
 				// If the uniqueID is available, display it here
-				$uniqueid = system_get_uniqueid();
+/*				$uniqueid = system_get_uniqueid();
 				if (!empty($uniqueid)) {
 					print("<br />" .
 					    gettext("Netgate Device ID:") .
 					    " <strong>{$uniqueid}</strong>");
 				}
+*/
 ?>
 			</td>
 		</tr>
@@ -213,13 +214,13 @@ $temp_use_f = (isset($user_settings['widgets']['thermal_sensors-0']) && !empty($
 			<th><?=gettext("BIOS");?></th>
 			<td>
 			<?php if (!empty($biosvendor[0])): ?>
-				<?=gettext("Vendor: ");?><strong><?=$biosvendor[0];?></strong><br/>
+				<?=gettext("Vendor:  ");?><strong><?=$biosvendor[0];?></strong><br/>
 			<?php endif; ?>
 			<?php if (!empty($biosversion[0])): ?>
-				<?=gettext("Version: ");?><strong><?=$biosversion[0];?></strong><br/>
+				<?=gettext("Version:  ");?><strong><?=$biosversion[0];?></strong><br/>
 			<?php endif; ?>
 			<?php if (!empty($biosdate[0])): ?>
-				<?=gettext("Release Date: ");?><strong><?= date("D M j Y ",strtotime($biosdate[0]));?></strong><br/>
+				<?=gettext("Release Date: ");?><strong><?= date(" d m Y ",strtotime($biosdate[0]));?></strong><br/>
 			<?php endif; ?>
 			</td>
 		</tr>
@@ -314,7 +315,7 @@ $temp_use_f = (isset($user_settings['widgets']['thermal_sensors-0']) && !empty($
 ?>
 		<tr>
 			<th><?=gettext("Current date/time");?></th>
-			<td><div id="datetime"><?= date("D M j G:i:s T Y"); ?></div></td>
+			<td><div id="datetime"><?= date("d m Y T G:i:s"); ?></div></td>
 		</tr>
 <?php
 	endif;
@@ -342,7 +343,7 @@ $temp_use_f = (isset($user_settings['widgets']['thermal_sensors-0']) && !empty($
 		<?php if ($config['revision']): ?>
 		<tr>
 			<th><?=gettext("Last config change");?></th>
-			<td><?= htmlspecialchars(date("D M j G:i:s T Y", intval($config['revision']['time'])));?></td>
+			<td><?= htmlspecialchars(date("d m Y T G:i:s", intval($config['revision']['time'])));?></td>
 		</tr>
 		<?php endif; ?>
 <?php
