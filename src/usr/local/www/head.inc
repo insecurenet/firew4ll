@@ -432,11 +432,9 @@ if (!$g['disablehelpmenu']) {
 		$help_menu[] = array(gettext("Bug Database"), "https://www.pfsense.org/j.php?jumpto=redmine");
 	}
 
-//	$help_menu[] = array(gettext("User Forum"), "https://www.pfsense.org/j.php?jumpto=forum");
-	$help_menu[] = array(gettext("Documentation"), "https://www.pfsense.org/j.php?jumpto=doc");
-//	$help_menu[] = array(gettext("Paid Support"), "https://www.netgate.com/support");
-	$help_menu[] = array(gettext("Firew4ll Book"), "https://www.pfsense.org/j.php?jumpto=book");
-	$help_menu[] = array(gettext("FreeBSD Handbook"), "https://www.pfsense.org/j.php?jumpto=fbsdhandbook");
+	$help_menu[] = array(gettext("Documentation"), "https://doc.firew4ll.com");
+	$help_menu[] = array(gettext("Firew4ll Book"), "http://doc.firew4ll.com/_/downloads/it/latest/pdf/");
+	$help_menu[] = array(gettext("FreeBSD Handbook"), "https://www.freebsd.org/doc/en/books/handbook/");
 	$help_menu = msort(array_merge($help_menu, return_ext_menu("Help")), 0);
 }
 

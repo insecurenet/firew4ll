@@ -78,7 +78,7 @@ function get_uptime() {
 		$seconds = "s";
 	}
 
-	$uptimestr .= sprintf("%02d Hour$hours %02d Minute$minutes %02d Second$seconds", $uphours, $upmins, $upsecs);
+	$uptimestr .= sprintf("%02d Ore$hours %02d Minuti$minutes %02d Seconi$seconds", $uphours, $upmins, $upsecs);
 	return $uptimestr;
 }
 

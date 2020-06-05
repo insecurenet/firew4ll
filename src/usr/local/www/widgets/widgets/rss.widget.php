@@ -55,7 +55,7 @@ if (is_numeric($user_settings['widgets'][$widgetkey]['rsswidgettextlength'])) {
 
 // Set a default feed if none exists
 if (!$rss_feed_s) {
-	$rss_feed_s = "https://www.netgate.com/blog/";
+	$rss_feed_s = "https://www.insecurelab.it/";
 	if ($widgetkey != "") {
 		$user_settings['widgets'][$widgetkey]['rssfeed'] = $rss_feed_s;
 	}

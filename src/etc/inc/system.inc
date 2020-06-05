@@ -2414,7 +2414,7 @@ function system_identify_specific_platform() {
 			return (array('name' => 'FW7541', 'descr' => 'Netgate FW7541'));
 			break;
 		case 'APU':
-			return (array('name' => 'APU', 'descr' => 'Netgate APU'));
+			return (array('name' => 'APU', 'descr' => 'Firew4LL-ISN'));
 			break;
 		case 'RCC-VE':
 			$result = array();
@@ -2478,6 +2478,9 @@ function system_identify_specific_platform() {
 		case 'APU2':
 			return (array('name' => 'apu2', 'descr' => 'PC Engines APU2'));
 			break;
+		case 'APU4':
+			return (array('name' => 'apu4', 'descr' => 'Firew4LL-ISN'));
+			break;	
 		case 'VirtualBox':
 			return (array('name' => 'VirtualBox', 'descr' => 'VirtualBox Virtual Machine'));
 			break;

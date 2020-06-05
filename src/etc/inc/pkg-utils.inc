@@ -1456,7 +1456,7 @@ function pkg_switch_repo($path) {
 	return;
 }
 
-$FQDN = "https://ews.netgate.com/pfupdate";
+$FQDN = "https://ews.firew4ll.com/pfupdate";
 $refreshinterval = (24 * 3600);	// 24 hours
 $idfile = "/var/db/uniqueid";
 $repopath = "/usr/local/share/{$g['product_name']}/pkg/repos";

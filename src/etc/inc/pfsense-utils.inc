@@ -3075,10 +3075,10 @@ function set_language() {
 function get_locale_list() {
 	$locales = array(
 		"it" => gettext("ITALIANO"),
-		"zh_CN" => gettext("Chinese"),
+//		"zh_CN" => gettext("Chinese"),
 		"en_US" => gettext("English"),
-		"fr" => gettext("French"),
-		"de_DE" => gettext("German (Germany)"),
+//		"fr" => gettext("French"),
+//		"de_DE" => gettext("German (Germany)"),
 	);
 
 	// If the locales are sorted, the order changes depending on the language selected. If the user accidentally

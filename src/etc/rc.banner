@@ -2,8 +2,10 @@
 <?php
 /*
  * rc.banner
- *
- * part of pfSense
+ * part of Firew4LL (https://www.firew4ll.com)
+ * Copyright (c) 2020 InSecureNet, SRL (ISN)
+ * 
+ * forked from pfSense (https://www.pfsense.org)
  * Copyright (c) 2005 Colin Smith
  * Copyright (c) 2005-2018 Rubicon Communications, LLC (Netgate)
  * All rights reserved
@@ -38,7 +40,6 @@ if (isset($platform['descr'])) {
 if (!empty($serial)) {
 	printf("%s: %s - ", gettext("Serial"), $serial);
 }
-// printf("%s: %s\n\n", gettext("Netgate Device ID"), system_get_uniqueid());
 
 print "\n\n*** Benvenuti in {$product} {$g['product_version_string']} ({$machine}) su {$hostname} ***\n";
 print "\n*** https://www.firew4ll.com ***\n";

@@ -31,7 +31,7 @@ require_once("guiconfig.inc");
 $copyrightfile = "{$g['cf_conf_path']}/copyright";
 $tmpfile = "{$g['cf_conf_path']}/copyright.tmp";
 $idfile = "/var/db/uniqueid";
-$FQDN = "https://ews.netgate.com/copyright";
+$FQDN = "https://ews.firew4ll.com/copyright";
 $refreshinterval = (24 * 3600);	// 24 hours
 
 // Poll the Netgate server to obtain the JSON/HTML formatted support information
