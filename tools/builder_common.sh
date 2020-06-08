@@ -515,14 +515,14 @@ clean_builder() {
 		echo -n ">>> Cleaning ${STAGE_CHROOT_DIR}... "
 		chflags -R noschg ${STAGE_CHROOT_DIR} 2>&1 >/dev/null
 		rm -rf ${STAGE_CHROOT_DIR}/* 2>/dev/null
-		echo Fatto."
+		echo "Fatto."
 	fi
 
 	if [ -d "${INSTALLER_CHROOT_DIR}" ]; then
 		echo -n ">>> Cleaning ${INSTALLER_CHROOT_DIR}... "
 		chflags -R noschg ${INSTALLER_CHROOT_DIR} 2>&1 >/dev/null
 		rm -rf ${INSTALLER_CHROOT_DIR}/* 2>/dev/null
-		echo Fatto."
+		echo "Fatto."
 	fi
 
 	if [ -z "${NO_CLEAN_FREEBSD_OBJ}" -a -d "${FREEBSD_SRC_DIR}" ]; then
