@@ -50,7 +50,7 @@ Before diving into a file, clean it with the supplied cleaner (`clean.sh`). This
 
 # Migration conventions
 
-All migrated files (in usr/local/www) are formatted with default [Bootstrap](http://getbootstrap.com/) components. Custom CSS goes into `usr/www/bootstrap/css/pfSense.css`, but try to keep this to a minimum.
+All migrated files (in usr/local/www) are formatted with default [Bootstrap](http://getbootstrap.com/) components. Custom CSS goes into `usr/www/bootstrap/css/Firew4ll.css`, but try to keep this to a minimum.
 
 The Bootstrap grid system is used for defining columns. We've chosen the 'small' breakpoint as the default breakpoint to collapse from a horizontal to vertical layout. You should define your column widths with `.col-sm-*`, unless there's a good (and documented ;) ) reason to deviate from this default.
 

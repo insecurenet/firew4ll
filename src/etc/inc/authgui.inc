@@ -254,7 +254,7 @@ function display_login_form() {
 	// For the login form, get the settings of no particular user.
 	// That ensures we will use the system default theme for the login form.
 	$user_settings = get_user_settings("");
-	$cssfile = "/css/pfSense.css";
+	$cssfile = "/css/Firew4ll.css";
 
 	if (isset($user_settings['webgui']['webguicss'])) {
 		if (file_exists("/usr/local/www/css/" . $user_settings['webgui']['webguicss'])) {
@@ -371,7 +371,7 @@ function display_login_form() {
 
 		<script src="/vendor/jquery/jquery-1.12.0.min.js?v=<?=filemtime('/usr/local/www/vendor/jquery/jquery-1.12.0.min.js')?>"></script>
 		<script src="/vendor/bootstrap/js/bootstrap.min.js?v=<?=filemtime('/usr/local/www/vendor/bootstrap/js/bootstrap.min.js')?>"></script>
-		<script src="/js/pfSense.js?v=<?=filemtime('/usr/local/www/js/pfSense.js')?>"></script>
+		<script src="/js/Firew4ll.js?v=<?=filemtime('/usr/local/www/js/Firew4ll.js')?>"></script>
 
 		<script type="text/javascript">
 		//!<[CDATA[

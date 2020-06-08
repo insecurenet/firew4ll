@@ -860,7 +860,7 @@ if ($seprows[$nrules]) {
 <script type="text/javascript">
 //<![CDATA[
 
-//Need to create some variables here so that jquery/pfSenseHelpers.js can read them
+//Need to create some variables here so that jquery/Firew4llHelpers.js can read them
 iface = "<?=strtolower($if)?>";
 cncltxt = '<?=gettext("Cancel")?>';
 svtxt = '<?=gettext("Save")?>';

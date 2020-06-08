@@ -188,7 +188,7 @@ function get_css_files() {
 			    strpos($css, "logo") == 0) {
 				if (strpos($css, "BETA") != 0) {
 					array_push($betacss, $css);
-				} else if (strpos($css, "pfSense") != 0) {
+				} else if (strpos($css, "Firew4LL") != 0) {
 					array_push($pfscss, $css);
 				} else {
 					array_push($usrcss, $css);
@@ -220,7 +220,7 @@ function gen_webguicss_field(&$section, $value) {
 	$csslist = get_css_files();
 
 	if (!isset($csslist[$value])) {
-		$value = "pfSense.css";
+		$value = "Firew4ll.css";
 	}
 
 	$section->addInput(new Form_Select(

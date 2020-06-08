@@ -1,28 +1,28 @@
-@import url("/css/pfSense.css");
+@import url("/css/Firew4ll.css");
 
 :root {
-    --blue: #7C8590;
-    --indigo: #5C6974;
+    --blue: #0C4B62;
+    --indigo: #102331;
     --purple: #9788a5;
     --red: #937982;
-    --orange: #856827;
-    --yellow: #B79A5A;
-    --green: #6ba574;
-    --teal: #B5C2BA;
-    --cyan: #5F7B80;
-    --white: #E4EEEF;
-    --gray: #b4c1c4;
-    --gray-dark: #0d3044;
-    --primary: #7e9191;
+    --orange: #CF683C;
+    --yellow: #CF683C;
+    --green: #26A98B;
+    --teal: #D9F7EF;
+    --cyan: #5A98A3;
+    --white: #D9F7EF;
+    --gray: #25515C;
+    --gray-dark: #091F2C;
+    --primary: #0C4B62;
     --secondary: #0d3044;
-    --success: #6ba574;
-    --info: rgba(12, 75, 98, 0.24);
-    --warning: #B79A5A;
-    --warning-dark: #856827;
+    --success: #26A98B;
+    --info: #0C4B62;
+    --warning: #C79341;
+    --warning-dark: #966f30;
     --danger: #937982;
     --danger-dark: #934751;
-    --light: #dee5e6;
-    --dark: #b4c1c4;
+    --light: #D9F7EF;
+    --dark: #10151B;
     --font-family-sans-serif: Roboto-Regular;
 }
 
@@ -32,18 +32,17 @@ pre {
     margin: 0 0 10px;
     font-size: 12px;
     line-height: 1.42857143;
-    color: var(--gray-dark);
+    color: var(--teal);
     word-break: break-all;
     word-wrap: break-word;
-    background-color: var(--light);
+    background-color: var(--indigo);
     border: 1px solid var(--cyan);
     border-radius: 4px;
 }
 
 /* pfSense logo */
-
 .logo-st0 {
-    fill: var(--yellow);
+    fill: var(--cyan);
 }
 
 .logo-st1 {
@@ -51,15 +50,14 @@ pre {
 }
 
 .logo-st2 {
-    fill: var(--yellow);
+    fill: var(--cyan);
 }
 
 body {
-    background-color: var(--light);
-    color: var(--gray-dark);
+    background-color: var(--dark);
+    color: var(--teal);
     font-family: Roboto-Regular, sans-serif;
     font-style: normal;
-    box-shadow: none;
 }
 
 .text-danger {
@@ -71,33 +69,32 @@ body {
 }
 
 body.no-menu {
-    background-color: var(--light);
+    background-color: var(--gray);
 }
 
 a {
-    color: var(--gray-dark);
+    color: var(--cyan);
 }
 
 a:hover {
-    color: var(--gray-dark);
+    color: var(--teal);
     text-decoration: none;
 }
 
 h1 a:any-link,
 h1 a:visited {
-    color: var(--gray-dark);
+    color: var(--blue);
 }
 
 h1 a:hover,
 h1 a:active {
-    color: var(--gray-dark);
+    color: var(--teal);
     text-decoration: none !important;
 }
 
 /** Content structure */
-
 .contains-table table {
-    border: 1px solid var(--dark);
+    border: 1px solid var(--teal);
 }
 
 .table>tbody>tr>td,
@@ -106,20 +103,20 @@ h1 a:active {
 .table>tfoot>tr>th,
 .table>thead>tr>td,
 .table>thead>tr>th {
-    border-color: var(--cyan);
+    border-color: var(--dark);
 }
 
 .table-hover>tbody>tr:hover,
 .table-striped>tbody>tr:nth-of-type(odd):hover {
-    background-color: var(--yellow);
+    background-color: var(--gray);
 }
 
 .table-striped>tbody>tr:nth-of-type(even):hover {
-    background-color: var(--yellow);
+    background-color: var(--gray);
 }
 
 table.sortable-theme-bootstrap {
-    color: var(--orange) !important;
+    color: var(--yellow) !important;
     background-color: var(--gray) !important;
 }
 
@@ -128,68 +125,57 @@ table.sortable-theme-bootstrap {
 }
 
 .dropdown-menu {
-    background-color: var(--light);
+    background-color: var(--dark);
     opacity: .93;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .dropdown-menu>li>a {
-    color: var(--indigo);
+    color: var(--cyan);
 }
 
 .dropdown-menu>li>a:focus,
 .dropdown-menu>li>a:hover {
     background-color: var(--blue);
-    color: var(--white);
+    color: var(--teal);
 }
 
 /** Page header with title and breadcrumb */
-
 .header {
-    color: var(--blue);
-    background-color: var(--light);
-    box-shadow: none;
+    color: var(--cyan);
+    background-color: var(--indigo);
 }
 
 .breadcrumb {
-    color: var(--blue);
-    background-color: var(--light);
+    color: var(--cyan);
+    background-color: var(--indigo);
     margin: 1px;
     line-height: 100%;
-    box-shadow: none;
-    border: 1px solid var(--blue);
 }
 
 .breadcrumb>li+li:before {
-    color: var(--blue);
+    color: var(--secondary);
 }
 
 ul.context-links li a {
-    color: var(--blue);
+    color: var(--teal);
 }
 
 /* navigation */
-
 .navbar-inverse {
-    background-color: var(--indigo);
-    box-shadow: none;
-    border-bottom: 3px solid var(--gray);
-}
-
-.navbar-inverse .navbar-nav>li>a {
-    border-bottom: 3px solid var(--indigo);
+    background-color: var(--gray-dark);
 }
 
 .nav>li>a {
-    border-bottom: 3px solid var(--gray);
-    color: var(--indigo);
+    border-bottom: 3px solid var(--dark);
+    color: var(--teal);
 }
 
 .nav>li>a:focus,
 .nav>li>a:hover {
-    color: var(--indigo);
-    background-color: var(--light);
-    border-bottom: 3px solid var(--yellow);
+    color: var(--teal);
+    background-color: var(--dark);
+    border-bottom: 3px solid var(--teal);
 }
 
 .nav-pills>li.active>a,
@@ -197,13 +183,17 @@ ul.context-links li a {
 .nav li.open>a,
 .nav li.open>a:focus,
 .nav-pills>li.active>a:hover {
-    background-color: var(--light);
-    border-bottom: 3px solid var(--yellow);
-    color: var(--indigo);
+    background-color: var(--dark);
+    border-bottom: 3px solid var(--teal);
+    color: var(--teal);
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    border-bottom: 3px solid var(--dark);
 }
 
 .nav-tabs>li>a {
-    border-bottom: 3px solid var(--gray);
+    border-bottom: 3px solid var(--dark);
 }
 
 .nav-tabs {
@@ -217,60 +207,55 @@ ul.context-links li a {
     border-left: 1px solid var(--dark);
     border-right: 1px solid var(--dark);
     border-top: 1px solid var(--dark);
-    border-bottom: 3px solid var(--yellow);
-    background-color: var(--light);
-    color: var(--indigo);
+    border-bottom: 3px solid var(--teal);
+    background-color: var(--indigo);
+    color: var(--teal);
 }
 
 /* end navigation */
-
 /* start common colors */
-
 .alert-danger {
     color: var(--danger-dark);
     background-color: var(--dark);
-    box-shadow: none;
-    border-left: 3px solid var(--danger-dark);
-    font-weight: bold;
 }
 
 .alert-warning {
-    color: var(--light);
-    background-color: var(--warning);
+    color: var(--warning);
+    background-color: var(--dark);
 }
 
 .alert-success {
-    color: var(--indigo);
+    color: var(--teal);
     background-color: var(--success);
 }
 
 .alert-info {
-    color: var(--indigo);
+    color: var(--teal);
     background-color: var(--info);
 }
 
 .bg-primary {
-    color: var(--indigo);
+    color: var(--dark);
     background-color: var(--success);
 }
 
 .bg-info {
-    color: var(--light);
+    color: var(--dark);
     background-color: var(--cyan);
 }
 
 .bg-danger {
-    color: var(--light);
+    color: var(--dark);
     background-color: var(--danger);
 }
 
 .bg-warning {
-    color: var(--indigo);
+    color: var(--dark);
     background-color: var(--yellow);
 }
 
 .bg-success {
-    color: var(--light);
+    color: var(--dark);
     background-color: var(--success);
 }
 
@@ -292,8 +277,8 @@ ul.context-links li a {
 }
 
 .btn-info {
-    background-color: var(--info);
-    border-color: var(--info);
+    background-color: var(--cyan);
+    border-color: var(--cyan);
 }
 
 .btn-info.active,
@@ -367,31 +352,25 @@ ul.context-links li a {
 }
 
 /* end common colors */
-
 caption {
-    color: var(--orange);
-    background-color: var(--gray);
-    font-weight: bold;
+    color: var(--yellow);
+    background-color: var(--blue);
 }
 
 .form-control {
-    color: var(--indigo);
-    background-color: var(--light);
-    border-color: var(--cyan);
-    box-shadow: none;
+    color: var(--light);
+    background-color: var(--indigo);
 }
 
 .form-group {
-    color: var(--indigo);
     border-bottom: 1px solid var(--dark);
-    background-color: var(--light);
-    border-color: var(--cyan);
-    box-shadow: none;
+    background-color: var(--dark);
+    border-color: var(--gray);
 }
 
 .panel-default>.panel-heading {
-    color: var(--orange);
-    background-color: var(--dark);
+    color: var(--yellow);
+    background-color: var(--indigo);
     border-color: var(--cyan);
 }
 
@@ -404,48 +383,47 @@ caption {
 
 .panel-heading a:link,
 .panel-heading a:visited {
-    color: var(--orange);
+    color: var(--yellow);
 }
 
 .panel {
-    background-color: var(--light);
+    background-color: var(--indigo);
     border-color: var(--cyan);
     font-size: 14px;
-    box-shadow: none;
 }
 
 .panel-footer {
-    background-color: var(--light);
+    background-color: var(--dark);
 }
 
 .help-block {
-    color: var(--indigo);
+    color: var(--teal);
 }
 
 .checkbox label,
 .radio label {
-    color: var(--indigo);
+    color: var(--light);
 }
 
 .table-striped>thead {
-    background-color: var(--light);
+    background-color: var(--dark);
     border-color: var(--cyan);
 }
 
 .table-striped>tbody>tr:nth-of-type(odd) {
-    background-color: var(--light);
+    background-color: var(--dark);
     border-color: var(--cyan);
-    color: var(--gray-dark);
+    color: var(--grey);
 }
 
 .table-striped>tbody>tr.disabled:nth-of-type(odd) {
-    background-color: var(--light);
+    background-color: var(--dark);
     border-color: var(--cyan);
-    color: var(--gray-dark);
+    color: var(--grey);
 }
 
 .table-striped>tbody>tr:nth-of-type(even) {
-    background-color: var(--dark);
+    background-color: var(--indigo);
     border-color: var(--cyan);
 }
 
@@ -457,11 +435,11 @@ caption {
 .table-hover>tbody>tr.disabled:hover,
 .table-striped>tbody>tr.disabled:nth-of-type(odd):hover,
 .table-striped>tbody>tr.disabled:nth-of-type(even):hover {
-    background-color: var(--dark);
+    background-color: var(--gray-dark);
 }
 
 tr.disabled a {
-    color: var(--gray-dark);
+    color: var(--blue);
 }
 
 .table-bordered {
@@ -474,11 +452,9 @@ tr.disabled a {
 
 .table .table {
     background-color: var(--primary);
-    border-color: var(--cyan);
 }
 
 /* active table row */
-
 .table>tbody>tr.active>td,
 .table>tbody>tr.active>th,
 .table>tbody>tr>td.active,
@@ -492,18 +468,17 @@ tr.disabled a {
 .table>thead>tr>td.active,
 .table>thead>tr>th.active {
     background-color: var(--teal);
-    color: var(--gray-dark);
+    color: var(--dark);
 }
 
 /* active table row on hover */
-
 .table-hover>tbody>tr.active:hover>td,
 .table-hover>tbody>tr.active:hover>th,
 .table-hover>tbody>tr:hover>.active,
 .table-hover>tbody>tr>td.active:hover,
 .table-hover>tbody>tr>th.active:hover {
-    background-color: var(--dark);
-    color: var(--gray-dark);
+    background-color: var(--teal);
+    color: var(--dark);
 }
 
 .popover-title {
@@ -512,7 +487,7 @@ tr.disabled a {
 }
 
 .popover {
-    background-color: var(--light);
+    background-color: var(--gray);
 }
 
 .popover.right>.arrow:after {
@@ -526,39 +501,40 @@ tr.disabled a {
 .modal-header,
 .modal-footer {
     background-color: var(--dark);
-    color: var(--gray-dark);
+    border-color: var(--dark);
 }
 
 /** Page footer */
-
 .footer {
     background-color: var(--dark);
 }
 
 .footer a {
-    color: var(--gray-dark);
+    color: var(--cyan);
 }
 
 /** Homepage / dashboard */
-
 .widget .panel-heading {
     color: var(--yellow);
-    background-color: var(--light);
+    background-color: var(--indigo);
+}
+
+#widgetSequence {
+    border-top: 1px solid var(--cyan);
 }
 
 /* icons in the dashboard panel headings should pull-right **/
-
 .widget-heading-icon {
     display: block;
     float: right;
 }
 
 .widget-heading-icon .fa {
-    color: var(--indigo);
+    color: var(--cyan);
 }
 
 .widget-heading-icon .fa:hover {
-    color: var(--gray-dark);
+    color: var(--teal);
 }
 
 a.list-group-item,
@@ -573,12 +549,12 @@ a.list-group-item:hover,
 .list-group-item:focus,
 .list-group-item:hover {
     background-color: var(--dark);
-    color: var(--indigo);
+    color: var(--teal);
 }
 
 a.list-group-item .list-group-item-heading,
 .list-group-item .list-group-item-heading {
-    color: var(--indigo);
+    color: var(--cyan);
 }
 
 .progress {
@@ -586,17 +562,16 @@ a.list-group-item .list-group-item-heading,
 }
 
 .progress-bar {
-    background-color: var(--yellow);
+    background-color: var(--cyan);
 }
 
 .icon-embed-btn {
-    color: var(--dark);
+    color: var(--blue);
 }
 
 /* Used when you need an icon to act as a submit button **/
-
 .button-icon {
-    color: var(--dark);
+    color: var(--teal);
 }
 
 button.close {
@@ -606,41 +581,42 @@ button.close {
 
 .modal-header button.close {
     border: 1px solid var(--teal);
-    color: var(--indigo);
+    color: var(--teal);
 }
 
 input,
 select,
 textarea {
-    color: var(--gray-dark);
-    background-color: var(--gray);
+    color: var(--teal);
 }
 
 /* tree css */
-
 ul.tree li A:link,
 ul.tree li A:hover,
 ul.tree li A:visited {
-    color: var(--indigo);
+    color: var(--cyan);
 }
 
 /*sortable table*/
-
 table[data-sortable].sortable-theme-bootstrap th[data-sorted="true"] {
     background-color: var(--gray-dark);
-    color: var(--gray-dark);
+    color: var(--teal);
     border-bottom-color: var(--gray-dark);
 }
 
 table[data-sortable].sortable-theme-bootstrap tbody td {
-    color: var(--gray-dark);
-    border-color: var(--cyan);
+    color: var(--teal);
+    border-top: 1px solid var(--gray-dark);
+}
+
+textarea {
+    color: var(--teal);
+    background-color: var(--gray-dark);
 }
 
 /** Styling for jQuery autocomplete widget */
-
 .ui-autocomplete {
-    color: var(--indigo);
+    color: var(--teal);
     background-color: var(--gray-dark);
 }
 
@@ -650,7 +626,6 @@ table[data-sortable].sortable-theme-bootstrap tbody td {
 }
 
 /* Callouts */
-
 .bs-callout {
     padding: 10px 15px;
     margin: 10px 0;
@@ -678,7 +653,6 @@ table[data-sortable].sortable-theme-bootstrap tbody td {
 }
 
 /* Callout contextual classes */
-
 .bs-callout-default {
     border-left-color: var(--secondary);
 }
@@ -689,24 +663,24 @@ table[data-sortable].sortable-theme-bootstrap tbody td {
 
 .bs-callout-danger {
     border-color: var(--danger-dark);
-    color: var(--gray-dark);
-    background-color: var(--danger);
+    color: var(--danger);
+    background-color: var(--dark);
 }
 
 .bs-callout-danger h4 {
-    color: var(--gray-dark);
-    background-color: var(--danger);
+    color: var(--danger);
+    background-color: var(--dark);
 }
 
 .bs-callout-warning {
     border-left-color: var(--warning);
     color: var(--warning);
-    background-color: var(--warning-dark);
+    background-color: var(--dark);
 }
 
 .bs-callout-warning h4 {
     color: var(--warning);
-    background-color: var(--warning-dark);
+    background-color: var(--dark);
 }
 
 .bs-callout-info {
@@ -718,9 +692,9 @@ table[data-sortable].sortable-theme-bootstrap tbody td {
 }
 
 /* D3 Styles */
-
 .traffic-widget-chart:not(:last-child) {
     border-bottom: 2px solid var(--dark);
+    fill: var(--danger) !important;
 }
 
 svg text {
@@ -730,32 +704,39 @@ svg text {
 
 g.nv-axis text,
 g.nv-legend text {
-    fill: var(--gray);
+    fill: var(--gray-dark);
 }
 
 .nvd3 .nv-axis line,
 .nvd3 .nv-axis path {
-    fill: var(--gray) !important;
-    stroke: var(--gray) !important;
+    fill: var(--gray-dark) !important;
+    stroke: var(--blue) !important;
 }
 
 /* Chart colors */
-
 .nvd3 .nv-group.nv-series-0 {
-    fill: var(--warning) !important;
-    stroke: var(--warning) !important;
+    fill: var(--danger) !important;
+    stroke: var(--danger) !important;
 }
 
 .nvd3 .nv-group.nv-series-1 {
-    fill: var(--warning-dark) !important;
-    stroke: var(--warning-dark) !important;
+    fill: var(--danger-dark) !important;
+    stroke: var(--danger-dark) !important;
 }
 
 .nvd3 .nv-legend-symbol {
-    fill: var(--warning-dark) !important;
-    stroke: var(--warning-dark) !important;
+    fill: var(--danger-dark) !important;
+    stroke: var(--danger-dark) !important;
 }
 
 .colspanth {
-    background-color: var(--indigo);
+    background-color: var(--teal);
+}
+
+/* Required input elements have a title that begins with "*". This causes
+Group.class.php to add <span class="element-required" to the title, which
+can then be used to style required input here. Example below uses a custom
+text underline, but text-color, background, font etc. could also be used */
+.element-required {
+    box-shadow: inset 0 0px 0 --teal, inset 0 0px 0 --teal
 }

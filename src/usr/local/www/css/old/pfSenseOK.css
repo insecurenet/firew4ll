@@ -1,5 +1,5 @@
 /*
- * pfSense.css
+ * Firew4ll.css
  *
  * part of Firew4LL (https://www.firew4ll.com)
  * Copyright (c) 2020 InSecureNet, SRL (ISN)
@@ -132,7 +132,7 @@ tr.disabled a {
 }
 
 .navbar-inverse {
-    background-color: #141A46;
+    background-color: #212121;
 }
 
 .navbar-brand > img {
@@ -177,13 +177,13 @@ tr.disabled a {
 }
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav li.open>a, .nav li.open>a:focus, .nav-pills>li.active>a:hover {
-    border-bottom: 5px solid #EC8B5E;
+    border-bottom: 5px solid #B71C1C;
     color: #B71C1C;
     background-color: #F5F5F5;
 }
 
 .navbar-inverse .navbar-nav >li>a {
-    border-bottom: 5px solid #141A46;
+    border-bottom: 5px solid #212121;
     color: #BDBDBD;
 }
 
@@ -197,14 +197,14 @@ tr.disabled a {
     border-right: 1px solid #F5F5F5;
     border-top: 1px solid #F5F5F5;
     background-color: #F5F5F5;
-    border-bottom: 5px solid #EC8B5E;
+    border-bottom: 5px solid #B71C1C;
     margin-bottom: 0;
     color: #B71C1C;
     box-shadow: none;
 }
 
 .nav-tabs {
-    border-bottom: 1px solid #EC8B5E;
+    border-bottom: 1px solid #B71C1C;
     margin-bottom: 15px;
 }
 
@@ -234,7 +234,7 @@ tr.disabled a {
 
 .panel-default>.panel-heading {
     color: #fff;
-    background-color: #141A46;
+    background-color: #424242;
     letter-spacing: 1px;
 }
 
@@ -406,7 +406,7 @@ tr.disabled a {
 
 .breadcrumb {
     background-color: #E0E0E0;
-    font-size: 18px;
+    font-size: 22px;
 }
 
 .breadcrumb>li+li:before {
@@ -455,7 +455,7 @@ form .btn + .btn {
     left: 0;
     width: 100%;
     height: 40px;
-    background-color: #141A46;
+    background-color: #212121;
     padding-top: 10px;
     text-align: center;
 }
@@ -539,7 +539,7 @@ footer a {
 }
 
 .progress-bar {
-    background-color: #EC8B5E;
+    background-color: #B71C1C;
 }
 
 .progress-bar.progress-bar-success {
@@ -909,7 +909,7 @@ table[data-sortable].sortable-theme-bootstrap thead th {
 
     .breadcrumb {
         font-size: 14px;
-        padding: 14px;
+        padding: 15px;
         width: 50%;
     }
 

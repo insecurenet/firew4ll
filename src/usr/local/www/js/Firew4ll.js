@@ -190,7 +190,7 @@ $(function() {
 	// the element value
 	$('.btn-danger, .fa-trash').on('click', function(e){
 		if (!($(this).hasClass('no-confirm')) && !($(this).hasClass('icon-embed-btn'))) {
-			// Anchors using the automatic get2post system (pfSenseHelpers.js) perform the confirmation dialog
+			// Anchors using the automatic get2post system (Firew4llHelpers.js) perform the confirmation dialog
 			// in those functions
 			var attr = $(this).attr('usepost');
 			if (typeof attr === typeof undefined || attr === false) {
