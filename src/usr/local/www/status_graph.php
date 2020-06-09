@@ -195,8 +195,8 @@ $group2->add(new Form_Select(
 	null,
 	$curbackgroundupdate,
 	array (
-		'false'	=> gettext('Clear graphs when not visible.'),
-		'true'	=> gettext('Keep graphs updated on inactive tab. (increases cpu usage)'),
+		'false'	=> gettext('Cancellare i grafici quando non sono visibili.'),
+		'true'	=> gettext('Conservare i grafici aggiornati sulle schede non attive. (Questa impostazione aumenta l\'utilizzo della CPU)'),
 	)
 ))->setHelp('Background updates');
 
@@ -205,8 +205,8 @@ $group2->add(new Form_Select(
 	null,
 	$curinvert,
 	array (
-		'true'	=> gettext('On'),
-		'false'	=> gettext('Off'),
+		'true'	=> gettext('Si'),
+		'false'	=> gettext('No'),
 	)
 ))->setHelp('Invert in/out');
 
