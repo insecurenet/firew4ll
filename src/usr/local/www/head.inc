@@ -432,6 +432,7 @@ if (!$g['disablehelpmenu']) {
 		$help_menu[] = array(gettext("Bug Database"), "https://www.pfsense.org/j.php?jumpto=redmine");
 	}
 
+	$help_menu[] = array(gettext("Chi Siamo"), "/chi_siamo.php");
 	$help_menu[] = array(gettext("Documentation"), "https://doc.firew4ll.com");
 	$help_menu[] = array(gettext("Firew4ll Book"), "http://doc.firew4ll.com/_/downloads/it/latest/pdf/");
 	$help_menu[] = array(gettext("FreeBSD Handbook"), "https://www.freebsd.org/doc/en/books/handbook/");
